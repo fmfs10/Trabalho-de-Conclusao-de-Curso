@@ -1,0 +1,135 @@
+\renewcommand{\NomeBloco}{APS\_pixel\_clk}
+\renewcommand{\NomeBlocoNoUnderline}{apspixelclk}
+\renewcommand{\NomePTab}{tab_\NomeBlocoNoUnderline}
+\renewcommand{\NomeSTab}{tab_\NomeBlocoNoUnderline2}
+\renewcommand{\NomePFig}{fig_\NomeBlocoNoUnderline}
+\renewcommand{\NomeSFig}{fig_\NomeBlocoNoUnderline2}
+\renewcommand{\NomeTTab}{tab_\NomeBlocoNoUnderline3}
+\renewcommand{\NomeQTab}{tab_\NomeBlocoNoUnderline4}
+
+\section{\NomeBloco}
+
+O \NomeBloco{} \'e o bloco respons\'avel por processar e digitalizar o sinal gerado pelo \emph{TIA}. A inten{\c c}\~ao de uso do \emph{TIA} \'e que ele seja o respons\'avel por captar um sinal luminoso com frequ\^encia bem definida, e o sinal el\'etrico gerado, em forma de pulsos quadrados, sirva de refer\^encia de rel\'ogio para todos os circuitos APS utilizados para detec{\c c}\~ao de cor. O bloco portanto tem como responsabilidade gerar um sinal digital de frequ\^encia igual \'a do sinal luminoso captado. O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
+
+\begin{table}[htbp]
+\caption{Sinais do bloco \NomeBloco}
+\label{\NomeSTab}
+\centering
+\begin{tabular}{ccl}
+
+    \toprule
+    Sinal & Tipo    & Descri{\c c}\~ao\\
+    \midrule \midrule
+    Vref\_comp   & Entrada   & Tens\~ao de refer\^encia utilizada pelo comparador\\
+    \midrule
+    Vref\_amp   & Entrada   & Tens\~ao de refer\^encia utilizada para o TIA\\
+    \midrule
+    Ibias   & Entrada   & Corrente de polariza{\c c}\~ao do comparador \\
+    \midrule
+    Vout   & Saída   & Sinal digital produzido pelo Comparador\\
+    \bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+
+O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
+
+\begin{figure}[htb]
+ \label{\NomePFig}
+ \centering
+    \centering
+    \caption{Circuito CMOS projetado para o bloco \NomeBloco} 
+    \includegraphics[scale=0.35]{Circuitos/APS_clk.png}
+    \legend{Fonte: Produzido pelo autor}
+\end{figure}
+
+\begin{figure}[htb]
+ \centering
+    \centering
+    \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{\NomeSFig}
+    \includegraphics[scale=0.5]{Circuitos/APS_clk_block.png}
+    \legend{Fonte: Produzido pelo autor}
+\end{figure}
+
+O circuito tem funcionamento similar ao do apresentado no bloco \emph{APS\_digitalized}, por\'em com apenas a sa\'ida digital sendo considerada e sendo utilizado um $TIA$ ao inv\'es de um APS. A corrente de polariza{\c c}\~ao do par diferencial \'e gerada pelo bloco Ibias\_generator presente no bloco.
+
+Uma resist\^encia $R$ de ganho \'e utilizada, com valor apresentado na \autoref{\NomeQTab}.
+
+\begin{table}[htb]
+\caption{Resistores do bloco \NomeBloco}
+\label{\NomeQTab}
+\centering
+\begin{tabular}{cccc}
+\toprule
+Resistor & W ($\mu$m)  & L ($\mu$m) & Resist\^encia (k$\Omega$)\\
+\midrule \midrule
+R & 1,68 & 39486,3 & 25000\\
+\bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+
+Para o bloco, a \autoref{eq_TIAblock} descreve $V_{PH}$, que \'e comparada com \emph{Vref\_comp} e ent\~ao utilizada para gerar o sinal de sa\'ida.
+
+\begin{equation}
+    \label{eq_TIAblock}
+    V_{PH} = RI_{PH} + Vref_amp
+\end{equation}
+
+Onde:
+
+\begin{itemize}
+
+    \item \emph{$V_{PH}$} \'e a tens\~ao no ramo positivo do comparador [$V$]
+    \item \emph{$I_{PH}$} \'e a corrente fotogerada [$A$]
+    
+\end{itemize}
+
+Dois transistores NMOS n\~ao apresentados na ilustra{\c c}\~ao foram conectado com o dreno e fonte ligados ao terra e o gate em VDD, de forma a se formar um capacitor de desacoplamento para o bloco. Os par\^ametros desses transistores s\~ao dadas na \autoref{tab_capdecclk}.
+
+\begin{table}[htbp]
+\caption{Capacitores de desacoplamento via transistor do bloco \NomeBloco}
+\label{tab_capdecclk}
+\centering
+\begin{tabular}{cccc}
+\toprule
+W ($\mu$m)  & L ($\mu$m) & M (n° dispositivos) & S (n° dispositivos)\\
+\midrule \midrule
+50 & 10 & 1 & 1\\
+\bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+
+Dois capacitores MOS n\~ao apresentados na ilustra{\c c}\~ao tamb\'em foram utilizados como capacitores de desacoplamento. Os par\^ametros desses capacitores s\~ao dadas na \autoref{tab_capdecclk2}.
+
+\begin{table}[htbp]
+\caption{Capacitores de desacoplamento MOS do bloco \NomeBloco}
+\label{tab_capdecclk2}
+\centering
+\begin{tabular}{ccc}
+\toprule
+W ($\mu$m)  & L ($\mu$m) & Capacit\^ancia ($pF$)\\
+\midrule \midrule
+30 & 30 & 1,7919\\
+\bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+
+Dois diodos quadrados ligados reversamente em VDD e GND tamb\'em foi utilizado, com o intuito de proteger o circuito de tens\~oes reversas. Os par\^ametros desses diodos s\~ao dadas na \autoref{tab_capdecclk3}
+
+\begin{table}[htbp]
+\caption{Diodos de prote{\c c}\~ao do bloco \NomeBloco}
+\label{tab_capdecclk3}
+\centering
+\begin{tabular}{ccc}
+\toprule
+W ($\mu$m)  & L ($\mu$m) & \'Area ($um^2$)\\
+\midrule \midrule
+3 & 3 & 9\\
+\bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+\clearpage

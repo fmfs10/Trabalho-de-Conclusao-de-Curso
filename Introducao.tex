@@ -1,0 +1,51 @@
+% ----------------------------------------------------------
+% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% ----------------------------------------------------------
+\chapter[Introdução]{Introdução}
+%$\addcontentsline{toc}{chapter}{Introdução}
+% ----------------------------------------------------------
+Receptores ópticos têm uma vasta gama de aplicações. Podemos utilizá-los para detectar a presença ou ausência de luz no ambiente em determinada faixa de frequência; recepção de sinais luminosos de diferentes cores para construir uma foto em uma câmera; recepção de sinais codificados em luz para realizar uma transmissão de dados sem fio (Li-Fi); detecção de temperatura em um objeto via a sua emissão de luz infravermelha; entre incontáveis outras aplicações. A forma como o circuito do sensor é desenvolvido varia muito com a aplicação, e diversas topologias podem ser utilizadas. Mesmo dentro de uma classe em específico de sensores, diversas variações de circuitos podem existir.
+
+Neste trabalho, é desenvolvido o projeto eletrônico dos principais blocos analógicos de um receptor óptico integrado em tecnologia CMOS 180 nm. Para realizar a recepção dos dados, um pixel ativo do tipo APS (Active Pixel Sensor) foi projetado. É um circuito utilizado para situações em que não só a presença, mas a intensidade de determinada frequência óptica é de interesse ao usuário. O APS já é uma topologia muito estudada e utilizada, devido principalmente à facilidade com que pode ser integrado em um CI utilizando tecnologia CMOS, facilidade de acoplamento com outros circuitos do mesmo CI, e também pelo seu baixo custo por pixel em comparação com outros tipos de Receptores Ópticos. 
+Junto à construção do circuito do APS, diversos outros blocos de circuitos são necessários para que se permita o condicionamento e processamento do sinal luminoso transferido para o domínio elétrico. Circuitos de controle devem ser desenvolvidos para garantir sincronia entre todos elementos do sistema. Dentre os circuitos auxiliares que compõem todo um sistema de Pixel Ativo, podemos citar Amplificadores Operacionais, utilizados para amplificar o sinal gerado pelo sensor; multiplexadores, para realizarem a seleção do sinal de diferentes pixeis de luz ou outros componentes do sistema; e circuitos geradores de clock, que definem o momento de captação de luz do pixel e momento este poderá ser operado.
+
+O desenvolvimento dos principais circuitos analógicos de um receptor óptico integrado serão apresentados, desde o seu detalhamento teórico, concepção do circuito e subcircuitos necessários ao sistema, desenvolvimento de esquemático para realização de simulações iniciais, construção do layout de circuito integrado,, desenvolvimento de um CI para permitir a ligação dos sinais e realização de testes, e finalmente, medições para validação de todo sistema. A tecnologia utilizada no processo é a CMOS TSMC 180nm.
+Discussões sobre os resultados obtidos são realizadas, com o intuito de averiguar as variações do modelo teórico e de simulação com aquilo que foi devidamente fabricado. Alinhado às discussões, é feita uma averiguação de possíveis melhorias para futuros projetos para otimização de todo o sistema em diversos fatores.
+
+Todo o trabalho é desenvolvido com apoio do OptMALab , laboratório que se apresenta internamente à Escola de Engenharia da UFMG, e que possui o ferramental necessário para permitir a realização de todos o procedimentos aqui citados, com exceção da fabricação do APS e seu encapsulamento, que é realizada em local externo por meio de uma parceria da universidade com a foundry Interuniversity Microelectronics Centre (IMEC); e da fabricação do PCB, feito por uma empresa externa.
+
+\section{Motivação e Objetivos do Trabalho}
+
+Dado a infinidade de aplicações do qual um APS pode ser utilizado, a fundamentação de parâmetros de referência para desenvolvimento de projetos de circuitos que se faz presente é de essencial importância para possibilitar a escolha de qual projeto é mais adequado à aplicação. Diferentes figuras de mérito podem ser avaliadas para otimizar uma ou mais características de interesse técnico e/ou econômico do projeto.
+
+O trabalho tem como principal objetivo o desenvolvimento de um circuito de Sensor de Pixel Ativo, e um TIA, tomando como referência trabalhos j\'a desenvolvidos por outros autores. O desenvolvimento apresenta o projeto elétrico, simulação, e desenvolvimento do layout do CI. 
+
+São desenvolvidos seis circuitos principais, sendo três com a função de detectar diferentes cores (azul, verde e amarelo) utilizando um APS, um circuito extrator de sinal de relógio de uma fonte luminosa atrav\'es de um TIA, e um APS e um TIA para fins de testes, dos quais s\~ao utilizados para testar as funcionalidades dos circuitos citados sem a necessidade de uma fonte luminosa. 
+
+O dispositivo projetado deve se adequar a todas as características recomendáveis de um projeto de circuito analógico integrado CMOS, devendo ser avaliado e otimizado para aprimorar certas propriedades importantes de layout como perdas ohmicas, capacitâncias parasitas, ruídos e consumo.
+
+Alguns circuitos auxiliares compõem conjuntamente o projeto, como Amplificadores Operacionais, Filtros e Multiplexadores, que são elementos comuns em projetos de APS’s e TIA's, utilizados para transferir e controlar a informação gerada pelo sensor, mas que não são o principal foco de análise.
+
+\section{Estrutura do Trabalho}
+
+A monografia apresenta o desenvolvimento de um projeto de APS's e TIA's com base em algumas figuras de mérito comumente utilizadas na indústria.. O texto foi dividido em quatro capítulos, além desta introdução, sendo eles Revisão Bibliográfica, Metodologia, Resultados e Conclusão.
+
+Revisão Bibliográfica, capítulo 2 deste trabalho, visa apresentar um resumo histórico simplificado sobre Receptores Ópticos, conceituação de elementos chave para o entendimento do que é apresentado em capítulos posteriores, citação de outros trabalhos relacionados ao tema aprovados pela comunidade científica e detalhamento do trabalho base que foi tomado como principal inspiração da monografia.
+Metodologia, capítulo 3 deste trabalho, visa apresentar o processo adotado para desenvolvimento do circuito de interesse, com base no trabalho de inspiração citado, demonstrando o processo de projeto à nível de esquemático elétrico, simulações, avaliações de figuras de mérito em ambiente simulado, design do layout do circuito analógico, design do PCB para utilização do CI projetado e a realização de medições dos parâmetros do CI após sua devida fabricação.
+
+Resultados, capítulo 4 deste trabalho, apresenta todos resultados obtidos de acordo com o modelo metodológico previamente apresentado, e a comprovação de atendimento aos objetivos tais quais formulados. Uma série de imagens, gráficos e dados são apresentados de forma a permitir a avaliação do projeto como um todo.
+
+Conclusão, capítulo 5 deste trabalho, retoma os resultados e avalia se os objetivos foram devidamente cumpridos. Sugestões de trabalhos posteriores são apresentados para explorar alguns tópicos que o autor entende que possam complementar todo o estudo aqui realizado.
+
+\section{Padroniza{\c c}\~ao de identifi{\c c}\~ao dos elementos dos circuitos}
+\label{section:padrao_sinais}
+
+Para facilitar a demonstra{\c c}\~ao dos circuitos presentes neste trabalho, o autor padronizou um conjunto de cores que estar\~ao presentes em cada elemento ilustrados para cada circuito referenciado:
+
+\begin{itemize}
+    \item \textbf{\color{red}VERMELHO}: indica o nome de uma inst\^ancia de um componente
+    \item \textbf{\color{orange}LARANJA}: indica o nome de um sinal interno
+    \item \textbf{\color{green}VERDE}: indica um sinal de entrada
+    \item \textbf{\color{blue}AZUL}: indica um sinal de sa\'ida
+    \item \textbf{\color{gray}CINZA}: indica o nome de um sinal bidirecional (entrada e/ou sa\'ida)
+\end{itemize}

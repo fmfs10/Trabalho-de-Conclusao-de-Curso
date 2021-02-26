@@ -1,0 +1,80 @@
+\renewcommand{\NomeBloco}{Decoder 2x4}
+\renewcommand{\NomePTab}{tab_\NomeBloco}
+\renewcommand{\NomeSTab}{tab_\NomeBloco2}
+\renewcommand{\NomePFig}{fig_\NomeBloco}
+\renewcommand{\NomeSFig}{fig_\NomeBloco2}
+\renewcommand{\NomeTTab}{tab_\NomeBloco3}
+
+\section{\NomeBloco}
+
+O bloco \NomeBloco{} tem a fun{\c c}\~ao de colocar um bit '1' em uma das sa\'idas, enquanto todas outras s\~ao iguais a '0'. A \autoref{\NomePTab} indica a Tabela Verdade do bloco.
+
+\begin{table}[htbp]
+
+\caption{Tabela Verdade do bloco \NomeBloco}%
+\label{\NomePTab}
+\centering
+\begin{tabular}{cccccc}
+    \toprule
+    In0 & In1 & Out0 & Out1 & Out2 & Out3 \\
+    \midrule \midrule
+    0 & 0 & 1 & 0 & 0 & 0 \\
+    \midrule
+    0 & 1 & 0 & 1 & 0 & 0 \\
+    \midrule
+    1 & 0 & 0 & 0 & 1 & 0 \\
+    \midrule
+    1 & 1 & 0 & 0 & 0 & 1 \\
+\bottomrule
+
+\end{tabular}
+\fonte{Produzido pelo autor.}
+\end{table}
+
+O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
+
+\begin{table}[htbp]
+\caption{Sinais do bloco \NomeBloco}
+\label{\NomeSTab}
+\centering
+\begin{tabular}{ccl}
+
+    \toprule
+    Sinal & Tipo    & Descri{\c c}\~ao        \\
+    \midrule \midrule
+    In1    & Entrada & Primeira entrada de sele{\c c}\~ao de sa\'ida \\
+    \midrule
+    In2    & Entrada & Segunda entrada de sele{\c c}\~ao de sa\'ida \\
+    \midrule
+    Out0 & Sa\'ida & Sa\'ida 0\\
+    \midrule
+    Out1 & Sa\'ida & Sa\'ida 1\\
+    \midrule
+    Out2 & Sa\'ida & Sa\'ida 2\\
+    \midrule
+    Out3 & Sa\'ida & Sa\'ida 3\\
+    \bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+
+O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
+
+\begin{figure}[htbp]
+ \label{NomePFig}
+ \centering
+    \centering
+    \caption{Circuito CMOS projetado para o bloco \NomeBloco} \label{\NomePFig}
+    \includegraphics[scale=0.3]{Circuitos/decoder.png}
+    \legend{Fonte: Produzido pelo autor}
+\end{figure}
+
+\begin{figure}[htbp]
+ \label{NomeSFig}
+ \centering
+    \centering
+    \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{NomeSFig}
+    \includegraphics[scale=0.5]{Circuitos/decoder_block.png}
+    \legend{Fonte: Produzido pelo autor}
+\end{figure}
+\clearpage

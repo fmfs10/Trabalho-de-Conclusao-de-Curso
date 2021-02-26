@@ -1,0 +1,17 @@
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+
+O trabalho explora a implementação de Optoreceptores utilizando a tecnologia CMOS de 180 nm da TSMC. São estudados e desenvolvidos quatro APS’s (Active Sensor Pixel), além de dois Amplificadores de Transimpedância (TIA) contendo um Fotodiodo em cada.
+Três APS’s tem a função de captação de uma cor distinta (Azul, Verde e Vermelho) de uma fonte luminosa. O circuito desenvolvido é feito de maneira idêntica para as 3 cores, e um filtro de luz externo é utilizado para que seja captada apenas a cor de interesse. O APS é constituído por um fotodiodo quadrado de dimensões 25x25 µm (625 µm²) e um circuito para captação da corrente fotogerada e envio de informação referente a luz em sua saída. Na saída do APS, o sinal é comparado à uma tensão de referência e amplificado, permitindo flexibilização na utilização do circuito para diferentes intensidades de fotocorrente. O sinal então caminha para um multiplexador que seleciona a saída que irá ao pino do Circuito Integrado, podendo ser qualquer um dos APS’s.
+Um quarto APS é utilizado apenas para fins de teste. A constituição física deste componente é idêntica aos outros, com exceção de um pino extra do qual pode ser injetada uma tensão diretamente ao fotodiodo, de forma a permitir a simulação de corrente fotogerada mesmo sem a presença de luz.
+O TIA tem a função de extrair um sinal de referência de uma fonte luminosa e servir como base para os outros circuitos de forma a gerar temporizações a todos APS’s. O fotodiodo tem dimensão de 25x25 µm (625 µm²), e também um amplificador com tensão de referência com o mesmo uso do APS. O circuito foi projetado de forma a permitir uma frequência de pelo menos 100 kHz. Assim como o APS de teste, existe um segundo TIA com um pino extra para simular uma fotocorrente sem a pŕesença de luz.
+Um chip de 1,6x1,6 mm (2,56 mm²) em encapsulamento CLC44 foi projetado, contendo os circuitos aqui citados como também outros circuitos de interesse do laboratório OptMA. Todo o projeto foi disponibilizado para fabricação em setembro de 2020, e sua caracterização será possível a partir de março de 2021.
+
+
+ \textbf{Palavras-chave}: latex. abntex. editoração de texto.
+\end{resumo}
