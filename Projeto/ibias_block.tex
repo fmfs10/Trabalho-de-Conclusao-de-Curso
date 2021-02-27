@@ -1,0 +1,62 @@
+\renewcommand{\NomeBloco}{ibias\_block}
+\renewcommand{\NomeBlocoA}{ibiasblock}
+\renewcommand{\NomePTab}{tab_\NomeBlocoA}
+\renewcommand{\NomeSTab}{tab_\NomeBlocoA2}
+\renewcommand{\NomePFig}{fig_\NomeBlocoA}
+\renewcommand{\NomeSFig}{fig_\NomeBlocoA2}
+\renewcommand{\NomeTTab}{tab_\NomeBlocoA3}
+
+O bloco \NomeBloco{} gera diversos drenos de corrente utilizadas por outros blocos. O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
+
+\begin{table}[htbp]
+\caption{Sinais do bloco \NomeBloco}
+\label{\NomeSTab}
+\centering
+\begin{tabular}{ccl}
+
+    \toprule
+    Sinal & Tipo    & Descri{\c c}\~ao      \\
+    \midrule \midrule
+    bias\_pixel\_1   & Sa\'ida   & Dreno de corrente para o APS 1 (0,5 $\mu$A) \\
+    \midrule
+    bias\_pixel\_2   & Sa\'ida   & Dreno de corrente para o APS 2 (0,5 $\mu$A) \\
+    \midrule
+    bias\_pixel\_3   & Sa\'ida   & Dreno de corrente para o APS 3 (0,5 $\mu$A) \\
+    \midrule
+    bias\_pixel\_4   & Sa\'ida   & Dreno de corrente para o APS 4 (0,5 $\mu$A) \ \\
+    extra\_500nA   & Sa\'ida   & Dreno de corrente para o APS de teste (0,5 $\mu$A) \ \\
+    \midrule
+    bias\_comp\_1   & Sa\'ida   & Dreno de corrente para o Comparador 1 (1,5 $\mu$A) \ \\
+    \midrule
+    bias\_comp\_2   & Sa\'ida   & Dreno de corrente para o Comparador 2 (1,5 $\mu$A) \ \\
+    \midrule
+    bias\_comp\_3   & Sa\'ida   & Dreno de corrente para o Comparador 3 (1,5 $\mu$A) \\
+    \midrule
+    bias\_comp\_4   & Sa\'ida   & Dreno de corrente para o Comparador 4 (1,5 $\mu$A) \\
+    extra\_1500nA   & Sa\'ida   & Dreno de corrente para o Comparador de teste (1,5 $\mu$A) \ \\
+    \bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\legend{¹ Essa tens\~ao \'e igual \'a sa\'ida Vref\_minus do bloco \emph{vref\_block}\\² Essa tens\~ao \'e igual \'a sa\'ida Vref\_extra do bloco \emph{vref\_block}}
+\end{table}
+
+O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
+
+\begin{figure}[htb]
+ \label{NomePFig}
+ \centering
+    \centering
+    \caption{Circuito CMOS projetado para o bloco \NomeBloco} \label{\NomePFig}
+    \includegraphics[scale=0.38]{Circuitos/ibias_block.png}
+    \legend{Fonte: Produzido pelo autor}
+\end{figure}
+
+\begin{figure}[htb]
+ \label{NomeSFig}
+ \centering
+    \centering
+    \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{NomeSFig}
+    \includegraphics[scale=0.3]{Circuitos/ibias_block_block.png}
+    \legend{Fonte: Produzido pelo autor}
+\end{figure}
+\clearpage

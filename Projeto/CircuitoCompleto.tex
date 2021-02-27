@@ -1,4 +1,7 @@
-Um circuito integrado foi desenvolvido para avaliar cinco dispositivos APS's, referenciado na se{\c c}\~ao \ref{section:APS} deste documento, e dois TIA's, em refer\^encia \`a se{\c c}\~ao \ref{section:TIA}. O projeto \'e representado em alto n\'ivel na \autoref{fig_circcompleto}. Todos os sinais aqui apresentados na figura, e tamb\'em em todas figuras \'a seguir, seguem o a padr\~o descrito na se{\c c}\~ao \ref{section:padrao_sinais} deste trabalho.
+\chapter[Desenvolvimento do Projeto]{Desenvolvimento do Projeto}
+\label{sec_circ_comp}
+
+Um circuito integrado foi desenvolvido para avaliar cinco dispositivos APS's, referenciado na \autoref{section:APS} deste documento, e dois TIA's, em refer\^encia \`a \autoref{section:TIA}. O projeto \'e representado em alto n\'ivel na \autoref{fig_circcompleto}. Todos os sinais aqui apresentados na figura, e tamb\'em em todas figuras \'a seguir, seguem o a padr\~o descrito na \autoref{section:padrao_sinais} deste trabalho.
 
 \begin{figure}[htb]
 	\caption{\label{fig_circcompleto}Circuito projetado}
@@ -17,13 +20,13 @@ A tecnologia de fabrica{\c c}\~ao utilizada para o desenvolvimento de todos bloc
 O circuito representado na \autoref{fig_circcompleto} \'e composto por 2 blocos principais, que permitem o processamento advindos da fonte luminosa, al\'em de um circuito \emph{APS} e um \emph{TIA} extra. A descri{\c c}\~ao dos bloco s\~ao:
 
 \begin{itemize}
-    \item \emph{ibias\_block}: Tem a fun{\c c}\~ao de gerar todas fontes de corrente utilizadas em todos os blocos do circuito, quando necess\'ario.
+    \item \emph{ibias\_block}: Tem a fun{\c c}\~ao de gerar fontes de corrente utilizadas em todos alguns blocos do circuito.
     
-    \item \emph{4\_APS}: Implementa os tr\^es circuitos APS descritos, al\'em do circuito \emph{TIA}. A sa\'ida de cada bloco passa por um comparador de forma a digitalizar o dado, como ser\'a melhor explicitado na se{\c c}\~ao \autoref{Bloco4APS}.
+    \item \emph{4\_APS}: Implementa os tr\^es circuitos APS descritos, al\'em do circuito \emph{TIA}. A sa\'ida de cada bloco passa por um comparador de forma a digitalizar o dado, como ser\'a melhor explicitado na \autoref{sec_apsdigitalized}.
     
-    \item \emph{Vref\_block} e \emph{PIXEL\_CLK\_TEST}: Estes blocos realizam a implementa{\c c}\~ao de um TIA, por\'em com a adi{\c c}\~ao de um pino extra que possibilita a simula{\c c}\~ao de uma corrente fotogerada sem necessitar de uma fonte luminosa. Estes blocos ser\~ao melhor explicados na se{\c c}\~ao \autoref{BlocoTIA}. 
+    \item \emph{Vref\_block} e \emph{PIXEL\_CLK\_TEST}: Estes blocos realizam a implementa{\c c}\~ao de um TIA, por\'em com a adi{\c c}\~ao de um pino extra que possibilita a simula{\c c}\~ao de uma corrente fotogerada sem necessitar de uma fonte luminosa. Estes blocos ser\~ao melhor explicados na se{\c c}\~ao \autoref{BlocoTestes}. 
     
-    \item \emph{Vref\_block} e \emph{PIXEL\_TEST}: Este blocos realizam a implementa{\c c}\~ao de um APS, por\'em com a adi{\c c}\~ao de um pino extra que possibilita a simula{\c c}\~ao de uma corrente fotogerada sem necessitar de uma fonte luminosa. Estes blocos ser\~ao melhor explicados na se{\c c}\~ao \autoref{BlocoAPS}.
+    \item \emph{Vref\_block} e \emph{PIXEL\_TEST}: Este blocos realizam a implementa{\c c}\~ao de um APS, por\'em com a adi{\c c}\~ao de um pino extra que possibilita a simula{\c c}\~ao de uma corrente fotogerada sem necessitar de uma fonte luminosa. Estes blocos ser\~ao melhor explicados na se{\c c}\~ao \autoref{BlocoTestes}.
     
 \end{itemize}
 
@@ -34,21 +37,21 @@ A \autoref{tab_circcomp} mostra a rela{\c c}\~ao de sinais de entrada e sa\'ida 
   \caption{Descri{\c c}\~ao dos sinais de entrada e sa\'ida do circuito projetado para as cores azul, verde e vermelha}%
   \label{tab_circcomp}
 }{%
-  \begin{tabular}{ccll}
+  \begin{tabular}{clll}
   \toprule
    Sinal & Tipo & Descri{\c c}\~ao & Observa{\c c}\~ao \\
   \midrule \midrule
-   RESET\_BLUE & Entrada & Sinal de \emph{RESET} no APS para cor azul & Ativo em n\'ivel baixo \\
+   RESET\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de \emph{RESET} no APS\\ para cor azul\end{tabular}   & Ativo em n\'ivel baixo \\
   \midrule
-   RESET\_GREEN & Entrada & Sinal de \emph{RESET} no APS para cor verde & Ativo em n\'ivel baixo \\
+   RESET\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de \emph{RESET} no APS\\ para cor verde\end{tabular}   & Ativo em n\'ivel baixo \\
   \midrule
-   RESET\_RED & Entrada & Sinal de \emph{RESET} no APS para cor vermelha & Ativo em n\'ivel baixo \\
+   RESET\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de \emph{RESET} no APS\\ para cor vermelha\end{tabular}   & Ativo em n\'ivel baixo \\
   \midrule
-   ENABLE\_BLUE & Entrada & Sinal de \emph{ENABLE} no APS para cor azul & Ativo em n\'ivel alto \\
+   ENABLE\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de \emph{ENABLE} no APS\\ para cor azul\end{tabular}   & Ativo em n\'ivel alto \\
   \midrule
-   ENABLE\_GREEN & Entrada & Sinal de \emph{ENABLE} no APS para cor verde & Ativo em n\'ivel alto \\
+   ENABLE\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de \emph{ENABLE} no APS\\ para cor verde\end{tabular}   & Ativo em n\'ivel alto \\
   \midrule
-   ENABLE\_RED & Entrada & Sinal de \emph{ENABLE} no APS para cor vermelha & Ativo em n\'ivel alto \\
+   ENABLE\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de \emph{ENABLE} no APS\\ para cor vermelha\end{tabular}   & Ativo em n\'ivel alto \\
   \midrule
    Out\_An\_Blue & Sa\'ida & Sinal anal\'ogico para cor azul \\
   \midrule
@@ -61,6 +64,8 @@ A \autoref{tab_circcomp} mostra a rela{\c c}\~ao de sinais de entrada e sa\'ida 
    Out\_An\_Red & Sa\'ida & Sinal anal\'ogico para cor vermelha \\
   \midrule
    Out\_Dig\_Red & Sa\'ida & Sinal digital para cor vermelha \\
+   \midrule
+   Out\_CLK & Sa\'ida & Sinal de rel\'ogio gerado pelo TIA\\
   \bottomrule
 \end{tabular}%
 }{%
@@ -73,9 +78,19 @@ A \autoref{tab_circcomp} mostra a rela{\c c}\~ao de sinais de entrada e sa\'ida 
   \caption{Descri{\c c}\~ao dos sinais de entrada e sa\'ida do circuito projetado para os blocos de teste}%
   \label{tab_circcomp2}
 }{%
-  \begin{tabular}{cccc}
+  \begin{tabular}{ccl}
   \toprule
-   Sinal & Tipo & Descri{\c c}\~ao & Observa{\c c}\~ao \\
+   Sinal & Tipo & Descri{\c c}\~ao \\
+   \midrule \midrule
+   Vdiode\_test & Entrada & Tens\~ao que simula um potencial no fotodiodo do APS de teste\\
+   \midrule
+   Vdiode\_clk\_test & Entrada & Tens\~ao que simula um potencial no fotodiodo no TIA de teste\\
+   \midrule
+   Out\_An\_Test & Sa\'ida & Sinal anal\'ogico para o APS de teste \\
+   \midrule
+   Out\_Dig\_Test & Sa\'ida & Sinal digital para o APS de teste \\
+  \midrule
+   Out\_CLK\_test & Sa\'ida & Sinal de rel\'ogio gerado pelo TIA de teste\\
   \bottomrule
 \end{tabular}%
 }{%

@@ -1,9 +1,10 @@
 \renewcommand{\NomeBloco}{vref\_block}
-\renewcommand{\NomePTab}{tab_\NomeBloco}
-\renewcommand{\NomeSTab}{tab_\NomeBloco2}
-\renewcommand{\NomePFig}{fig_\NomeBloco}
-\renewcommand{\NomeSFig}{fig_\NomeBloco2}
-\renewcommand{\NomeTTab}{tab_\NomeBloco3}
+\newcommand{\NomeBlocoA}{vrefblock}
+\renewcommand{\NomePTab}{tab_\NomeBlocoA}
+\renewcommand{\NomeSTab}{tab_\NomeBlocoA2}
+\renewcommand{\NomePFig}{fig_\NomeBlocoA}
+\renewcommand{\NomeSFig}{fig_\NomeBlocoA2}
+\renewcommand{\NomeTTab}{tab_\NomeBlocoA3}
 
 O bloco \NomeBloco{} tem a finalidade de conter o bloco \emph{vref\_generator}, mais o bloco respons\'avel por gerar a corrente que o polariza. O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
 
@@ -45,7 +46,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \centering
     \centering
     \caption{Circuito CMOS projetado para o bloco \NomeBloco} \label{\NomePFig}
-    \includegraphics[scale=0.4]{Circuitos/vref_block.png}
+    \includegraphics[scale=0.3]{Circuitos/vref_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
@@ -54,25 +55,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \centering
     \centering
     \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{NomeSFig}
-    \includegraphics[scale=0.5]{Circuitos/vref_block_block.png}
+    \includegraphics[scale=0.4]{Circuitos/vref_block_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
-
-Os transistores utilizados no bloco \NomeBloco{} apresentam os par\^ametros mostrados na \autoref{\NomeTTab}.
-
-\begin{table}[htbp]
-\caption{Transistores do Bloco \NomeBloco}
-\label{\NomeTTab}
-\centering
-\begin{tabular}{ccccc}
-\toprule
-Transistor & W ($\mu$m)  & L ($\mu$m)           & M (n° dispositivos) & S (n° dispositivos)\\
-\midrule \midrule
-Q1 & 1,2 & 0,18 & 1 & 1\\
-\midrule
-Q2 & 0,6 & 0,18 & 1 & 1\\
-\bottomrule
-\end{tabular}
-\legend{Fonte: Produzido pelo autor}
-\end{table}
 \clearpage
