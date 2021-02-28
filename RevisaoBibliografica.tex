@@ -58,6 +58,7 @@ Um fotodiodo apresenta um modelo el\'etrico equivalente ilustrado na \autoref{fi
 	    \includegraphics[scale=0.8]{Imagens/ModeloFotodiodo.png}
 	\end{center}
 	\legend{Fonte: \cite{hamamatsu}}
+	\label{modeloElFotodiodo}
 \end{figure}
 
     O modelo el\'etrico apresenta a seguinte express\~ao:
@@ -245,7 +246,7 @@ Cada componente desempenha uma diferente fun{\c c}\~ao de forma a processar a in
 
     \item O transistor \emph{$T_{reset}$} funciona como uma chave, que quando fechada (sinal 0 em seu gate), vale \emph{VDD}. Quando aberto (sinal 1 em seu gate), o sinal no n\'o central passa a depender da configuração do transmition gate.
 
-    \item O transmition gate \emph{$T_{enable}$} funciona como uma chave, e quando o transistor \emph{$T_{reset}$} estiver em aberto, tem a função controlar se a tensão presente no fotodiodo ir\'a para o nó central ou n\~ao. Quando aberto, $V_{pn}$ fica isolado do restante do circuito. Quando fechado, a corrente fotogerada descarrega em $V_{cn}$, pois a associação das capacitâncias parasitas presentes nos transistores de \emph{$T_{enable}$}, \emph{$T_{reset}$} e \emph{$T_{buffer}$} formam um caminho fechado do qual descarrega lentamente o fotodiodo \cite{LidianeCampos}. Uma representa{\c c}\~ao desses capacitores \'e dada na \autoref{fig_APS_cap}.
+    \item O transmition gate \emph{$T_{enable}$} funciona como uma chave, e quando o transistor \emph{$T_{reset}$} estiver em aberto, tem a função controlar se a tensão presente no fotodiodo ir\'a para o nó central ou n\~ao. Quando aberto, $V_{pn}$ fica isolado do restante do circuito, devido ao estado de alta imped\^ancia nos terminais do dispositivo. Quando fechado, a corrente fotogerada descarrega em $V_{cn}$, pois a associação das capacitâncias parasitas presentes nos transistores de \emph{$T_{enable}$}, \emph{$T_{reset}$} e \emph{$T_{buffer}$} formam um caminho fechado do qual descarrega lentamente o fotodiodo \cite{LidianeCampos}. Uma representa{\c c}\~ao desses capacitores \'e dada na \autoref{fig_APS_cap}.
     
     \item O transistor \emph{$T_{select}$} \'e utilizado para que m\'ultiplos APS's compartilhem um mesmo barramento de sa\'ida. No projeto aqui implementado \emph{$T_{select}$} sempre se apresentar\'a fechado (\emph{SELECT} em n\'ivel l\'ogico '1').
     
@@ -256,8 +257,8 @@ Cada componente desempenha uma diferente fun{\c c}\~ao de forma a processar a in
     H\'a dois n\'os internos de bastante interesse ao trabalho, que s\~ao:
 
 \begin{itemize}
-    \item \emph{$V_{pn}$}: n\'o contendo a diferen{\c c}a de potencial gerada pelos terminais do fotodiodo
-    \item \emph{$V_{cn}$}: n\'o contendo o potencial no n\'o central do APS
+    \item \emph{$V_{pn}$}: tens\~ao entre os terminais do fotodiodo
+    \item \emph{$V_{cn}$}: tens\~ao no n\'o central do \emph{APS}
 \end{itemize}
 
     Os sinais externos do circuito s\'ao:
@@ -270,7 +271,7 @@ Cada componente desempenha uma diferente fun{\c c}\~ao de forma a processar a in
 \end{itemize}
 
 \subsubsection{Capacit\^ancias Parasitas}
-Para o correto estudo do APS devemos observar as capacit\^ancia equivalente presentes nos n\'os \emph{$V_{pn}$} e \emph{$V_{cn}$} do circuito \cite{LidianeCampos}. Na \autoref{fig_APS_cap} temos uma representa{\c c}\~ao dessas capacit\^ancias.
+Para o correto estudo do \emph{APS} devemos observar as capacit\^ancia equivalente presentes nos n\'os \emph{$V_{pn}$} e \emph{$V_{cn}$} do circuito \cite{LidianeCampos}. Na \autoref{fig_APS_cap} temos uma representa{\c c}\~ao dessas capacit\^ancias.
 
 \begin{figure}[htb]
 	\caption{\label{fig_APS_cap}Representa{\c c}\~ao do circuito APS com suas capacit\^ancias parasitas destacadas}
@@ -280,10 +281,12 @@ Para o correto estudo do APS devemos observar as capacit\^ancia equivalente pres
 	\legend{Fonte: Produzido pelo autor}
 \end{figure}
 
+\clearpage
+
 \begin{itemize}
     \item $C_j$ \'e a capacit\^ancia de jun{\c c}\~ao do fotodiodo. Seu principal efeito no estudo do APS \'e limitar a velocidade de varia{\c c}\~ao da corrente fotogerada.
-    \item $C_{cn}$ \'e a capacit\^ancia equivalente vista do n\'o \emph{$V_cn$} ao terra, devido principalmente \'as capacit\^ancias presentes em \emph{$T_{enable}$},  \emph{$T_{reset}$} e \emph{$T_{buffer}$}, causando um caminho fechado para a corrente do fotodiodo circular ao terra e ser descarregado em dos est\'agios citados posteriormente no trabalho.
-    \item \emph{$I_{ph}$} \'e a corrente fotogerada do fotodiodo
+    \item $C_{cn}$ \'e a capacit\^ancia equivalente vista do n\'o \emph{$V_{cn}$} ao terra, devido principalmente \'as capacit\^ancias presentes em \emph{$T_{enable}$},  \emph{$T_{reset}$} e \emph{$T_{buffer}$}, sendo o de \emph{$T_{buffer}$} o de maior contribui{\c c}\~ao. O capacitor cria um caminho fechado para a corrente do fotodiodo circular ao terra e ser descarregado em um dos est\'agios citados posteriormente no trabalho.
+    \item \emph{$I_{ph}$} \'e a corrente fotogerada
     \item \emph{Diode} \'e o diodo do modelo el\'etrico equivalente do fotodiodo
     \emph{}
 \end{itemize}
@@ -298,20 +301,20 @@ A operação do APS pode ser dividida em 4 est\'agios, que vão definir os m\'in
 	\begin{center}
 	    \includegraphics[scale=0.3]{Imagens/estagiosAPS.png}
 	\end{center}
-	\legend{Fonte do esbo{\c c}o: Pr\'oprio autor}
+	\legend{Fonte do esbo{\c c}o: Adaptado de \cite{LidianeCampos}}
 \end{figure}
 
 \begin{enumerate}
 
 \item \emph{$T_{reset}$} fechado, \emph{$T_{enable}$} fechado
     
-Nessa condição, o n\'o $V_{cn}$ \'e igual ao sinal de alimentação decrescido da queda de tensão entre dreno e fonte do transistor $T_{reset}$. A queda de tensão n\~ao \'e 0 pois uma impedância \'e vista desse nó ao terra, referente à queda de tensão do transmition gate e da capacitância parasita presente no fotodiodo.
+Nessa condição, o n\'o $V_{cn}$ \'e igual a VDD.
 
 \item \emph{$T_{reset}$} aberto, \emph{$T_{enable}$} fechado
 
-A corrente fotogerada passa a circular no nó central, e então pelas capacitância parasita \emph{$C_{cn}$}. A tensão no fotodiodo passa a diminuir, devido a circulação de corrente que diminui os portadores de carga do fotodiodo.
+A corrente fotogerada passa a descarregar a capacit\^ancia $C_{cn}$ do nó central, e então pelas capacitância parasita \emph{$C_{cn}$}. A tensão no fotodiodo passa a diminuir, devido a circulação de corrente que diminui a carga de \emph{$C_{j}$}.
 
-A tens\~ao nos terminais do fotodiodo neste segundo est\'agio uma rela{\c c}\~ao linear com a corrente fotogerada, conforme descrito na \autoref{eq_modEletFotIl}, que \'e deduzida por simples an\'alises dos n\'os.
+A tens\~ao nos terminais do fotodiodo neste segundo est\'agio tem uma rela{\c c}\~ao linear com a corrente fotogerada, conforme descrito na \autoref{eq_modEletFotIl}, que \'e deduzida por fazendo an\'alises dos n\'os, desprezando-se a resitência presente em $T_{enable}$ e tamb\^em outra resistências parasitas, como aquelas presentes no modelo elétrico do fotodiodo apresentado na \autoref{modeloElFotodiodo}.
 
 \begin{equation}
     \label{eq_modEletFotIl}
@@ -331,11 +334,11 @@ Onde:
 
 \item \emph{$T_{reset}$} aberto, \emph{$T_{enable}$} aberto, potencial \emph{$V_{pd}$} positivo
 
-Logo ap\'os abrir o transmition gate, a fotocorrente n\~ao circula mais no n\'o central, e o fotodiodo continua a ter sua diferen{\c c}a de potencial reduzida, com circula{\c c}\~ao de corrente internamente devido a \emph{$C_j$}. O n\'o central passa a cair bem lentamente devido a correntes de fuga. \emph{$V_{pd}$} cai at\'e chegar a se tornar negativo;
+Logo ap\'os abrir o $T_{enable}$, a fotocorrente n\~ao circula mais no n\'o central, e o fotodiodo continua a ter sua diferen{\c c}a de potencial reduzida, com circula{\c c}\~ao de corrente internamente devido a \emph{$C_j$}. O n\'o central passa a cair bem lentamente devido a correntes de fuga. \emph{$V_{pd}$} cai at\'e chegar a se tornar negativo;
 
-\item \emph{$T_reset$} aberto, \emph{$T_enable$} aberto, potencial \emph{$V_pd$} negativo
+\item \emph{$T_{reset}$} aberto, \emph{$T_{enable}$} aberto, potencial \emph{$V_{pd}$} negativo
 
-Nessa situação, o transmition gate passa a operar em modo linear. O potencial no n\'o $V_cn$ passa a cair devido a circulação de corrente do n\'o at\'e o fotodiodo. O nó diminui at\'e que finalmente chega a 0, onde se mant\'em estável e não apresenta mais circula{\c c}\~ao de corrente.
+Nessa situação, o $T_{enable}$ passa a operar em modo linear. O potencial no n\'o $V_{cn}$ passa a cair devido a circulação de corrente do n\'o at\'e o fotodiodo. O nó diminui at\'e que finalmente chega a 0, onde se mant\'em estável e não apresenta mais circula{\c c}\~ao de corrente.
 
 \end{enumerate}
 
@@ -343,19 +346,19 @@ Nessa situação, o transmition gate passa a operar em modo linear. O potencial 
 
 Podemos aproveitar o entendimento das propriedades f\'isicas do fotodiodo, e tamb\'em dos est\'agios de funcionamento de um APS, para obtermos informações relativas aos f\'otons absorvidos.
 
-Como sabemos matematicamente as relações de fotocorrente determinadas por \autoref{eq_modEletFot} e \autoref{eq_modEletFotIl}, e tamb\'em as Figuras de M\'erito que caracterizam o fotodetector, podemos utilizar o APS para coletar as informações em sua sa\'ida e determinar a frequência da onda eletromagn\'etica captada.
+Como sabemos matematicamente as relações de fotocorrente determinadas por \autoref{eq_modEletFot} e \autoref{eq_modEletFotIl}, e tamb\'em as Figuras de M\'erito que caracterizam o fotodetector, podemos utilizar o APS para coletar as informações em sua sa\'ida e determinar a intensidade da luz
 
-Entre os est\'agios 2 e 3, a tens\~ao do n\'o $V_cn$ passa a cair, devido a circula{\c c}\~ao da fotocorrente. Como essa corrente depende da frequ\^encia da luz, podemos descobrir qual o valor da frequ\^encia sabendo a inclina{\c c}\~ao da curva de tens\~ao na sa\'ida, j\'a que a varia{\c c}\~ao da tens\~ao \'e uma grandeza diretamente proporcional a corrente e a imped\^ancia vista no n\'o. Como (idealmente) a tens\~ao de sa\'ida \'e igual ao do n\'o central, podemos medir a sa\'ida para processar o sinal e ent\~ao relatar a frequ\^encia da luz.
+Entre os est\'agios 2 e 3, a tens\~ao do n\'o $V_{cn}$ passa a cair, devido a circula{\c c}\~ao da fotocorrente. Como essa corrente depende da intensidade da luz, podemos descobrir qual o valor de intensidade sabendo a inclina{\c c}\~ao da curva de tens\~ao na sa\'ida, j\'a que a varia{\c c}\~ao da tens\~ao \'e uma grandeza diretamente proporcional a corrente e a imped\^ancia vista no n\'o. Como a tens\~ao de sa\'ida \'e igual ao de $V_{cn}$ menos $V_{GS}$ do transistor $T_{buffer}$, podemos medir a sa\'ida para processar o sinal e ent\~ao relatar a intensidade luminosa.
 
-Com as observa{\c c}\~oes aqui apresentadas, podemos desenvolver um sistema de medi{\c c}\~ao de informa{\c c}\~ao luminosa, trabalhando entre os est\'agios 1 e 3, e ent\~ao retornando ao 1 para uma nova aquisi{\c c}\~ao. \'E importante destacar que existem limitações quanto \`a temporiza{\c c}\~ao dos est\'agios. Para que a medi{\c c}\~ao seja realizada de forma adequada, devemos garantir que tenhamos entre o Est\'agio 1 e 2 um tempo suficientemente grande para que $V_{cn}$ apresente um valor estável, ou seja, o tempo de transi{\c c}\~ao do sistema nessa condi{\c c}\~ao tenha foi conclu\'ido. Entre o Est\'agio 2 e Est\'agio 3, devemos garantir que tenhamos um tempo mínimo para que dois valores distintos de $V_out$ possam ser medidos, de acordo com a sensibilidade do sistema de medi{\c c}\~ao.
+Com as observa{\c c}\~oes aqui apresentadas, podemos desenvolver um sistema de medi{\c c}\~ao de informa{\c c}\~ao luminosa, trabalhando entre os est\'agios 1 e 3, e ent\~ao retornando ao 1 para uma nova aquisi{\c c}\~ao. \'E importante destacar que existem limitações quanto \`a temporiza{\c c}\~ao dos est\'agios. Para que a medi{\c c}\~ao seja realizada de forma adequada, devemos garantir que tenhamos entre o Est\'agio 1 e 2, um tempo suficientemente grande para que $V_{cn}$ apresente um valor estável, ou seja, o tempo de transi{\c c}\~ao do sistema nessa condi{\c c}\~ao seja conclu\'ido. Entre o Est\'agio 2 e Est\'agio 3, devemos garantir que tenhamos um tempo mínimo para que dois valores distintos de $V_{out}$ possam ser medidos, de acordo com a sensibilidade do sistema de medi{\c c}\~ao.
 
 \section{Amplificador de Transimped\^ancia (TIA)}
 \label{section:TIA}
 
-Um amplificador de transimped\^ancia \'e um circuito em dada uma corrente de entrada, se gera uma tens\~ao em sua sa\'ida proporcional \`a corrente de entrada \cite{RazaviFundM}. Considerando-se o fotodiodo como uma fonte de corrente, o trabalho apresenta na \autoref{fig_TIA} a topologia de um TIA desenvolvido no trabalho.
+Um amplificador de transimped\^ancia \'e um circuito em que dada uma corrente de entrada, gera-se uma tens\~ao em sua sa\'ida proporcional \`a esta corrente \cite{RazaviFundM}. Considerando-se o fotodiodo como uma fonte de corrente, a \autoref{fig_TIA} apresenta uma poss\'ivel topologia de um \emph{TIA}, desenvolvido no presente trabalho.
 
 \begin{figure}[htb]
-	\caption{\label{fig_TIA}TIA desenvolvido no projeto}
+	\caption{\label{fig_TIA}\emph{TIA} desenvolvido}
 	\begin{center}
 	    \includegraphics[scale=0.4]{Circuitos/TIA.png}
 	\end{center}
@@ -365,31 +368,25 @@ Um amplificador de transimped\^ancia \'e um circuito em dada uma corrente de ent
 Onde:
 
 \begin{itemize}
-    \item $V_{in}$ \'e a tens\~ao de entrada (ou $refer\^encia$) [$V$]
+    \item $V_{ref}$ \'e a tens\~ao de entrada (ou $refer\^encia$) [$V$]
     \item $V_o$ \'e a tens\~ao de sa\'ida [$V$]
     \item $R$ \'e uma resist\^encia de ajuste ganho [$\Omega$]
     \item $R_l$ \'e uma carga de sa\'ida [$\Omega$]
 \end{itemize}
 
-Sabemos da \ref{fig_modelofotodiodo} que podemos modelar uma resist\^encia $R_{sh}$ em paralelo ao fotodiodo. Desprezando-se todos outros componentes do modelo para facilitar a an\'alise, podemos descrever a f\'ormula correspondente ao $TIA$ da seguinte forma:
+Sabemos da \autoref{fig_modelofotodiodo} que podemos modelar uma resist\^encia $R_{sh}$ em paralelo ao fotodiodo. Desprezando-se todos outros componentes do modelo para facilitar a an\'alise, podemos descrever a f\'ormula correspondente ao $TIA$ como a \autoref{eqCTIA}.
 
 \begin{equation}
     \label{eqCTIA}
-    V_o = (1+\frac{R_{sh}}{R})*I_{PH} + V_{IN}
-\end{equation}
-
-\begin{equation}
-    \label{gainCTIA}
-    G_{TIA} = 1+\frac{R_{sh}}{R}
+    V_o = RI_{PH} + (1+\frac{R}{R_{sh}})V_{ref}
 \end{equation}
 
 Onde:
 \begin{itemize}
     \item $I_{PH}$ \'e a corrente fotogerada [$A$]
-    \item $G_{TIA}$ ganho do amplificador [$V.A^{-1}$]
 \end{itemize}
 
-A f\'ormula \ref{eqCTIA} mostra que R deve ser ajustado de forma que n\~ao seja nem pequeno demais para que n\~ao sature o circuito, tornando $G_{TIA}$o tendendo a infinito, como também n\~ao seja grande demais, para que n\~ao gere uma tens\~ao na sa\'ida de varia{\c c}\~ao pequena demais.
+A \autoref{eqCTIA} nos mostra que \emph{R} deve ser ajustado de forma que n\~ao seja grande demais, pois valores altos (de acordo com a aplicação) irão gerar tens\~ao na sa\'ida com varia{\c c}\~ao muito grande. Mesmo que \emph{Vref} fosse colocado em \emph{GND}, o fator $(1+\frac{R}{R_{sh}})$ ainda pode dominar a relação, devido \'a ruídos presentes nó, e então impor um termo indesejado, o que também causaria problemas, quando tivermos \emph{R} altos \cite{hamamatsu}.
 
 \subsection{Resposta espectral de um $TIA$}
 
