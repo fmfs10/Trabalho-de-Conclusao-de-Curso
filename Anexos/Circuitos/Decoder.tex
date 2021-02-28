@@ -1,36 +1,30 @@
-\renewcommand{\NomeBloco}{Multiplexador 7x1}
+\renewcommand{\NomeBloco}{Decoder 2x4}
 \renewcommand{\NomePTab}{tab_\NomeBloco}
 \renewcommand{\NomeSTab}{tab_\NomeBloco2}
 \renewcommand{\NomePFig}{fig_\NomeBloco}
 \renewcommand{\NomeSFig}{fig_\NomeBloco2}
 \renewcommand{\NomeTTab}{tab_\NomeBloco3}
 
-\section{\NomeBloco}
+\subsection{\NomeBloco}
 
-O bloco \NomeBloco{} tem a fun{\c c}\~ao de colocar na sa\'ida o valor correspondente \'a entrada selecionada. Nesse bloco, 7 entradas distintas podem ser selecionadas. A \autoref{\NomePTab} indica a Tabela Verdade do bloco. Embora tenha uma l\'ogica digital, o circuito permite entradas e sa\'idas anal\'ogicas.
+O bloco \NomeBloco{} tem a fun{\c c}\~ao de colocar um bit '1' em uma das sa\'idas, enquanto todas outras s\~ao iguais a '0'. A \autoref{\NomePTab} indica a Tabela Verdade do bloco.
 
 \begin{table}[htbp]
 
 \caption{Tabela Verdade do bloco \NomeBloco}%
 \label{\NomePTab}
 \centering
-\begin{tabular}{ccccc}
+\begin{tabular}{cccccc}
     \toprule
-    D0 & D1 & D2 & D3 & Out \\
+    In0 & In1 & Out0 & Out1 & Out2 & Out3 \\
     \midrule \midrule
-    0 & 0 & 0 & 0 & In0 \\
+    0 & 0 & 1 & 0 & 0 & 0 \\
     \midrule
-    0 & 1 & 0 & 0 & In1 \\
+    0 & 1 & 0 & 1 & 0 & 0 \\
     \midrule
-    1 & 0 & 0 & 0 & In2 \\
+    1 & 0 & 0 & 0 & 1 & 0 \\
     \midrule
-    1 & 1 & 0 & 0 & In3 \\
-    \midrule
-    X & X & 0 & 1 & In4 \\
-    \midrule
-    X & X & 1 & 0 & In5 \\
-    \midrule
-    X & X & 1 & 1 & In6 \\
+    1 & 1 & 0 & 0 & 0 & 1 \\
 \bottomrule
 
 \end{tabular}
@@ -48,16 +42,17 @@ O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos 
     \toprule
     Sinal & Tipo    & Descri{\c c}\~ao        \\
     \midrule \midrule
-    D0    & Entrada & Primeira entrada de sele{\c c}\~ao de sa\'ida \\
+    In1    & Entrada & Primeira entrada de sele{\c c}\~ao de sa\'ida \\
     \midrule
-    D1    & Entrada & Segunda entrada de sele{\c c}\~ao de sa\'ida \\
+    In2    & Entrada & Segunda entrada de sele{\c c}\~ao de sa\'ida \\
     \midrule
-    D2    & Entrada & Segunda entrada de sele{\c c}\~ao de sa\'ida \\
+    Out0 & Sa\'ida & Sa\'ida 0\\
     \midrule
-    D3    & Entrada & Segunda entrada de sele{\c c}\~ao de sa\'ida \\
+    Out1 & Sa\'ida & Sa\'ida 1\\
     \midrule
-    Vout & Sa\'ida & Sa\'ida do Multiplexador\\
+    Out2 & Sa\'ida & Sa\'ida 2\\
     \midrule
+    Out3 & Sa\'ida & Sa\'ida 3\\
     \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}
@@ -70,7 +65,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \centering
     \centering
     \caption{Circuito CMOS projetado para o bloco \NomeBloco} \label{\NomePFig}
-    \includegraphics[scale=0.3]{Circuitos/mux7x1.png}
+    \includegraphics[scale=0.3]{Circuitos/decoder.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
@@ -79,7 +74,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \centering
     \centering
     \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{NomeSFig}
-    \includegraphics[scale=0.5]{Circuitos/mux7x1_block.png}
+    \includegraphics[scale=0.5]{Circuitos/decoder_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 \clearpage

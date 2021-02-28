@@ -10,12 +10,13 @@ A literatura sobre Receptores Ópticos \'e extensa e contempla os mais diversos 
 O interesse de extrair informações advindas do espectro eletromagn\'etico \'e a muito tempo de grande interesse para físicos e engenheiros. As suas aplicações são diversas, desde extrair cores para formar uma imagem at\'e extrair informação digital de acordo com um sinal luminoso modulado.
 Em 1949, a primeira patente relacionada a um dispositivo semicondutor capaz de transformar informações luminosas em el\'etricas foi requisitada pela Bell Labs, sendo oficialmente aceita em 1951. Era o nascimento do fototransistor, um transistor bipolar especial que capta informação luminosa em sua base, gerando uma informação por forma de uma corrente el\'etrica em seu coletor e emissor \cite{Shive}.
 
-Com invenção do fototransistor e fotodiodo, e o desenvolvimento de tecnologias de fabricação de semicondutores, se gerou uma intensa pesquisa na d\'ecada de 60, que culminou no desenvolvimento do CCD (Charge Coupled Device) no início da d\'ecada de 70, sendo a tecnologia de Recepção Óptica mais utilizada at\'e a d\'ecada de 90 \cite{EstevaoCoelho, Andre}.
+Com invenção do fototransistor e fotodiodo, e o desenvolvimento de tecnologias de fabricação de semicondutores, se gerou uma intensa pesquisa na d\'ecada de 60, que culminou no desenvolvimento do CCD (\emph{Charge Coupled Device}) no início da d\'ecada de 70, sendo a tecnologia de Recepção Óptica mais utilizada at\'e a d\'ecada de 90 \cite{EstevaoCoelho, Andre}.
 
-Em meados da d\'ecada de 70, o PPS (Passive Pixel Sensor) foi desenvolvido, como alternativa aos dispositivos de imagem de tubo a vácuo \cite{Savvas}. Sua constituição se dá por uma matriz de fotodiodos, que convertem uma informação luminosa em el\'etrica, diretamente a um elemento processador de dados analógico, sem a utilização de um componente de amplificação.
+Em meados da d\'ecada de 70, o PPS (\emph{Passive Pixel Sensor}) foi desenvolvido, como alternativa aos dispositivos de imagem de tubo a vácuo \cite{Savvas}. Sua constituição se dá por uma matriz de fotodiodos, que convertem uma informação luminosa em el\'etrica, diretamente a um elemento processador de dados analógico, sem a utilização de um componente de amplificação.
 
-Ainda na d\'ecada de 70, os primeiros trabalhos relacionados ao APS (Active Pixel Sensor) foram desenvolvidos utilizando a tecnologia MOS (Metal-Oxide-Semiconductor) \cite{Peter}. O APS \'e uma evolução direta do PPS, com a adição de um dispositivo amplificador \cite{EstevaoCoelho}. Amplificar o sinal permite uma maior precisão na aquisição dos dados, al\'em de permitir uma maior miniaturização do fotodiodo, o que leva a uma miniaturização de todo o sistema. Com a evolução da tecnologia CMOS (Complementary Metal-Oxide-Semiconductor) na d\'ecada de 90, o APS se tornou mais atraente, por ser facilmente integrado com outros componentes que utilizam-se da mesma tecnologia em um mesmo circuito integrado. O APS vem desde então dominando o mercado de Recepção Óptica \cite{Andre, LidianeCampos}.
+Ainda na d\'ecada de 70, os primeiros trabalhos relacionados ao \emph{APS} foram desenvolvidos utilizando a tecnologia \emph{MOS} (\emph{Metal-Oxide-Semiconductor}) \cite{Peter}. O \emph{APS} \'e uma evolução direta do \emph{PPS} (\emph{Passive Pixel Sensor}), com a adição de um dispositivo amplificador \cite{EstevaoCoelho}. Amplificar o sinal permite uma maior precisão na aquisição dos dados, al\'em de permitir uma maior miniaturização do fotodiodo, o que leva a uma miniaturização de todo o sistema. Com a evolução da tecnologia CMOS (\emph{Complementary Metal-Oxide-Semiconductor}) na d\'ecada de 90, o \emph{APS} se tornou mais atraente, por ser facilmente integrado com outros componentes que utilizam-se da mesma tecnologia em um mesmo circuito integrado. O \emph{APS} vem desde então dominando o mercado de Recepção Óptica \cite{Andre, LidianeCampos}.
 
+Amplificadores Operacionais s\~ao circuitos amplamente utilizados para o desenvolvimento de sistemas analógicos. Desde a década de 60, o desenvolvimento de circuitos de comunicação óptica exploram a utilização de amplificadores para captação de sinais ópticos, transmissão e regeneração de sinais. A utilização de amplificadores operacionais junto à fotodiodos, possibilitam a conversão de sinais de luz em elétricas, que pode ser então processado e utilizado para fins tanto analógicos quanto digitais. O circuito comumente utilizado no processo de captação óptica são variações do \emph{TIA}, tendo papel fundamental para a expansão tecnológica que vemos tendo desde então. \cite{ajoy, andrefontoura}.
 
 \section{Fotodiodo}
 
@@ -24,7 +25,7 @@ O fotodiodo, ou fotodetector, \'e um componente optoeletrônico semicondutor que
 Para o entendimento do funcionamento do fotodiodo, uma fundamentação quântica da luz deve ser utilizada, com foco principal na Teoria das Bandas e no entendimento do que são os Fótons.
 
 \subsection{Física Quântica e Fotóns}
-A Física Quântica nos diz que qualquer material apresenta níveis de energia possíveis dadas de forma discreta (quantizada), ou seja, qualquer objeto do universo não pode ter qualquer nível de energia, mas sim valores dados de forma discreta, e que são quantificados por meio da solução da Equação de Schrödinger do material. \cite{Sze, JohnSingleton}
+A Física Quântica nos diz que qualquer material apresenta níveis de energia possíveis dados de forma discreta (quantizada), ou seja, qualquer objeto do universo não pode ter qualquer nível de energia, mas sim valores dados de forma discreta, e que são quantificados por meio da solução da Equação de Schrödinger do material. \cite{Sze, JohnSingleton}
 
 \subsubsection{Teoria das Bandas}
 
@@ -38,7 +39,7 @@ Fóton \'e uma partícula elementar que surge como resultado da liberação de e
 
 \subsection{Fotodiodo}
 \label{secao_fotodiodo}
-Um fotodiodo comumente \'e formado pela junção PIN, que \'e a junção de um material semicondutor dopado do tipo-P, um semicondutor intrínseco e um um material semicondutor dopado do tipo-N, como mostrado na \autoref{fig_fotodiodo}:
+Um fotodiodo comumente \'e formado pela junção PIN, que \'e a junção de um material semicondutor dopado do tipo-P, um semicondutor intrínseco e um material semicondutor dopado do tipo-N, como mostrado na \autoref{fig_fotodiodo}:
 
 \begin{figure}[htb]
 	\caption{\label{fig_fotodiodo}Exemplo de construção de uma junção PIN}
@@ -68,21 +69,21 @@ Um fotodiodo apresenta um modelo el\'etrico equivalente ilustrado na \autoref{fi
 
 Onde:
 \begin{itemize}
-    \item \emph{I\textsubscript{o}} \'e a corrente de saída presente na carga [A]
-    \item \emph{V\textsubscript{o}} \'e a tensão de saída [V], \emph{R\textsubscript{L}} \'e a carga de saída [$\Omega$]
-    \item \emph{V\textsubscript{D}} \'e a tens\~ao presente no diodo do modelo el\'etrico equivalente [V]
-    \item $I_L$ \'e a corrente fotogerada pela fonte luminosa[A]
-    \item  \emph{I\textsubscript{D}} \'e a corrente presente no diodo do modelo el\'etrico equivalente [A]
+    \item \emph{I\textsubscript{o}} \'e a corrente de saída presente na carga [\emph{A}]
+    \item \emph{V\textsubscript{o}} \'e a tensão de saída [\emph{V}]
+    \item \emph{R\textsubscript{L}} \'e a carga de saída [\emph{$\Omega$}]
+    \item \emph{V\textsubscript{D}} \'e a tens\~ao presente no diodo do modelo el\'etrico equivalente [\emph{V}]
+    \item $I_L$ \'e a corrente fotogerada pela fonte luminosa[\emph{A}]
+    \item  \emph{I\textsubscript{D}} \'e a corrente corrente de escuro do fotodiodo (sem a presença de luz) [\emph{A}]
     \item \emph{C\textsubscript{j}} \'e a capacit\^ancia de junç\~ao [F]
     \item \emph{R\textsubscript{sh}} \'e a resist\^encia shunt do modelo el\'etrico equivalente [$\Omega$]
     \item \emph{I\rq} \'e a corrente shunt presente na resistência shunt do modelo el\'etrico equivalente [A]
     \item \emph{R\textsubscript{S}} \'e a resistência em s\'erie com a carga de saída do modelo el\'etrico equivalente [$\Omega$]
-    \item \emph{I\textsubscript{S}} \'e a corrente de saturação reversa do fotodiodo [A]
     \item \emph{q} \'e a carga el\'etrica de um el\'etron [C], \item \emph{k} \'e a constante de Boltzmann [J.K$^{-1}$],
     \item \emph{T} \'e a temperatura presente no fotodiodo [K]
 \end{itemize}
 
-O fotodiodo em uma grande faixa apresenta comportamento linear, e \'e a faixa de principal interesse em aplica{\c c}\~oes como o $APS$ ou o $TIA$. Quanto maior o n\'umero de f\'otons recebidos, mais o gr\'afico apresentado na \autoref{fig_respFotodiodo} tende a se deslocar para baixo, aumentando a corrente fotogerada. Com o aumento ou diminui{\c c}\~ao expressiva, o circuito come{\c c}a a se tornar n\~ao-linear.
+O fotodiodo em uma grande faixa apresenta comportamento linear, e \'e a faixa de principal interesse em aplica{\c c}\~oes como o $APS$ ou o $TIA$. Com o aumento do n\'umero de f\'otons recebidos, o n\'ivel de corrente tende a ficar cada vez mais negativo, como mostrado na \autoref{fig_respFotodiodo}. Com o aumento ou diminui{\c c}\~ao expressiva, o circuito come{\c c}a a se tornar n\~ao-linear.
 
 \begin{figure}[htb]
 	\caption{\label{fig_respFotodiodo}Resposta Tens\~ao x Corrente para dada intensidade luminosa no fotodiodo}
@@ -93,9 +94,10 @@ O fotodiodo em uma grande faixa apresenta comportamento linear, e \'e a faixa de
 \end{figure}
 
 \subsection{Figuras de M\'erito}
-Do fotodiodo podemos extrair diversas m\'etricas (Figuras de M\'erito), que são de interesse para comparar diferentes modelos. As principais Figuras de M\'erito encontradas na literatura são \cite{LidianeCampos}:
+Do fotodiodo podemos extrair diversas m\'etricas (Figuras de M\'erito), que são de interesse para comparar diferentes modelos. As principais Figuras de M\'erito encontradas na literatura são descritas abaixo, apresentados em \cite{LidianeCampos}.
+
 \subsubsection{Eficiência Quântica}
-Relação entre o número de portadores detectados nos terminais das camadas PN do fotodetector, dividido pela incidência de uma determinada quantidade de fótons ao fotodetector.
+Relação entre o número de portadores detectados nos terminais das camadas PN do fotodetector, dividido pela incidência de uma determinada quantidade de fótons no fotodetector.
 
 \begin{equation}
     \eta = \frac{N_e}{N_p}
@@ -123,9 +125,12 @@ Onde:
     \item \emph{P$_{FD}$} \'e a pot\^encia \'optica presente no fotodiodo [W]
 \end{itemize}
 
-A Eficiência Quântica e a Responsividade se relacionam de acordo com a seguinte expressão:
+A Eficiência Quântica e a Responsividade se relacionam de acordo com a \autoref{eqEfResp}.
+
+A \autoref{fig_eqEfResp} mostra o gráfico da Responsividade e Efici\^encia Qu\^antica de alguns materiais.
 
 \begin{equation}
+    \label{eqEfResp}
     R_\lambda = \frac{\lambda\eta}{1,24}
 \end{equation}
 
@@ -136,6 +141,16 @@ Onde:
     \item $\eta$ \'e Efici\^encia Qu\^antica [Adm.]
 \end{itemize}
 
+\begin{figure}[htb]
+	\caption{\label{fig_responsividade}Responsividade e Efici\^encia Qu\^antica dos materiais Ge, InGaAs, Si}
+	\begin{center}
+	    \includegraphics[scale=0.8]{Imagens/GraficoRespostaEspectral.png}
+	\end{center}
+	\legend{Fonte: \cite{ajoy}}
+	\label{fig_eqEfResp}
+\end{figure}
+
+
 \subsubsection{Velocidade de Resposta}
 A velocidade de resposta indica o quão rápido o fotodiodo \'e capaz de responder a estímulos de luz externos, em determinada frequência. \'e caracterizado pelo Tempo de Subida e Tempo de Descida do fotodiodo, na faixa de frequências de interesse.
 
@@ -144,18 +159,18 @@ O Tempo de Subida \'e calculado como o tempo do qual um fotodiodo, inicialmente 
 O Tempo de Descida \'e calculado como o tempo do qual um fotodiodo, inicialmente com determinada incidência de luz e já estabilizado na sua respectiva tensão de pico, leva para diminuir a diferença de tensão entre seus terminais de 90\% para 10\% do seu pico, a partir do momento que não absorver mais fótons de origem de uma fonte luminosa controlada, em determinada frequência.
 
 \begin{figure}[htb]
-	\caption{\label{fig_velocidadeResp}Representa{\c c} \~ao gr\'afica do Tempo de Subida e descida}
+	\caption{\label{fig_velocidadeResp}Representa{\c c} \~ao gr\'afica do Tempo de Subida e Descida}
 	\begin{center}
 	    \includegraphics[scale=0.3]{Imagens/GraficoVelocidadeResposta.png}
 	\end{center}
-	\legend{Fonte da ilustra{\c c}\~ao: Pr\'oprio autor}
+	\legend{Fonte: Produzido pelo autor}
 \end{figure}
 
 O conhecimento da velocidade de resposta \'e crucial para determinar as limitações do projeto em termos de processamento de informações. A amostragem de dados deve ter período maior do que os tempos de subida e de descida do fotodiodo, nos maiores valores apresentados na faixa de frequência desejada.
 
 \subsubsection{Resposta Espectral}
-	Pelos fundamentos teóricos do chamado Efeito Fotoel\'etrico, a excitação de um el\'etron presente em um material por um fóton somente acontece quando o fóton apresenta pelo menos uma energia mínima, chamada de Função Trabalho. Mesmo quando uma grande quantidade de fótons com energia menor do que a Função Trabalho atravessem o fotodiodo, eles não serão capazes de excitar nenhum el\'etron. Como a energia de um fóton diminui com o aumento de seu comprimento de onda, existe um comprimento de onda máximo (ou uma frequência mínima) do qual o fotodetector será capaz de gerar fotocorrente.
-	Por outro lado, uma diminuição do comprimento de onda tende a excitar cada vez mais el\'etrons, at\'e que chegue a um ponto que o fotodiodo sature em resposta e não seja mais possível diferenciar diferentes frequências acima desta.
+	O Efeito Fotoel\'etrico se caracteriza pela excitação de el\'etrons em um material por um fóton, quando este apresenta uma energia mínima, chamada de Função Trabalho. Mesmo quando uma grande quantidade de fótons com energia menor do que a Função Trabalho atravessem o fotodiodo, eles não serão capazes de excitar nenhum el\'etron. Como a energia de um fóton diminui com o aumento de seu comprimento de onda, existe um comprimento de onda máximo (ou uma frequência mínima) do qual o fotodetector será capaz de gerar fotocorrente.
+	Por outro lado, uma diminuição do comprimento de onda tende a excitar cada vez menos el\'etrons, pois  absorção na região de depleção deixa de acontecer, chegando a um ponto que o fotodiodo sature em resposta e não seja mais possível diferenciar diferentes frequências acima desta.
 Sabendo destas limitações, definimos a Resposta Espectral como a faixa de comprimentos de onda do qual o fotodetector \'e capaz de produzir uma fotocorrente correspondente.
 
 \subsubsection{Relação Sinal-Ruído}
@@ -203,6 +218,7 @@ Onde:
 \section{Sensor de Pixel Ativo (APS)}
 \label{section:APS}
 Um APS \'e um dispositivo do qual se aproveita das características de um fotodiodo para gerar um sinal que pode ser amostrado e então quantificado, de forma a produzir informações referentes à luz incidida no fotodetector.
+
 Dentre as várias possibilidades de produção de um circuito APS, aquele estudado ao longo de todo este trabalho se apresenta na \autoref{fig_APS}.
 
 \begin{figure}[htb]
@@ -218,26 +234,26 @@ Dentre as várias possibilidades de produção de um circuito APS, aquele estuda
 	\begin{center}
 	    \includegraphics[scale=0.5]{Circuitos/APS_block.png}
 	\end{center}
-	\legend{Fonte da ilustra{\c c}\~ao}: Pr\'oprio autor
+	\legend{Fonte: Produzido pelo autor}
 \end{figure}
 
-Cada componente desempenha uma diferente fun{\c c}\~ao de forma a processar a informação advinda da corrente fotogerada por \emph{Photodiode}:
+Cada componente desempenha uma diferente fun{\c c}\~ao de forma a processar a informação advinda da corrente fotogerada:
 
 \begin{itemize}
 
-    \item O transistor \emph{$T_{buffer}$} funciona como um amplificador de Dreno Comum, e seu papel \'e replicar o sinal advindo do n\'o central ao n\'o de sa\'ida, reduzindo o efeito de carga que aconteceria caso o n\'o central fosse a saída do sistema.
+    \item O transistor \emph{$T_{buffer}$} funciona como um amplificador de Dreno Comum, e seu papel \'e replicar o sinal advindo do n\'o central ao n\'o de sa\'ida, reduzindo o efeito de carga que aconteceria caso o n\'o central ($V_{cn}$) fosse a saída do sistema.
 
-    \item O transistor \emph{$T_{reset}$} funciona como uma chave, que quando fechada (sinal 0 em seu gate), replica o sinal de alimentação decrescido da queda de tensão no dreno e fonte do transistor no n\'o central. Quando aberto (sinal 1 em seu gate), o sinal no n\'o central passa a depender da configuração do transmition gate.
+    \item O transistor \emph{$T_{reset}$} funciona como uma chave, que quando fechada (sinal 0 em seu gate), vale \emph{VDD}. Quando aberto (sinal 1 em seu gate), o sinal no n\'o central passa a depender da configuração do transmition gate.
 
-    \item O transmition gate \emph{$T_{enable}$} funciona como uma chave, e quando o transistor \emph{$T_{reset}$} estiver em aberto, tem a função controlar se a tensão presente no fotodiodo ir\'a para o nó central ou n\~ao. Quando aberto, a fotocorrente fica "presa" ao fotodiodo. Quando fechado, a corrente fotogerada pode circular livremente ao n\'o central, pois a associação das capacitâncias parasitas presentes nos transistores de \emph{$T_{enable}$}, \emph{$T_{reset}$} e \emph{$T_{buffer}$} formam um caminho fechado do qual descarrega lentamente o fotodiodo \cite{LidianeCampos}. Uma representa{\c c}\~ao desses capacitores \'e dada na \autoref{fig_APS_cap}.
+    \item O transmition gate \emph{$T_{enable}$} funciona como uma chave, e quando o transistor \emph{$T_{reset}$} estiver em aberto, tem a função controlar se a tensão presente no fotodiodo ir\'a para o nó central ou n\~ao. Quando aberto, $V_{pn}$ fica isolado do restante do circuito. Quando fechado, a corrente fotogerada descarrega em $V_{cn}$, pois a associação das capacitâncias parasitas presentes nos transistores de \emph{$T_{enable}$}, \emph{$T_{reset}$} e \emph{$T_{buffer}$} formam um caminho fechado do qual descarrega lentamente o fotodiodo \cite{LidianeCampos}. Uma representa{\c c}\~ao desses capacitores \'e dada na \autoref{fig_APS_cap}.
     
     \item O transistor \emph{$T_{select}$} \'e utilizado para que m\'ultiplos APS's compartilhem um mesmo barramento de sa\'ida. No projeto aqui implementado \emph{$T_{select}$} sempre se apresentar\'a fechado (\emph{SELECT} em n\'ivel l\'ogico '1').
     
-    \item A fonte de corrente \emph{$I_ref$} tem a fun{\c c}\~ao de polarizar a sa\'ida do circuito, que está além de aprimorar a linearidade do estágio de sa\'ida \cite{RazaviFundM}.
+    \item A fonte de corrente \emph{$I_{ref}$} tem a fun{\c c}\~ao de polarizar a sa\'ida do circuito, além de aprimorar a linearidade do estágio de sa\'ida \cite{RazaviFundM}.
 
 \end{itemize}
 
-    H\'a dois n\'os internos de bastante interesse ao trabalho, que s\'ao:
+    H\'a dois n\'os internos de bastante interesse ao trabalho, que s\~ao:
 
 \begin{itemize}
     \item \emph{$V_{pn}$}: n\'o contendo a diferen{\c c}a de potencial gerada pelos terminais do fotodiodo
@@ -261,7 +277,7 @@ Para o correto estudo do APS devemos observar as capacit\^ancia equivalente pres
 	\begin{center}
 	    \includegraphics[scale=0.3]{Circuitos/APS_cap.png}
 	\end{center}
-	\legend{Fonte da ilustra{\c c}\~ao: Pr\'oprio autor}
+	\legend{Fonte: Produzido pelo autor}
 \end{figure}
 
 \begin{itemize}
