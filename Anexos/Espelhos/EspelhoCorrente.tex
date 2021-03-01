@@ -1,7 +1,6 @@
-\section{Espelho de Corrente}
 \label{anexoespelhos}
 
-\subsection{Espelho de Corrente NMOS}
+\section{Espelho de Corrente NMOS}
 
 Um espelho de corrente \'e um circuito que replica o sinal de uma corrente de refer\^encia em outras sa\'idas, podendo ser multiplicado por um fator de ajuste. A \autoref{fig_espelho} mostra a representa{\c c}\~ao de um circuito com tal caracter\'istica, utilizando transistores NMOS. O espelho de corrente NMOS tamb\'em \'e chamado de dreno de corrente, por drenar a corrente nos ramos.
 
@@ -13,11 +12,11 @@ Um espelho de corrente \'e um circuito que replica o sinal de uma corrente de re
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
-Nesta figura, est\'a representado a utiliza{\c c}\~ao de uma corrente de refer\^encia Iref para gerar as correntes Io1, Io2 at\'e Ion, onde "n" \'e o n\'umero de transistores se referenciando por \emph{Qref}.
+Nesta figura, est\'a representado a utiliza{\c c}\~ao de uma corrente de refer\^encia Iref para gerar as correntes Io1, Io2 at\'e Ion, onde "n" \'e o n\'umero de transistores se referenciando por $Q_{ref}$.
 
-No circuito demonstrado pela \autoref{fig_espelho}, o transistor \emph{Qref} tem func\^ao de captar a corrente igual \'a \emph{Iref}, para servir de refer\^encia aos outros transistores \emph{Q1}, \emph{Q2} at\'e \emph{Qn}, onde \emph{n} \'e o numero de transistores que se referenciam de \emph{Qref}, e que s\~ao chamados de bra{\c c}os do espelho. O potencial \emph{VDD\_IREF} \'e um valor de tens\~o utilizado para polarizar Iref, que n\~ao precisa ser igual ao valor de alimenta{\c c}\~ao dos outros bra{\c c}os.
+No circuito demonstrado pela \autoref{fig_espelho}, o transistor \emph{Qref} tem funç\^ao de captar a corrente igual \'a \emph{Iref}, para servir de refer\^encia aos outros transistores \emph{Q1}, \emph{Q2} at\'e \emph{Qn}, onde \emph{n} \'e o numero de transistores que se referenciam de Q\_ref, e que s\~ao chamados de bra{\c c}os do espelho. O potencial \emph{VDD\_IREF} \'e um valor de tens\~ao utilizado para polarizar Iref, que n\~ao precisa ser igual ao valor de alimenta{\c c}\~ao dos outros bra{\c c}os.
 
-Dado os parâmetrosWx/Lnde cada transistor, onde "x" é o número indicado do transistor, podemos calcular o valor de corrente de cada braço utilizando a fórmula apresentada na \autoref{eq_espcorpmos}.
+Dado o parâmetro $W_x/L_x$ de cada transistor, onde "x" é o número indicado do transistor, podemos calcular o valor de corrente de cada braço utilizando a fórmula apresentada na \autoref{eq_espcorpmos}.
 
 \begin{equation}
     \label{eq_espcor}
@@ -41,7 +40,7 @@ Onde:
     \item $V_{t}$ \'e a tens\~ao de limiar do transistor
 \end{itemize}
 
-\subsection{Espelho de Corrente PMOS}
+\section{Espelho de Corrente PMOS}
 
 Um circuito de espelho de corrente pode ser constru\'ido com transistores PMOS, utilizando o mesmo racioc\'inio de constru{\c c}\~ao do circuito NMOS, conforme a \autoref{fig_curmir_pmos}. A diferen{\c c}a principal \'e que em vez de ser um dreno de corrente, o PMOS ser\'a um fornecedor de corrente.
 
@@ -53,9 +52,9 @@ Um circuito de espelho de corrente pode ser constru\'ido com transistores PMOS, 
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
-O funcionamento do circuito PMOS segue o mesmo principio do NMOS, porém, ao inv\'es de receber corrente fixada a um n\'o, ele fornece. O potencial \emph{negVDD\_IREF} \'e um valor de tens\~o utilizado para polarizar Iref, que n\~ao precisa ser igual ao valor de alimenta{\c c}\~ao negativa/terra dos outros bra{\c c}os.
+O funcionamento do circuito PMOS segue o mesmo principio do NMOS, porém, ao inv\'es de receber corrente fixada a um n\'o, ele fornece. O potencial \emph{negVDD\_{IREF}} \'e um valor de tens\~ao utilizado para polarizar Iref, que n\~ao precisa ser igual ao valor de alimenta{\c c}\~ao negativa/terra dos outros bra{\c c}os.
 
-Dado os parâmetrosWx/Lnde cada transistor, onde "x" é o número indicado do transistor, podemos calcular o valor de corrente de cada braço utilizando a fórmula apresentada na \autoref{eq_espcorpmos}.
+Dado o parâmetro $W_x/L_x$ de cada transistor, onde "x" é o número indicado do transistor, podemos calcular o valor de corrente de cada braço utilizando a fórmula apresentada na \autoref{eq_espcorpmos}.
 
 \begin{equation}
     \label{eq_espcorpmos}

@@ -1,9 +1,10 @@
-\renewcommand{\NomeBloco}{Comparador}
+\renewcommand{\NomeBloco}{\emph{Comparador}}
+\renewcommand{\NomeBlocoNoIt}{Comparador}
 \renewcommand{\NomePTab}{tab_\NomeBloco}
-\renewcommand{\NomeSTab}{tab_\NomeBloco2}
-\renewcommand{\NomePFig}{fig_\NomeBloco}
-\renewcommand{\NomeSFig}{fig_\NomeBloco2}
-\renewcommand{\NomeTTab}{tab_\NomeBloco3}
+\renewcommand{\NomeSTab}{tab_\NomeBlocoNoIt2}
+\renewcommand{\NomePFig}{fig_\NomeBlocoNoIt}
+\renewcommand{\NomeSFig}{fig_\NomeBlocoNoIt2}
+\renewcommand{\NomeTTab}{tab_\NomeBlocoNoIt3}
 
 \section{\NomeBloco}
 
@@ -37,7 +38,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \centering
     \centering
     \caption{Circuito CMOS projetado para o bloco \NomeBloco} 
-    \includegraphics[scale=0.4]{Circuitos/Comparator.png}
+    \includegraphics[scale=0.3]{Circuitos/Comparator.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
@@ -45,7 +46,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \centering
     \centering
     \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{\NomeSFig}
-    \includegraphics[scale=0.5]{Circuitos/Comparator_block.png}
+    \includegraphics[scale=0.3]{Circuitos/Comparator_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
@@ -85,11 +86,9 @@ Q10 & 1.5 & 0.18 & 1 & 1\\
 \legend{$^1$Calculado de forma a produzir uma corrente de 9 $\mu$A}
 \end{table}
  
-O \NomeBloco{} \'e desenvolvido com tr\^es est\'agios de amplifica{\c c}\~ao. O primeiro est\'agio, composto pelos transistores Q3, Q4, Q5, Q6 t\^em a fun{\c c}\~a de realizar a diferen{\c c}a entra as entradas \emph{Vp} e \emph{Vn} e multiplicar por um pequeno ganho. Os transistores Q3 e Q4 sao respons\'aveis por receber as entradas, enquanto os transistores Q5 e Q6 funcionam como transistores de Carga Ativa. O Q2 funciona como uma fonte de corrente, que ser\'a melhor explicada na \autoref{EspelhoCorrente}.
+O \NomeBloco{} \'e desenvolvido com tr\^es est\'agios de amplifica{\c c}\~ao. O primeiro est\'agio, composto pelos transistores Q3, Q4, Q5, Q6 t\^em a fun{\c c}\~a de realizar a diferen{\c c}a entra as entradas \emph{Vp} e \emph{Vn} e multiplicar por um pequeno ganho. Os transistores Q3 e Q4 sao respons\'aveis por receber as entradas, enquanto os transistores Q5 e Q6 funcionam como transistores de Carga Ativa. O Q2 funciona como uma fonte de corrente.
 
 O segundo est\'agio \'e um est\'agio de ganho, do qual o transistor Q2 fornece um ganho para a saida do est\'agio anterior e o transistor Q7 funciona como uma fonte de corrente para o est\'agio.
-
-O terceiro est\'agio funciona como um amplificador seguidor de fonte, que n\'ao adiciona ganho de tens\~ao por\'em aprimora a resist\'encia de saida do amplificador al\'em de adicionar ganho de corrente.
 
 Diodos quadrados \emph{D1} e \emph{D2} de prote{\c c}\~ao s\~ao inclu\'idos nos terminais \emph{Vp} e \emph{Vn do circuito}, com \^anodo ligado ao terra e catodo ligado ao seu respectivo terminal. Os diodo apresentam os seguintes par\^ametros apresentados na \autoref{diodosComp}.
 
@@ -107,4 +106,3 @@ D1 e D2 & 1 & 1 & 1 \\
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}
 \end{table}
-\clearpage

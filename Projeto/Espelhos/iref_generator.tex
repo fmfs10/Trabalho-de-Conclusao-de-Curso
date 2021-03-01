@@ -37,20 +37,20 @@ O bloco \NomeBloco{} \'e um espelho de corrente que apresenta algumas sa\'idas c
 O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
 
 \begin{figure}[htb]
- \label{\NomePFig}
  \centering
     \centering
     \caption{Circuito CMOS projetado para o bloco \NomeBloco} 
     \includegraphics[scale=0.3]{Circuitos/iref_generator.png}
     \legend{Fonte: Produzido pelo autor}
-    \nota{Nem todos transistores se apresentam representados na imagem. \emph{Q17}, \emph{Q18}, \emph{Q19} e \emph{Q20} s\~ao transistores replicados para cada sa\'ida \emph{IrefX\_src} e \emph{IrefY\_sink}, onde \emph{X} e \emph{Y} s\~ao os identificadores de cada sa\'ida}
+    \nota{Nem todos transistores são representados na imagem. \emph{Q17}, \emph{Q18}, \emph{Q19} e \emph{Q20} s\~ao transistores replicados para cada sa\'ida \emph{IrefX\_src} e \emph{IrefY\_sink}, onde \emph{X} e \emph{Y} s\~ao os identificadores de cada sa\'ida}
+    \label{\NomePFig}
 \end{figure}
 
 \begin{figure}[htb]
  \centering
     \centering
     \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{\NomeSFig}
-    \includegraphics[scale=0.5]{Circuitos/iref_generator_block.png}
+    \includegraphics[scale=0.3]{Circuitos/iref_generator_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
@@ -100,7 +100,7 @@ O resistor \emph{R} utilizado no bloco \NomeBloco{} apresentam os par\^ametros m
 \toprule
 Resistor & W ($\mu$m)  & L ($\mu$m) & Resist\^encia (k$\Omega$)\\
 \midrule \midrule
-R & 3 & 404.4 & 141,996\\
+R & 3 & 404,4 & 141,996\\
 \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}
@@ -111,4 +111,3 @@ Os transistores \emph{Q6} e \emph{Q9}, juntos aos resistores \emph{R1} e \emph{R
 Os transistores \emph{Q5}, \emph{Q8} e \emph{Q11} se apresentam na configura{\c c}\~ao \emph{Cascode}, que tem o intuito de tornar o espelho de corrente de resposta mais linear, aumentar sua banda e ainda aumentar as suas resist\^encias de entrada e sa\'ida.
 
 Os transistores \emph{Q1}, \emph{Q2} e \emph{Q3} t\^em a fun{\c c}\~ao de inicializarem o circuito no ponto de opera{\c c}\~ao adequado, j\'a que o circuito tamb\'em apresenta estabilidade quando fornecendo 0 A, sendo necess\'ario evitar essa situa{\c c}\~ao.
-\clearpage

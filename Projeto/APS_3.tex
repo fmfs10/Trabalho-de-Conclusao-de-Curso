@@ -1,4 +1,4 @@
-\renewcommand{\NomeBloco}{APS\_3}
+\renewcommand{\NomeBloco}{\emph{APS\_3}}
 \renewcommand{\NomeBlocoNoUnderline}{apsthree}
 \renewcommand{\NomePTab}{tab_\NomeBlocoNoUnderline}
 \renewcommand{\NomeSTab}{tab_\NomeBlocoNoUnderline2}
@@ -13,62 +13,58 @@ O \emph{\NomeBloco} \'e o circuito respons\'avel por armazenar todos os tr\^es b
 
 \begin{table}[htb]
 \centering
-\IBGEtab{%
   \caption{Descri{\c c}\~ao dos sinais de entrada e sa\'ida do circuito projetado para as cores azul, verde e vermelha}%
   \label{\NomeSTab}
-}{%
   \begin{tabular}{ccll}
   \toprule
    Sinal & Tipo & Descri{\c c}\~ao & Observa{\c c}\~ao \\
   \midrule \midrule
-   RESET\_BLUE & Entrada & \begin{tabular}[c]{@{}c@{}}Sinal de \emph{RESET} no APS\\ para cor azul\end{tabular} & Ativo em n\'ivel baixo \\
+   RESET\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão \emph{RESET}\\ no APS para cor azul\end{tabular} & Ativo em n\'ivel baixo \\
   \midrule
-   RESET\_GREEN & Entrada & \begin{tabular}[c]{@{}c@{}}Sinal de \emph{RESET} no APS\\ para cor verde\end{tabular} & Ativo em n\'ivel baixo \\
+   RESET\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \emph{RESET}\\ no APS para cor verde\end{tabular} & Ativo em n\'ivel baixo \\
   \midrule
-   RESET\_RED & Entrada & \begin{tabular}[c]{@{}c@{}}Sinal de \emph{RESET} no APS\\ para cor vermelha\end{tabular} & Ativo em n\'ivel baixo \\
+   RESET\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão \emph{RESET}\\ no APS para cor vermelha\end{tabular} & Ativo em n\'ivel baixo \\
    \midrule
-   ENABLE\_BLUE & Entrada & \begin{tabular}[c]{@{}c@{}}Sinal de \emph{ENABLE} no APS\\ para cor azul\end{tabular} & Ativo em n\'ivel alto \\
+   ENABLE\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão \emph{ENABLE} \\no APS para cor azul\end{tabular} & Ativo em n\'ivel alto \\
   \midrule
-   ENABLE\_GREEN & Entrada & \begin{tabular}[c]{@{}c@{}}Sinal de \emph{ENABLE} no APS\\ para cor verde\end{tabular} & Ativo em n\'ivel alto \\
+   ENABLE\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão \emph{ENABLE} \\no APS para cor verde\end{tabular} & Ativo em n\'ivel alto \\
   \midrule
-   ENABLE\_RED & Entrada & \begin{tabular}[c]{@{}c@{}}Sinal de \emph{ENABLE} no APS\\ para cor vermelha\end{tabular} & Ativo em n\'ivel alto \\
+   ENABLE\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão \emph{ENABLE}\\ no APS para cor vermelha\end{tabular} & Ativo em n\'ivel alto \\
   \midrule
-   Ibias\_comp1 & Entrada & Fonte de corrente para cor Azul &  \\
+   Ibias\_comp1 & Entrada & \begin{tabular}[l]{@{}l@{}}Fonte de corrente para\\ cor Azul\end{tabular} &  \\
    \midrule
-   Ibias\_comp2 & Entrada & Fonte de corrente para cor Verde &  \\
+   Ibias\_comp2 & Entrada & \begin{tabular}[l]{@{}l@{}}Fonte de corrente para\\ cor Verde\end{tabular} &  \\
    \midrule
-   Ibias\_comp3 & Entrada & Fonte de corrente para cor Vermelha &  \\
+   Ibias\_comp3 & Entrada & \begin{tabular}[l]{@{}l@{}}Fonte de corrente para\\ cor Vermelha\end{tabular} &  \\
    \midrule
-   Ibias\_clk & Entrada & \begin{tabular}[c]{@{}c@{}}Fonte de corrente para o bloco\\ \emph{APS\_pixel\_clk}\end{tabular}
+   Ibias\_clk & Entrada & \begin{tabular}[l]{@{}l@{}}Fonte de corrente para o\\ bloco \emph{APS\_pixel\_clk}\end{tabular}
     &  \\
   \midrule
-   Out\_An\_Blue & Sa\'ida & Sinal anal\'ogico para cor azul \\
+   Out\_An\_Blue & Sa\'ida & \begin{tabular}[l]{@{}l@{}}Sinal anal\'ogico para cor\\ azul\end{tabular} \\
   \midrule
    Out\_Dig\_Blue & Sa\'ida & Sinal digital para cor azul \\
   \midrule
-   Out\_An\_Green & Sa\'ida & Sinal anal\'ogico para cor verde \\
+   Out\_An\_Green & Sa\'ida & \begin{tabular}[l]{@{}l@{}}Sinal anal\'ogico para cor\\ verde\end{tabular} \\
   \midrule
    Out\_Dig\_Green & Sa\'ida & Sinal digital para cor verde \\
   \midrule
-   Out\_An\_Red & Sa\'ida & Sinal anal\'ogico para cor vermelha \\
+   Out\_An\_Red & Sa\'ida & \begin{tabular}[l]{@{}l@{}}Sinal anal\'ogico para cor\\ vermelha\end{tabular} \\
   \midrule
-   Out\_Dig\_Red & Sa\'ida & Sinal digital para cor vermelha \\
+   Out\_Dig\_Red & Sa\'ida & \begin{tabular}[l]{@{}l@{}}Sinal digital para cor\\ vermelha\end{tabular} \\
   \bottomrule
-\end{tabular}%
-}{%
-  \fonte{Produzido pelo autor.}
-}
+  \end{tabular}
+  \legend{Fonte: Produzido pelo autor.}
 \end{table}
 
 O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
 
 \begin{figure}[htb]
- \label{\NomePFig}
  \centering
     \centering
     \caption{Circuito CMOS projetado para o bloco \NomeBloco} 
     \includegraphics[scale=0.3]{Circuitos/APS_3.png}
     \legend{Fonte: Produzido pelo autor}
+    \label{\NomePFig}
 \end{figure}
 
 \begin{figure}[htb]
@@ -80,4 +76,3 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
 \end{figure}
 
 As sa\'idas digitais de cada bloco APS\_digitalized apresentam um buffer, de forma a garantir a integridade do sinal nos pinos do Circuito Integrado.
-\clearpage
