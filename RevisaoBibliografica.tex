@@ -25,7 +25,8 @@ O fotodiodo, ou fotodetector, \'e um componente optoeletrônico semicondutor que
 Para o entendimento do funcionamento do fotodiodo, uma fundamentação quântica da luz deve ser utilizada, com foco principal na Teoria das Bandas e no entendimento do que são os Fótons.
 
 \subsection{Física Quântica e Fotóns}
-A Física Quântica nos diz que qualquer material apresenta níveis de energia possíveis dados de forma discreta (quantizada), ou seja, qualquer objeto do universo não pode ter qualquer nível de energia, mas sim valores dados de forma discreta, e que são quantificados por meio da solução da Equação de Schrödinger do material. \cite{Sze, JohnSingleton}
+A Física Quântica nos diz que qualquer material apresenta níveis de energia possíveis dados de forma discreta (quantizada), ou seja, qualquer objeto do universo não pode ter qualquer nível de energia, mas sim valores dados de forma discreta, e que são quantificados por meio da solução da \textit{Equação de Schrödinger} do material \cite{Sze, JohnSingleton}.
+
 
 \subsubsection{Teoria das Bandas}
 
@@ -160,7 +161,7 @@ O Tempo de Subida \'e calculado como o tempo do qual um fotodiodo, inicialmente 
 O Tempo de Descida \'e calculado como o tempo do qual um fotodiodo, inicialmente com determinada incidência de luz e já estabilizado na sua respectiva tensão de pico, leva para diminuir a diferença de tensão entre seus terminais de 90\% para 10\% do seu pico, a partir do momento que não absorver mais fótons de origem de uma fonte luminosa controlada, em determinada frequência.
 
 \begin{figure}[htb]
-	\caption{\label{fig_velocidadeResp}Representa{\c c} \~ao gr\'afica do Tempo de Subida e Descida}
+	\caption{\label{fig_velocidadeResp}Representação gr\'afica do Tempo de Subida e Descida}
 	\begin{center}
 	    \includegraphics[scale=0.3]{Imagens/GraficoVelocidadeResposta.png}
 	\end{center}
@@ -178,7 +179,7 @@ Sabendo destas limitações, definimos a Resposta Espectral como a faixa de comp
 Razão entre a potência de sinal fotogerada pela pot\^encia de ru\'ido no sinal.
 
 \begin{equation}
-    SNR = \frac{P_{SINAL}}{P_{RU\'IDO}}
+    SNR = \frac{P_{SINAL}}{P_{RUÍDO}}
 \end{equation}
 
 Onde:
@@ -283,6 +284,8 @@ Para o correto estudo do \emph{APS} devemos observar as capacit\^ancia equivalen
 
 \clearpage
 
+Onde: 
+
 \begin{itemize}
     \item $C_j$ \'e a capacit\^ancia de jun{\c c}\~ao do fotodiodo. Seu principal efeito no estudo do APS \'e limitar a velocidade de varia{\c c}\~ao da corrente fotogerada.
     \item $C_{cn}$ \'e a capacit\^ancia equivalente vista do n\'o \emph{$V_{cn}$} ao terra, devido principalmente \'as capacit\^ancias presentes em \emph{$T_{enable}$},  \emph{$T_{reset}$} e \emph{$T_{buffer}$}, sendo o de \emph{$T_{buffer}$} o de maior contribui{\c c}\~ao. O capacitor cria um caminho fechado para a corrente do fotodiodo circular ao terra e ser descarregado em um dos est\'agios citados posteriormente no trabalho.
@@ -314,7 +317,7 @@ Nessa condição, o n\'o $V_{cn}$ \'e igual a VDD.
 
 A corrente fotogerada passa a descarregar a capacit\^ancia $C_{cn}$ do nó central, e então pelas capacitância parasita \emph{$C_{cn}$}. A tensão no fotodiodo passa a diminuir, devido a circulação de corrente que diminui a carga de \emph{$C_{j}$}.
 
-A tens\~ao nos terminais do fotodiodo neste segundo est\'agio tem uma rela{\c c}\~ao linear com a corrente fotogerada, conforme descrito na \autoref{eq_modEletFotIl}, que \'e deduzida por fazendo an\'alises dos n\'os, desprezando-se a resitência presente em $T_{enable}$ e tamb\^em outra resistências parasitas, como aquelas presentes no modelo elétrico do fotodiodo apresentado na \autoref{modeloElFotodiodo}.
+A tens\~ao nos terminais do fotodiodo neste segundo est\'agio tem uma rela{\c c}\~ao linear com a corrente fotogerada, conforme descrito na \autoref{eq_modEletFotIl}, que \'e deduzida fazendo an\'alises dos n\'os, desprezando-se a resistência presente em $T_{enable}$ e tamb\^em outra resistências parasitas, como aquelas presentes no modelo elétrico do fotodiodo apresentado na \autoref{modeloElFotodiodo}.
 
 \begin{equation}
     \label{eq_modEletFotIl}
@@ -386,7 +389,9 @@ Onde:
     \item $I_{PH}$ \'e a corrente fotogerada [$A$]
 \end{itemize}
 
-A \autoref{eqCTIA} nos mostra que \emph{R} deve ser ajustado de forma que n\~ao seja grande demais, pois valores altos (de acordo com a aplicação) irão gerar tens\~ao na sa\'ida com varia{\c c}\~ao muito grande. Mesmo que \emph{Vref} fosse colocado em \emph{GND}, o fator $(1+\frac{R}{R_{sh}})$ ainda pode dominar a relação, devido \'a ruídos presentes nó, e então impor um termo indesejado, o que também causaria problemas, quando tivermos \emph{R} altos \cite{hamamatsu}.
+A \autoref{eqCTIA} nos mostra que \emph{R} deve ser ajustado de forma que n\~ao seja grande demais, pois valores altos (de acordo com a aplicação) irão gerar tens\~ao na sa\'ida com varia{\c c}\~ao muito grande. Mesmo que \emph{Vref} fosse colocado em \emph{GND}, o fator $(1+\frac{R}{R_{sh}})$ ainda pode dominar a relação, devido \'a ruídos presentes no nó, e então impor um termo indesejado, o que também causaria problemas quando \emph{R} fosse muito alto \cite{hamamatsu}.
+
+Devido ao produto $RI_{PH}$, também devemos ter o cuidado de não fazer \textit{R} pequeno demais para que tenhamos a sensibilidade no sinal de saída de forma adequada.
 
 \subsection{Resposta espectral de um \emph{TIA}}
 
