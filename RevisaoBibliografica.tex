@@ -309,11 +309,11 @@ A operação do APS pode ser dividida em 4 est\'agios, que vão definir os m\'in
 
 \begin{enumerate}
 
-\item \emph{$T_{reset}$} fechado, \emph{$T_{enable}$} fechado
+\item \emph{$T_{reset}$} fechado, \emph{$T_{enable}$} fechado (Período de Reset)
     
 Nessa condição, o n\'o $V_{cn}$ \'e igual a VDD.
 
-\item \emph{$T_{reset}$} aberto, \emph{$T_{enable}$} fechado
+\item \emph{$T_{reset}$} aberto, \emph{$T_{enable}$} fechado (Período de Integração)
 
 A corrente fotogerada passa a descarregar a capacit\^ancia $C_{cn}$ do nó central, e então pelas capacitância parasita \emph{$C_{cn}$}. A tensão no fotodiodo passa a diminuir, devido a circulação de corrente que diminui a carga de \emph{$C_{j}$}.
 
@@ -346,12 +346,13 @@ Nessa situação, o $T_{enable}$ passa a operar em modo linear. O potencial no n
 \end{enumerate}
 
 \subsection{Amostrando informações da luz com um APS básico}
+\label{secao_amostrando}
 
 Podemos aproveitar o entendimento das propriedades f\'isicas do fotodiodo, e tamb\'em dos est\'agios de funcionamento de um APS, para obtermos informações relativas aos f\'otons absorvidos.
 
 Como sabemos matematicamente as relações de fotocorrente determinadas por \autoref{eq_modEletFot} e \autoref{eq_modEletFotIl}, e tamb\'em as Figuras de M\'erito que caracterizam o fotodetector, podemos utilizar o APS para coletar as informações em sua sa\'ida e determinar a intensidade da luz
 
-Entre os est\'agios 2 e 3, a tens\~ao do n\'o $V_{cn}$ passa a cair, devido a circula{\c c}\~ao da fotocorrente. Como essa corrente depende da intensidade da luz, podemos descobrir qual o valor de intensidade sabendo a inclina{\c c}\~ao da curva de tens\~ao na sa\'ida, j\'a que a varia{\c c}\~ao da tens\~ao \'e uma grandeza diretamente proporcional a corrente e a imped\^ancia vista no n\'o. Como a tens\~ao de sa\'ida \'e igual ao de $V_{cn}$ menos $V_{GS}$ do transistor $T_{buffer}$, podemos medir a sa\'ida para processar o sinal e ent\~ao relatar a intensidade luminosa.
+Entre os est\'agios 2 e 3, a tens\~ao do n\'o $V_{cn}$ passa a cair, devido a circula{\c c}\~ao da fotocorrente. Como essa corrente depende da intensidade da luz, podemos descobrir o valor de intensidade sabendo a inclina{\c c}\~ao da curva de tens\~ao na sa\'ida, j\'a que a varia{\c c}\~ao da tens\~ao \'e uma grandeza diretamente proporcional a corrente e a imped\^ancia vista no n\'o. Como a tens\~ao de sa\'ida \'e igual ao de $V_{cn}$ menos $V_{GS}$ do transistor $T_{buffer}$, podemos medir a sa\'ida para processar o sinal e ent\~ao relatar a intensidade luminosa.
 
 Com as observa{\c c}\~oes aqui apresentadas, podemos desenvolver um sistema de medi{\c c}\~ao de informa{\c c}\~ao luminosa, trabalhando entre os est\'agios 1 e 3, e ent\~ao retornando ao 1 para uma nova aquisi{\c c}\~ao. \'E importante destacar que existem limitações quanto \`a temporiza{\c c}\~ao dos est\'agios. Para que a medi{\c c}\~ao seja realizada de forma adequada, devemos garantir que tenhamos entre o Est\'agio 1 e 2, um tempo suficientemente grande para que $V_{cn}$ apresente um valor estável, ou seja, o tempo de transi{\c c}\~ao do sistema nessa condi{\c c}\~ao seja conclu\'ido. Entre o Est\'agio 2 e Est\'agio 3, devemos garantir que tenhamos um tempo mínimo para que dois valores distintos de $V_{out}$ possam ser medidos, de acordo com a sensibilidade do sistema de medi{\c c}\~ao.
 
@@ -371,7 +372,7 @@ Um amplificador de transimped\^ancia \'e um circuito em que dada uma corrente de
 Onde:
 
 \begin{itemize}
-    \item $V_{ref}$ \'e a tens\~ao de entrada (ou $refer\^encia$) [$V$]
+    \item $V_{ref}$ \'e a tens\~ao de entrada (ou $referência$) [$V$]
     \item $V_o$ \'e a tens\~ao de sa\'ida [$V$]
     \item $R$ \'e uma resist\^encia de ajuste ganho [$\Omega$]
     \item $R_l$ \'e uma carga de sa\'ida [$\Omega$]
