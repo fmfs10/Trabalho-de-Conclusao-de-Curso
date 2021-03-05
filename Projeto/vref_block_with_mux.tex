@@ -1,4 +1,4 @@
-\renewcommand{\NomeBloco}{\emph{vref\_block\_with\_mux}}
+\renewcommand{\NomeBloco}{\textit{vref\_block\_with\_mux}}
 \renewcommand{\NomeBlocoA}{vrefblockwithmux}
 \renewcommand{\NomePTab}{tab_\NomeBlocoA}
 \renewcommand{\NomeSTab}{tab_\NomeBlocoA2}
@@ -6,9 +6,9 @@
 \renewcommand{\NomeSFig}{fig_\NomeBlocoA2}
 \renewcommand{\NomeTTab}{tab_\NomeBlocoA3}
 
-\section{\NomeBloco}
+\section{vref\_block\_with\_mux}
 
-O bloco \NomeBloco{} tem a finalidade de selecionar a tens\~ao de refer\^encia a ser utilizada nos blocos de compara{\c c}\~ao do circuito, al\'em de retornar a tens\~ao de refer\^encia utilizada pelo bloco \emph{TIA}. A \autoref{\NomePTab} indica a Tabela Verdade do bloco. Embora tenha uma l\'ogica digital, o circuito permite sa\'idas anal\'ogicas.
+O bloco \NomeBloco{} tem a finalidade de selecionar a tensão de refer\^encia a ser utilizada nos blocos de comparação do circuito, al\'em de retornar a tensão de refer\^encia utilizada pelo bloco \textit{TIA}. A \autoref{\NomePTab} indica a Tabela Verdade do bloco. Embora tenha uma l\'ogica digital, o circuito permite sa\'idas anal\'ogicas.
 
 \begin{table}[htbp]
 
@@ -38,7 +38,7 @@ O bloco \NomeBloco{} tem a finalidade de selecionar a tens\~ao de refer\^encia a
 \fonte{Produzido pelo autor.}
 \end{table}
 
-O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
+O bloco apresenta as definições de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
 
 \begin{table}[htbp]
 \caption{Sinais do bloco \NomeBloco}
@@ -47,25 +47,25 @@ O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos 
 \begin{tabular}{ccl}
 
     \toprule
-    Sinal & Tipo    & Descri{\c c}\~ao      \\
+    Sinal & Tipo    & Descrição      \\
     \midrule \midrule
-    D0   & Entrada   & Entrada de sele{\c c}\~ao 1 \\
+    D0   & Entrada   & Entrada de seleção 1 \\
     \midrule
-    D1   & Entrada   & Entrada de sele{\c c}\~ao 2 \\
+    D1   & Entrada   & Entrada de seleção 2 \\
     \midrule
-    D2   & Entrada   & Entrada de sele{\c c}\~ao 3 \\
+    D2   & Entrada   & Entrada de seleção 3 \\
     \midrule
-    D3   & Entrada   & Entrada de sele{\c c}\~ao 4 \\
+    D3   & Entrada   & Entrada de seleção 4 \\
     \midrule
-    Vref\_pixel   & Sa\'ida   & Tens\~ao de refer\^encia selecionada \\
+    Vref\_pixel   & Sa\'ida   & Tensão de refer\^encia selecionada \\
     \midrule
-    Vref\_clk¹  & Sa\'ida   & Tens\~ao de refer\^encia do Clock \\
+    Vref\_clk¹  & Sa\'ida   & Tensão de refer\^encia do Clock \\
     \midrule
-    Vref\_comp²  & Sa\'ida   & Tens\~ao de refer\^encia do Clock do bloco teste \\
+    Vref\_comp²  & Sa\'ida   & Tensão de refer\^encia do Clock do bloco teste \\
     \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}
-\legend{¹ Essa tens\~ao \'e igual \'a sa\'ida Vref\_minus do bloco \emph{vref\_block}\\² Essa tens\~ao \'e igual \'a sa\'ida Vref\_extra do bloco \emph{vref\_block}}
+\legend{¹ Essa tensão \'e igual \'a sa\'ida Vref\_minus do bloco \textit{vref\_block}\\² Essa tensão \'e igual \'a sa\'ida Vref\_extra do bloco \textit{vref\_block}}
 \end{table}
 
 O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
@@ -83,7 +83,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \label{NomeSFig}
  \centering
     \centering
-    \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{NomeSFig}
+    \caption{Representação em bloco do \NomeBloco} \label{NomeSFig}
     \includegraphics[scale=0.3]{Circuitos/vref_block_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}

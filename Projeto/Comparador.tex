@@ -1,4 +1,4 @@
-\renewcommand{\NomeBloco}{\emph{Comparador}}
+\renewcommand{\NomeBloco}{\textit{Comparador}}
 \renewcommand{\NomeBlocoNoIt}{Comparador}
 \renewcommand{\NomePTab}{tab_\NomeBloco}
 \renewcommand{\NomeSTab}{tab_\NomeBlocoNoIt2}
@@ -6,9 +6,9 @@
 \renewcommand{\NomeSFig}{fig_\NomeBlocoNoIt2}
 \renewcommand{\NomeTTab}{tab_\NomeBlocoNoIt3}
 
-\section{\NomeBloco}
+\section{Comparador}
 
-O bloco \NomeBloco{} tem a fun{\c c}\~ao de comparar dois sinais anal\'ogicos advindos nas entradas '+' (\emph{Vp}) e '-' (\emph{Vn}), e retornar \emph{VDD} caso Vp seja maior do que Vn, e \emph{GND} caso Vp seja menor ou igual a Vn.  O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
+O bloco \NomeBloco{} tem a função de comparar dois sinais anal\'ogicos advindos nas entradas '+' (\textit{Vp}) e '-' (\textit{Vn}), e retornar \textit{VDD} caso Vp seja maior do que Vn, e \textit{GND} caso Vp seja menor ou igual a Vn. O bloco apresenta as definições de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
 
 \begin{table}[htbp]
 \caption{Sinais do bloco \NomeBloco}
@@ -17,13 +17,13 @@ O bloco \NomeBloco{} tem a fun{\c c}\~ao de comparar dois sinais anal\'ogicos ad
 \begin{tabular}{ccl}
 
     \toprule
-    Sinal & Tipo    & Descri{\c c}\~ao        \\
+    Sinal & Tipo    & Descrição        \\
     \midrule \midrule
     Vp (+) & Entrada & Entrada positiva do Comparador\\
     \midrule
     Vn (-) & Entrada & Entrada negativa do Comparador\\
     \midrule
-    Ibias & Entrada & Corrente de polariza{\c c}\~ao do Comparador\\
+    Ibias & Entrada & Corrente de polarização do Comparador\\
     \midrule
     Vo & sa\'ida & Sa\'ida do Comparador\\
     \bottomrule
@@ -45,7 +45,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
 \begin{figure}[htb]
  \centering
     \centering
-    \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{\NomeSFig}
+    \caption{Representação em bloco do \NomeBloco} \label{\NomeSFig}
     \includegraphics[scale=0.3]{Circuitos/Comparator_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
@@ -86,11 +86,11 @@ Q10 & 1.5 & 0.18 & 1 & 1\\
 \legend{$^1$Calculado de forma a produzir uma corrente de 9 $\mu$A}
 \end{table}
  
-O \NomeBloco{} \'e desenvolvido com tr\^es est\'agios de amplifica{\c c}\~ao. O primeiro est\'agio, composto pelos transistores Q3, Q4, Q5, Q6 t\^em a fun{\c c}\~a de realizar a diferen{\c c}a entra as entradas \emph{Vp} e \emph{Vn} e multiplicar por um pequeno ganho. Os transistores Q3 e Q4 sao respons\'aveis por receber as entradas, enquanto os transistores Q5 e Q6 funcionam como transistores de Carga Ativa. O Q2 funciona como uma fonte de corrente.
+O \NomeBloco{} \'e desenvolvido com dois est\'agios de amplificação. O primeiro est\'agio, composto pelos transistores Q3, Q4, Q5, Q6 t\^em a função de realizar a diferença entra as entradas \textit{Vp} e \textit{Vn} e multiplicar por um pequeno ganho. Os transistores Q3 e Q4 são respons\'aveis por receber as entradas, enquanto os transistores Q5 e Q6 funcionam como transistores de Carga Ativa. O Q2 funciona como uma fonte de corrente.
 
-O segundo est\'agio \'e um est\'agio de ganho, do qual o transistor Q2 fornece um ganho para a saida do est\'agio anterior e o transistor Q7 funciona como uma fonte de corrente para o est\'agio.
+O segundo est\'agio \'e um est\'agio de ganho, do qual o transistor Q2 fornece um ganho para a saía do est\'agio anterior e o transistor Q7 funciona como uma fonte de corrente para o est\'agio.
 
-Diodos quadrados \emph{D1} e \emph{D2} de prote{\c c}\~ao s\~ao inclu\'idos nos terminais \emph{Vp} e \emph{Vn do circuito}, com \^anodo ligado ao terra e catodo ligado ao seu respectivo terminal. Os diodo apresentam os seguintes par\^ametros apresentados na \autoref{diodosComp}.
+Diodos quadrados \textit{D1} e \textit{D2} de proteção são inclu\'idos nos terminais \textit{Vp} e \textit{Vn do circuito}, com \^anodo ligado ao terra e catodo ligado ao seu respectivo terminal. Os diodos apresentam os seguintes par\^ametros apresentados na \autoref{diodosComp}.
 
 \begin{table}[htbp]
 \caption{Diodos do Bloco \NomeBloco}

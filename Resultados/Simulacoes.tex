@@ -2,7 +2,7 @@
 
 Simulações foram realizadas para testar os dispositivos projetados. Os testes avaliaram o funcionamento geral do circuito de acordo com as especificações do projeto, e também o funcionamento dos componentes APS e TIA.
 
-Para a realização das simulações, é necessário se realizar uma estimativa da fotocorrente gerada dos fotodiodos. Como até o momento da simulação não havia a disponibilidade de uma amostra do fotodiodo utilizado, o autor fez uma estimativa conforme o trabalho de \cite{LidianeCampos}, apresentado na \autoref{tab_estcur}.
+Para a realização das simulações, é necessário se realizar uma estimativa da fotocorrente gerada dos fotodiodos. Como até o momento da simulação não havia a disponibilidade de uma amostra do fotodiodo, o autor fez uma estimativa conforme o trabalho de \cite{LidianeCampos}, apresentado na \autoref{tab_estcur}.
 
 \begin{table}[htbp]
 \caption{Estimativa de faixa de fotocorrente gerada}
@@ -14,7 +14,7 @@ Para a realização das simulações, é necessário se realizar uma estimativa 
 \midrule \midrule
 Mínimo & 0,1\\
 \midrule
-Maximo & 30\\
+Máximo & 30\\
 \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor baseado no trabalho \cite{LidianeCampos}}
@@ -84,7 +84,7 @@ As figuras \ref{graf247} e \ref{graf2472} apresentam mesmo comportamento daquele
 \begin{figure}[htb]
  \centering
     \caption{Tensão de saída analógica e tensão de saída digital comparado à tensão de referência do Comparador Período de Integração igual a 247 $\mu$s} 
-    \includegraphics[scale=1]{Resultados/Graficos/analogicoedigital-tb_pixel250.png}
+    \includegraphics[scale=0.5]{Resultados/Graficos/analogicoedigital-tb_pixel250.png}
     \legend{Fonte: Produzido pelo autor}
     \legend{Nota: Vout\_digital representa a tensão de saída digital do APS\_digitalized}
     \label{graf2472}
@@ -117,7 +117,7 @@ Como pode ser observado pela \autoref{grafruido2}, o ruído não impactou de for
 \subsection{Análise transiente do sinal de saída do TIA}
 \label{DCAPS}
 
-Uma simulação do TIA foi realizado para averiguar se seu comportamento se apresenta adequado. Para as simulações foi utilizado Vref\_amp igual a 800 mV, e Vref\_comp igual a 1.3 V.
+Uma simulação do TIA foi realizada para averiguar se seu comportamento se apresenta adequado. Para as simulações foi utilizado Vref\_amp igual a 800 mV, e Vref\_comp igual a 1.3 V.
 
 \begin{figure}[htb]
  \centering

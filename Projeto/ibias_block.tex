@@ -1,4 +1,4 @@
-\renewcommand{\NomeBloco}{\emph{ibias\_block}}
+\renewcommand{\NomeBloco}{\textit{ibias\_block}}
 \renewcommand{\NomeBlocoA}{ibiasblock}
 \renewcommand{\NomePTab}{tab_\NomeBlocoA}
 \renewcommand{\NomeSTab}{tab_\NomeBlocoA2}
@@ -6,9 +6,9 @@
 \renewcommand{\NomeSFig}{fig_\NomeBlocoA2}
 \renewcommand{\NomeTTab}{tab_\NomeBlocoA3}
 
-\section{\NomeBloco}
+\section{ibias\_block}
 
-O bloco \NomeBloco{} gera diversos drenos de corrente utilizadas por outros blocos. O bloco apresenta as defini{\c c}\~oes de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
+O bloco \NomeBloco{} gera diversos drenos de corrente utilizados por outros blocos. O bloco apresenta as definições de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
 
 \begin{table}[htbp]
 \caption{Sinais do bloco \NomeBloco}
@@ -17,7 +17,7 @@ O bloco \NomeBloco{} gera diversos drenos de corrente utilizadas por outros bloc
 \begin{tabular}{ccl}
 
     \toprule
-    Sinal & Tipo    & Descri{\c c}\~ao      \\
+    Sinal & Tipo    & Descrição      \\
     \midrule \midrule
     bias\_pixel\_1   & Sa\'ida   & Dreno de corrente para o APS 1 (0,5 $\mu$A) \\
     \midrule
@@ -39,7 +39,7 @@ O bloco \NomeBloco{} gera diversos drenos de corrente utilizadas por outros bloc
     \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}
-\legend{¹ Essa tens\~ao \'e igual \'a sa\'ida Vref\_minus do bloco \emph{vref\_block}\\² Essa tens\~ao \'e igual \'a sa\'ida Vref\_extra do bloco \emph{vref\_block}}
+\legend{¹ Essa tensão \'e igual \'a sa\'ida Vref\_minus do bloco \textit{vref\_block}\\² Essa tensão \'e igual \'a sa\'ida Vref\_extra do bloco \textit{vref\_block}}
 \end{table}
 
 O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
@@ -57,7 +57,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
  \label{NomeSFig}
  \centering
     \centering
-    \caption{Representa{\c c}\~ao em bloco do \NomeBloco} \label{NomeSFig}
+    \caption{Representação em bloco do \NomeBloco} \label{NomeSFig}
     \includegraphics[scale=0.3]{Circuitos/ibias_block_block.png}
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
