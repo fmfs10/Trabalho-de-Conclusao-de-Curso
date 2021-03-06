@@ -42,7 +42,7 @@ Fóton \'e uma partícula elementar que surge como resultado da liberação de e
 \label{secao_fotodiodo}
 Um fotodiodo comumente \'e formado pela junção PIN, que \'e a junção de um material semicondutor dopado do tipo-P, um semicondutor intrínseco e um material semicondutor dopado do tipo-N, como mostrado na \autoref{fig_fotodiodo}:
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_fotodiodo}Exemplo de construção de uma junção PIN}
 	\begin{center}
 	    \includegraphics[scale=0.4]{Imagens/PIN.png}
@@ -53,7 +53,7 @@ Um fotodiodo comumente \'e formado pela junção PIN, que \'e a junção de um m
 Quando um fóton com energia suficiente para excitar o material \'e absorvido, um par el\'etron-lacuna \'e gerado (migração de um el\'etron da banda de valência para de condução), e por difusão, os el\'etrons migram para o cátodo, formando uma fotocorrente. Ajustando-se os tamanhos das camadas P, N e da região de depleção (formada pelo semicondutor intrínseco), podemos controlar a resposta em frequência do fotodiodo e qual a energia mínima do fóton necessária para que gere a fotocorrente. Com a migração dos el\'etrons, uma diferença de potencial \'e gerada entre as camadas P e N, que pode ser aproveitada para a geração de corrente el\'etrica em um circuito el\'etrico fechado \cite{hamamatsu}.
 Um fotodiodo apresenta um modelo el\'etrico equivalente ilustrado na \autoref{fig_modelofotodiodo}:
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_modelofotodiodo}Modelo el\'etrico de um fotodiodo}
 	\begin{center}
 	    \includegraphics[scale=0.5]{Imagens/ModeloFotodiodo.png}
@@ -88,7 +88,7 @@ Onde:
 
 O fotodiodo em uma grande faixa apresenta comportamento linear, e \'e a faixa de principal interesse em aplica ões como o $APS$ ou o $TIA$. Com o aumento do n\'umero de f\'otons recebidos, o n\'ivel de corrente tende a ficar cada vez mais negativo, como mostrado na \autoref{fig_respFotodiodo}. Com o aumento ou diminuição expressiva, o circuito começa a se tornar não-linear.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_respFotodiodo}Resposta Tensão x Corrente para dada intensidade luminosa no fotodiodo}
 	\begin{center}
 	    \includegraphics[scale=0.8]{Imagens/graficoRespostaFotodiodo.png}
@@ -144,7 +144,7 @@ Onde:
     \item $\eta$ \'e Efici\^encia Qu\^antica [\textit{Adm.}]
 \end{itemize}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_responsividade}Responsividade e Efici\^encia Qu\^antica dos materiais Ge, InGaAs, Si}
 	\begin{center}
 	    \includegraphics[scale=0.5]{Imagens/GraficoRespostaEspectral.png}
@@ -161,7 +161,7 @@ O Tempo de Subida \'e calculado como o tempo do qual um fotodiodo, inicialmente 
 
 O Tempo de Descida \'e calculado como o tempo do qual um fotodiodo, inicialmente com determinada incidência de luz e já estabilizado na sua respectiva tensão de pico, leva para diminuir a diferença de tensão entre seus terminais de 90\% para 10\% do seu pico, a partir do momento que não absorve mais fótons de origem de uma fonte luminosa controlada, em determinada frequência.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_velocidadeResp}Representação gr\'afica do Tempo de Subida e Descida}
 	\begin{center}
 	    \includegraphics[scale=0.3]{Imagens/GraficoVelocidadeResposta.png}
@@ -224,18 +224,10 @@ Um APS \'e um dispositivo do qual se aproveita das características de um fotodi
 
 Dentre as várias possibilidades de produção de um circuito APS, aquele estudado ao longo de todo este trabalho se apresenta na \autoref{fig_APS}.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_APS}Circuito APS do trabalho}
 	\begin{center}
 	    \includegraphics[scale=0.3]{Circuitos/APS.png}
-	\end{center}
-	\legend{Fonte da ilustra ão: Pr\'oprio autor}
-\end{figure}
-
-\begin{figure}[htb]
-	\caption{\label{fig_APS_block}Representação do circuito APS em bloco}
-	\begin{center}
-	    \includegraphics[scale=0.3]{Circuitos/APS_block.png}
 	\end{center}
 	\legend{Fonte: Produzido pelo autor}
 \end{figure}
@@ -275,15 +267,13 @@ Cada componente desempenha uma diferente função de forma a processar a informa
 \subsubsection{Capacit\^ancias Parasitas}
 Para o correto estudo do APS devemos observar as capacit\^ancia equivalente presentes nos n\'os $V_{pn}$ e $V_{cn}$ do circuito \cite{LidianeCampos}. Na \autoref{fig_APS_cap} temos uma representação dessas capacit\^ancias.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_APS_cap}Representação do circuito APS com suas capacit\^ancias parasitas destacadas}
 	\begin{center}
 	    \includegraphics[scale=0.3]{Circuitos/APS_cap.png}
 	\end{center}
 	\legend{Fonte: Produzido pelo autor}
 \end{figure}
-
-\clearpage
 
 Onde: 
 
@@ -302,7 +292,7 @@ Onde:
 
 A operação do APS pode ser dividida em 4 est\'agios, que vão definir os m\'inimos momentos de  atuação no sinal de controle e seus limites operação. Os est\'agios são representados na \autoref{figura_estagiosAPS}, tendo como base o trabalho de \cite{LidianeCampos}.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{figura_estagiosAPS}Esbo o de resposta do APS ao controlar seus sinais de entrada}
 	\begin{center}
 	    \includegraphics[scale=0.2]{Imagens/estagiosAPS.png}
@@ -364,7 +354,7 @@ Com as observações aqui apresentadas, podemos desenvolver um sistema de mediç
 
 Um amplificador de transimped\^ancia \'e um circuito em que dada uma corrente de entrada, gera-se uma tensão em sua sa\'ida proporcional \`a esta corrente \cite{RazaviFundM}. Considerando-se o fotodiodo como uma fonte de corrente, a \autoref{fig_TIA} apresenta uma poss\'ivel topologia de um TIA, desenvolvido no presente trabalho.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{fig_TIA}TIA desenvolvido}
 	\begin{center}
 	    \includegraphics[scale=0.3]{Circuitos/TIA.png}
@@ -375,7 +365,7 @@ Um amplificador de transimped\^ancia \'e um circuito em que dada uma corrente de
 Onde:
 
 \begin{itemize}
-    \item $V_{ref}$ \'e a tensão de entrada (ou $referência$) [$V$]
+    \item $V_{ref}$ \'e a tensão de entrada de referência [$V$]
     \item $V_o$ \'e a tensão de sa\'ida [$V$]
     \item $R$ \'e uma resist\^encia de ajuste ganho [$\Omega$]
     \item $R_l$ \'e uma carga de sa\'ida [$\Omega$]
@@ -404,7 +394,7 @@ Como o pr\'oprio amplificador apresenta capacit\^ancias internas, o circuito \'e
 
 Dada as duas propriedades, a \autoref{figura_respostaTIA} e a \autoref{figura_respostaTIA2} mostram o comportamento t\'ipico de resposta em frequ\^encia da topologia.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{figura_respostaTIA}Resposta espectral de um TIA}
 	\begin{center}
 	    \includegraphics[scale=0.8]{Imagens/RespostaEspectralTIA.png}
@@ -412,12 +402,10 @@ Dada as duas propriedades, a \autoref{figura_respostaTIA} e a \autoref{figura_re
 	\legend{Fonte: \cite{hamamatsu}}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
 	\caption{\label{figura_respostaTIA2}Resposta a um pulso em um TIA}
 	\begin{center}
 	    \includegraphics[scale=0.8]{Imagens/RespostaEspectralTIA2.png}
 	\end{center}
 	\legend{Fonte: \cite{hamamatsu}}
 \end{figure}
-
-\clearpage

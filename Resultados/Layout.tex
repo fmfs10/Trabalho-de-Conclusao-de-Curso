@@ -1,8 +1,8 @@
 \section{Layout}
 
-Com os resultados de simulação validando o funcionamento do circuito, foi possível iniciar o desenvolvimento do layout. Todo o projeto foi realizado utilizando a ferramenta \textit{Virtuoso}, da \textit{Cadence}, utilizando o processo \textit{TSMC CMOS 180 nm}. O circuito integrado apresentado na \autoref{fig_circintegrado} foi desenvolvido, contendo todo o projeto de Receptor Óptico além de outros projetos desenvolvidos terceiros\footnote{"Projeto de um Oscilador em Anel Controlado por Tensão de Múltiplas Saídas em Tecnologia CMOS 180 nm" \cite{VictorRodrigues}}\footnote{"QUAL OS OUTROS ???????????????????????}. A \autoref{fig_circintegrado_division} mostra de maneira explicita o que representa cada parte do CI. O circuito integrado apresenta uma área total de 2x2 mm² (2,56 mm²), utilizando um encapsulamento do tipo CLCC44\footnote{Especificações do encapsulamento presentes no \autoref{anexo_clcc44}}. A \autoref{tab_clcc44} apresenta a relação da numeração dos pinos do encapsulamento com os pinos chip, que são distintos, além da identificação de cada pino. A \autoref{tab_clcc44_2} apresenta outros pinos presente no encapsulamento, referente à outros trabalhos.
+Com os resultados de simulação validando o funcionamento do circuito, foi possível iniciar o desenvolvimento do layout. Todo o projeto foi realizado utilizando a ferramenta \textit{Virtuoso}, da \textit{Cadence}, utilizando o processo \textit{TSMC CMOS 180 nm}. O circuito integrado apresentado na \autoref{fig_circintegrado} foi desenvolvido, contendo todo o projeto de Receptor Óptico além de outros projetos desenvolvidos terceiros\footnote{"Projeto de um Oscilador em Anel Controlado por Tensão de Múltiplas Saídas em Tecnologia CMOS 180 nm" \cite{VictorRodrigues}}\footnote{"QUAL OS OUTROS ???????????????????????}. A \autoref{fig_circintegrado_division} mostra de maneira explicita o que representa cada parte do CI. O circuito integrado apresenta uma área total de 2x2 mm² (2,56 mm²), utilizando um encapsulamento do tipo CLCC44\footnote{Especificações do encapsulamento presentes no \autoref{anexo_clcc44}}. A \autoref{tab_clcc44} apresenta a relação da numeração dos pinos do encapsulamento com os pinos chip, que são distintos, além da identificação de cada pino. A \autoref{tab_clcc44_2} apresenta outros pinos presentes no encapsulamento, referente à outros trabalhos.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Circuito Integrado utilizado para o Receptor Óptico} 
     \includegraphics[scale=0.5]{Resultados/Imagens/CircuitoIntegrado.png}
@@ -10,7 +10,7 @@ Com os resultados de simulação validando o funcionamento do circuito, foi poss
     \label{fig_circintegrado}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Circuito Integrado utilizado para o Receptor Óptico particionado} 
     \includegraphics[scale=0.4]{Resultados/Imagens/Image_CircuitoIntegrado.png}
@@ -21,7 +21,7 @@ Com os resultados de simulação validando o funcionamento do circuito, foi poss
 
 A \autoref{layoutcompleto} apresenta a implementação completa do Receptor Óptico projetado. A \autoref{layoutcompleto_division} mostra a mesma figura explicitando o que representa as diferentes partes do circuito. O projeto do Receptor Óptico ocupa uma área total de 422 633,9x666,96 $\mu$m² (~0,423 mm²).
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Layout completo do circuito desenvolvido} 
     \includegraphics[scale=1, angle = 90]{Resultados/Imagens/Circuito Completo.png}
@@ -30,7 +30,7 @@ A \autoref{layoutcompleto} apresenta a implementação completa do Receptor Ópt
     \nota{Imagem rotacionada em 90° em sentido anti-horário}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Layout completo do circuito particionado} 
     \includegraphics[scale=0.4]{Resultados/Imagens/Image_CircuitoCompleto.png}
@@ -70,7 +70,7 @@ A \autoref{layoutcompleto} apresenta a implementação completa do Receptor Ópt
 
 O bloco \textit{APS\_digitalized} projetado é apresentado na figura \autoref{layoutAPSDIG}. A \autoref{layoutAPSDIG_division} mostra a mesma figura explicitando o que representa as diferentes parte do circuito. O projeto do bloco ocupa uma área total aproximada de 3307 $\mu$m².
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \centering
     \caption{Layout do bloco \textit{APS\_digitalized}} 
@@ -79,7 +79,7 @@ O bloco \textit{APS\_digitalized} projetado é apresentado na figura \autoref{la
     \label{layoutAPSDIG}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \centering
     \caption{Layout do bloco \textit{APS\_digitalized} particionado} 
@@ -90,7 +90,7 @@ O bloco \textit{APS\_digitalized} projetado é apresentado na figura \autoref{la
 
 O bloco \textit{APS\_clk} projetado é apresentado na figura \autoref{layoutTIA}. A \autoref{layoutTIA_division} mostra a mesma figura explicitando o que representa as diferentes parte do circuito. O projeto do bloco ocupa uma área total aproximada de 102107 um².
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \begin{minipage}{0.5\textwidth}
     \centering
@@ -111,7 +111,7 @@ O bloco \textit{APS\_clk} projetado é apresentado na figura \autoref{layoutTIA}
 
 O bloco \textit{APS\_3} projetado é apresentado na figura \autoref{layoutAPS_3}. A \autoref{layoutAPS_3_division} mostra a mesma figura explicitando o que representa as diferentes parte do circuito. O projeto do bloco ocupa uma área aproximada de 123353 $\mu$m².
 
-\begin{figure}[htb]
+\begin{figure}[!h]
     \centering
     \caption{Layout do bloco \textit{APS\_3}} 
     \includegraphics[scale=1]{Resultados/Imagens/APS_3.png}
@@ -119,7 +119,7 @@ O bloco \textit{APS\_3} projetado é apresentado na figura \autoref{layoutAPS_3}
     \label{layoutAPS_3}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
     \centering
     \caption{Layout do bloco \textit{APS\_3} particionado} 
     \includegraphics[scale=0.4]{Resultados/Imagens/Image_APS_3.png}

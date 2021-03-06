@@ -7,8 +7,9 @@
 \renewcommand{\NomeTTab}{tab_\NomeBlocoNoIt3}
 
 \section{Porta de Transmissão}
+\label{portatg}
 
-O bloco \emph{\NomeBloco{}} funciona como uma chave, permitindo ou não o sinal de um lado passar ao outro. O bloco apresenta as defini ções de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
+O bloco \emph{\NomeBloco{}} funciona como uma chave, permitindo ou não o sinal de um lado passar ao outro. O bloco apresenta as definições de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
 
 \begin{table}[htbp]
 \caption{Sinais do bloco \emph{\NomeBloco}}
@@ -17,13 +18,13 @@ O bloco \emph{\NomeBloco{}} funciona como uma chave, permitindo ou não o sinal 
 \begin{tabular}{ccl}
 
     \toprule
-    Sinal & Tipo    & Descri ção        \\
+    Sinal & Tipo    & Descrição        \\
     \midrule \midrule
     A & Bidirecional & Sinal bidirecional 1\\
     \midrule
     B & Bidirecional & Sinal bidirecional 2\\
     \midrule
-    ENABLE & Entrada & Sinal de habilita ção\\
+    ENABLE & Entrada & Sinal de habilitação\\
     \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}
@@ -32,18 +33,17 @@ O bloco \emph{\NomeBloco{}} funciona como uma chave, permitindo ou não o sinal 
 O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
 
 \begin{figure}[htb]
- \label{\NomePFig}
  \centering
   \begin{minipage}{0.4\textwidth}
     \centering
-    \caption{Circuito CMOS projetado para o bloco \emph{\NomeBloco}} \label{\NomePFig}
+    \caption{\label{\NomePFig}Circuito CMOS projetado para o bloco \emph{\NomeBloco}}
     \includegraphics[scale=0.3]{Circuitos/TG.png}
     \legend{Fonte: Produzido pelo autor}
   \end{minipage}
   \hfill
   \begin{minipage}{0.4\textwidth}
     \centering
-    \caption{Representa ção em bloco do \emph{\NomeBloco}} \label{\NomeSFig}
+    \caption{\label{\NomeSFig}Representação em bloco do \emph{\NomeBloco}}
     \includegraphics[scale=0.3]{Circuitos/TG_Simbolo.png}
     \legend{Fonte: Produzido pelo autor}
   \end{minipage}

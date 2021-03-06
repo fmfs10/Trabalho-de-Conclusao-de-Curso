@@ -4,7 +4,7 @@ Simulações foram realizadas para testar os dispositivos projetados. Os testes 
 
 Para a realização das simulações, é necessário se realizar uma estimativa da fotocorrente gerada dos fotodiodos. Como até o momento da simulação não havia a disponibilidade de uma amostra do fotodiodo, o autor fez uma estimativa conforme o trabalho de \cite{LidianeCampos}, apresentado na \autoref{tab_estcur}.
 
-\begin{table}[htbp]
+\begin{table}[!h]
 \caption{Estimativa de faixa de fotocorrente gerada}
 \label{tab_estcur}
 \centering
@@ -29,10 +29,6 @@ Máximo & 30\\
 
 É avaliado qual é o sinal DC que o bloco APS conectado a um comparador apresenta sem ter nenhuma fotocorrente gerada, $T_{enable}$ desabilitado e $T_{reset}$ habilitado. Na situação $V_{cn}$ irá apresentar o valor de VDD, o que vai representar o máximo sinal possível em $V_{out}$. A corrente \textit{Iref} utilizada para a simulação foi de $500$ nA, fornecida pelo bloco \textit{current\_mirror\_nmos}. Uma carga de $100$ fF foi utilizada na saída do APS de forma a simular outras capacitâncias que podem aparecer no nó. O valor obtido foi de $1,15813$ V para $V_{out}$, equivalente ao apresentado na \autoref{DCAPS}.
 
-\subsection{Máximo sinal DC do APS no APS\_digitalized}
-
-É avaliado qual é o sinal DC que o bloco APS conectado a um comparador apresenta sem ter nenhuma fotocorrente gerada, $T_{enable}$ desabilitado e $T_{reset}$ habilitado. Na situação $V_{cn}$ irá apresentar o valor de VDD, o que vai representar o máximo sinal possível em $V_{out}$. A corrente \textit{Iref} utilizada para a simulação foi de $500$ nA, fornecida pelo bloco \textit{current\_mirror\_nmos}. Uma carga de $100$ fF foi utilizada na saída do APS de forma a simular outras capacitâncias que podem aparecer no nó. O valor obtido foi de $1,15813$ V para $V_{out}$, equivalente ao apresentado na \autoref{DCAPS}.
-
 \subsection{Análise transiente do sinal de saída do APS}
 
 É avaliado qual a resposta do APS com a presença de uma fotocorrente. Para a simulação, foi considerado o modelo apresentado na \autoref{fig_APS_cap}, do qual há uma fonte de corrente em paralelo a um diodo representando a fotogeração. A corrente \textit{Iref} considerada foi de $500$ nA, fornecida pelo bloco \textit{current\_mirror\_nmos}.
@@ -46,7 +42,7 @@ Nessa situação, foi considerado uma fotocorrente de 5 nA, que está dentro da 
 
 As figuras \ref{graf125} e \ref{graf1252} apresentam o comportamento esperado. Assim que RESET é desabilitado (vai para nível lógico '1'), Vout\_analogico passa a decair linearmente, como mostra \autoref{eq_modEletFotIl}\footnote{Note que aqui a tensão não foi completamente carregada por VDD, e por isso, ela inicia o ciclo de descarregamento em um ponto diferente de VDD.}. Quando Vout\_analogico atinge o valor de Vref, Vout\_digital vai do nível lógico '0' para '1', como descrito na \autoref{sec_apsdigitalized}.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \centering
     \caption{Tensão de saída analógica junto aos sinais de RESET e ENABLE para Período de Integração igual a 121 $\mu$s}
@@ -56,7 +52,7 @@ As figuras \ref{graf125} e \ref{graf1252} apresentam o comportamento esperado. A
     \label{graf125}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Tensão de saída analógica e tensão de saída digital comparado à tensão de referência do Comparador Período de Integração igual a 121 $\mu$s} 
     \includegraphics[scale=0.5]{Resultados/Graficos/analogicoedigital-tb_pixel125.png}
@@ -71,7 +67,7 @@ Nessa situação, foi considerado uma fotocorrente de 2.5 nA, que está dentro d
 
 As figuras \ref{graf247} e \ref{graf2472} apresentam mesmo comportamento daqueles apresentados na \autoref{sub_sec121}, como esperado.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \centering
     \caption{Tensão de saída analógica junto aos sinais de RESET e ENABLE para Período de Integração igual a 247 $\mu$s}
@@ -81,7 +77,7 @@ As figuras \ref{graf247} e \ref{graf2472} apresentam mesmo comportamento daquele
     \label{graf247}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Tensão de saída analógica e tensão de saída digital comparado à tensão de referência do Comparador Período de Integração igual a 247 $\mu$s} 
     \includegraphics[scale=0.5]{Resultados/Graficos/analogicoedigital-tb_pixel250.png}
@@ -94,7 +90,7 @@ As figuras \ref{graf247} e \ref{graf2472} apresentam mesmo comportamento daquele
 
 Uma simulação para verificar a resposta ao ruído do APS\_digitalized foi realizado, de forma a verificar o impacto que um ruído pode ter ao sistema. O ruído pode aparecer por efeito térmico, cargas parasitas, ondas eletromagnéticas do ambiente entre diversos outras formas, tornando-o complexo de ser estimado. Uma simulação foi feita na previsão de ruídos de até 1 mV, mas o autor não garante que seja o valor exato de faixa possível de ruído.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Iterações de ruídos na faixa de 1 mV realizadas para simulação} 
     \includegraphics[scale=0.5]{Resultados/Graficos/ruido-Vout_noise.png}
@@ -104,7 +100,7 @@ Uma simulação para verificar a resposta ao ruído do APS\_digitalized foi real
 
 A \autoref{grafruido} apresenta um gráfico com todas as iterações geradas para simulação, com sinal de tensão de ruído aplicado à saída do APS, que apresenta $T_{enable}$ desabilitado e $T_{reset}$ habilitado. Nessa situação, o autor do trabalho selecionou aleatoriamente 5 amostras do qual são demonstradas na , mas que são suficientes para as conclusões oferecidas.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Simulações de gráfico de ruído} 
     \includegraphics[scale=0.5]{Resultados/Graficos/tb_pixel_TRAN_NOISE.png}
@@ -115,11 +111,10 @@ A \autoref{grafruido} apresenta um gráfico com todas as iterações geradas par
 Como pode ser observado pela \autoref{grafruido2}, o ruído não impactou de forma visível a resposta do circuito, aparentando estarem todos visualmente sobre a mesma linha do gráfico.
 
 \subsection{Análise transiente do sinal de saída do TIA}
-\label{DCAPS}
 
 Uma simulação do TIA foi realizada para averiguar se seu comportamento se apresenta adequado. Para as simulações foi utilizado Vref\_amp igual a 800 mV, e Vref\_comp igual a 1.3 V.
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Corrente simulada de fotogeração} 
     \includegraphics[scale=0.5]{Resultados/Graficos/Corrente Diodo-tb_clock.png}
@@ -127,7 +122,7 @@ Uma simulação do TIA foi realizada para averiguar se seu comportamento se apre
     \label{graf_tiasinal}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Tensão de saída analógica do TIA} 
     \includegraphics[scale=0.5]{Resultados/Graficos/Tensao de Saída Analogica-tb_clock.png}
@@ -135,7 +130,7 @@ Uma simulação do TIA foi realizada para averiguar se seu comportamento se apre
     \label{graf_tiasinal2}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
  \centering
     \caption{Tensão de saída digital do TIA} 
     \includegraphics[scale=0.5]{Resultados/Graficos/Tensao de Saida Digital-tb_clock.png}
