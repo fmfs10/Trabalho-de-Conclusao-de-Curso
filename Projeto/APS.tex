@@ -42,22 +42,37 @@ A representação em bloco do circuito projetado é dado na \autoref{\NomeSFig}.
     \legend{Fonte: Produzido pelo autor}
 \end{figure}
 
-Os transistores utilizados no bloco apresentam os par\^ametros mostrados na \autoref{\NomeTTab}.
-
+Os transistores utilizados no bloco apresentam os par\^ametros mostrados na \autoref{\NomeTTab}. $W$ é a largura do canal. $L$ é o comprimento do canal $M$ representa o número de dispositivos em paralelo, enquanto $S$ representa o número de dispositivos em série.
 
 \begin{table}[!h]
-\caption{Transistores do Bloco \NomeBloco}
+\caption{Transistores do bloco \NomeBloco}
 \label{\NomeTTab}
 \centering
 \begin{tabular}{ccccc}
 \toprule
 Transistor & W ($\mu$m)  & L ($\mu$m)           & M (n° dispositivos) & S (n° dispositivos)\\
 \midrule \midrule
-T\textsubscript{buffe} & 15 & 0,75 & 1 & 1\\
+T\textsubscript{buffer} & 15 & 0,75 & 1 & 1\\
 \midrule
 T\textsubscript{reset} & 4 & 0,18 & 1 & 1\\
 \midrule
 T\textsubscript{select} & 10 & 0,18 & 2 & 2\\
+\bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+
+O fotodiodo utilizado no bloco apresenta os par\^ametros mostrados na \autoref{\NomeQTab}. $W$ é a largura do fotodiodo. $L$ é o comprimento do fotodiodo.
+
+\begin{table}[!h]
+\caption{Fotodiodo do bloco \NomeBloco}
+\label{\NomeQTab}
+\centering
+\begin{tabular}{ccccc}
+\toprule
+Nome & W ($\mu$m)  & L ($\mu$m)\\
+\midrule \midrule
+Fotodiodo & 25 & 25\\
 \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}

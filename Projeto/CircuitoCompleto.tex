@@ -13,22 +13,22 @@ A tensão de alimentação utilizada em todos os blocos do projeto apresentado �
 	\legend{Fonte: Produzido pelo autor}
 \end{figure}
 
-O circuito tem a finalidade de processar a informação advinda de tr\^es \emph{APS}'s, constru\'idos de maneira id\^entica em n\'ivel de layout, com a finalidade de abstrair informações de cores advindas de uma fonte luminosa, dos quais podem ser Azul, Verde ou Vermelha. Para que as cores fossem devidamente separadas entre cada \emph{APS}, filtros luminosos externos, por meio de uma pel\'icula colorida, são adicionados sob cada \emph{APS} respons\'avel por processar uma cor equivalente \`a de sua pel\'icula.
+O circuito tem a finalidade de processar a informação advinda de tr\^es APS's, constru\'idos de maneira id\^entica em n\'ivel de layout, com a finalidade de abstrair informações de cores advindas de uma fonte luminosa, dos quais podem ser Azul, Verde ou Vermelha. Para que as cores fossem devidamente separadas entre cada APS, filtros luminosos externos, por meio de uma pel\'icula colorida, são adicionados sob cada APS respons\'avel por processar uma cor equivalente \`a de sua pel\'icula.
 
-Um sinal luminoso de cor branca tamb\'em \'e utilizado no sistema de forma a ser a refer\^encia de rel\'ogio de todos \emph{APS's} descritos. Esse sinal \'e processado utilizando-se um $TIA$, do qual \'e gerado um sinal el\'etrico equivalente \`a informação luminosa.
+Um sinal luminoso de cor branca tamb\'em \'e utilizado no sistema de forma a ser a refer\^encia de rel\'ogio de todos APS's descritos. Esse sinal \'e processado utilizando-se um TIA, do qual \'e gerado um sinal el\'etrico equivalente \`a informação luminosa.
 
-A tecnologia de fabricação utilizada para o desenvolvimento de todos blocos foi a \emph{CMOS TSMC 180nm}. O software utilizado para o projeto do dispositivo foi o \emph{Virtuoso}, desenvolvido pela \emph{Cadence}.
+A tecnologia de fabricação utilizada para o desenvolvimento de todos blocos foi a \textit{CMOS TSMC 180nm}. O software utilizado para o projeto do dispositivo foi o \textit{Virtuoso}, desenvolvido pela empresa \textit{Cadence}.
 
-O circuito representado na \autoref{fig_circcompleto} \'e composto por 2 blocos principais, que permitem o processamento advindos da fonte luminosa, al\'em de um circuito \emph{APS} e um \emph{TIA} extra. A descrição dos bloco são:
+O circuito representado na \autoref{fig_circcompleto} \'e composto por 2 blocos principais, que permitem o processamento advindos da fonte luminosa, al\'em de um circuito APS e um TIA extra. A descrição dos bloco são:
 
 \begin{itemize}
-    \item \emph{ibias\_block}: Tem a função de gerar fontes de corrente utilizadas em alguns blocos do circuito.
+    \item \textit{ibias\_block}: Tem a função de gerar fontes de corrente utilizadas em alguns blocos do circuito.
     
-    \item \emph{APS\_3}: Implementa os tr\^es circuitos \emph{APS} descritos, al\'em do circuito \emph{TIA}. A sa\'ida de cada bloco passa por um comparador de forma a digitalizar o dado, como ser\'a melhor explicitado na \autoref{sec_apsdigitalized}.
+    \item \textit{APS\_3}: Implementa os tr\^es circuitos \textit{APS} descritos, al\'em do circuito TIA. A sa\'ida de cada bloco passa por um comparador de forma a digitalizar o dado, como ser\'a melhor explicitado na \autoref{sec_apsdigitalized}.
     
-    \item \emph{Vref\_block} e \emph{PIXEL\_CLK\_TEST}: Estes blocos realizam a implementação de um TIA, por\'em com a adição de um pino extra que possibilita a simulação de uma corrente fotogerada sem necessitar de uma fonte luminosa. Estes blocos serão melhor explicados na \autoref{BlocoTestes}. 
+    \item \textit{Vref\_block} e \textit{PIXEL\_CLK\_TEST}: Estes blocos realizam a implementação de um TIA, por\'em com a adição de um pino extra que possibilita a simulação de uma corrente fotogerada sem necessitar de uma fonte luminosa. Estes blocos serão melhor explicados na \autoref{BlocoTestes}. 
     
-    \item \emph{PIXEL\_TEST}: Este bloco realiza a implementação de um APS, por\'em com a adição de um pino extra que possibilita a simulação de uma corrente fotogerada sem necessitar de uma fonte luminosa. Este bloco será melhor explicado na \autoref{BlocoTestes}.
+    \item \textit{PIXEL\_TEST}: Este bloco realiza a implementação de um APS, por\'em com a adição de um pino extra que possibilita a simulação de uma corrente fotogerada sem necessitar de uma fonte luminosa. Este bloco será melhor explicado na \autoref{BlocoTestes}.
     
 \end{itemize}
 
@@ -41,17 +41,17 @@ A \autoref{tab_circcomp} mostra a relação de sinais de entrada e sa\'ida prese
   \toprule
    Sinal & Tipo & Descrição & Observação \\
   \midrule \midrule
-   RESET\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \emph{RESET}\\ no APS para cor azul\end{tabular}   & Ativo em n\'ivel baixo \\
+   RESET\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \textit{RESET}\\ no APS para cor azul\end{tabular}   & Ativo em n\'ivel baixo \\
   \midrule
-   RESET\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \emph{RESET}\\ no APS  para cor verde\end{tabular}   & Ativo em n\'ivel baixo \\
+   RESET\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \textit{RESET}\\ no APS  para cor verde\end{tabular}   & Ativo em n\'ivel baixo \\
   \midrule
-   RESET\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \emph{RESET}\\ no APS  para cor vermelha\end{tabular}   & Ativo em n\'ivel baixo \\
+   RESET\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \textit{RESET}\\ no APS  para cor vermelha\end{tabular}   & Ativo em n\'ivel baixo \\
   \midrule
-   ENABLE\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \emph{ENABLE}\\ no APS para cor azul\end{tabular}   & Ativo em n\'ivel alto \\
+   ENABLE\_BLUE & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \textit{ENABLE}\\ no APS para cor azul\end{tabular}   & Ativo em n\'ivel alto \\
   \midrule
-   ENABLE\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \emph{ENABLE}\\ no APS para cor verde\end{tabular}   & Ativo em n\'ivel alto \\
+   ENABLE\_GREEN & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \textit{ENABLE}\\ no APS para cor verde\end{tabular}   & Ativo em n\'ivel alto \\
   \midrule
-   ENABLE\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \emph{ENABLE}\\ no APS para cor vermelha\end{tabular}   & Ativo em n\'ivel alto \\
+   ENABLE\_RED & Entrada & \begin{tabular}[l]{@{}l@{}}Sinal de tensão de \textit{ENABLE}\\ no APS para cor vermelha\end{tabular}   & Ativo em n\'ivel alto \\
   \midrule
    Out\_An\_Blue & Sa\'ida & \begin{tabular}[l]{@{}l@{}}Sinal de tensão anal\'ogica\\ para cor azul\end{tabular} \\
   \midrule

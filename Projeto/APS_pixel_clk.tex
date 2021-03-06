@@ -53,7 +53,7 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
 
 O circuito tem funcionamento similar ao do apresentado no bloco \textit{APS\_digitalized}, por\'em com apenas a sa\'ida digital sendo considerada e sendo utilizado um $TIA$ ao inv\'es de um \textit{APS}. A corrente de polarização do par diferencial \'e gerada pelo bloco \textit{Ibias\_generator}, contido no bloco.
 
-Uma resist\^encia $R$ de ganho \'e utilizada, com valor apresentado na \autoref{\NomeQTab}.
+Uma resist\^encia $R$ de ganho \'e utilizada, com valor apresentado na \autoref{\NomeQTab}. $W$ é a largura do resistor. $L$ é o comprimento do resistor.
 
 \begin{table}[!h]
 \caption{Resistor do bloco \NomeBloco}
@@ -64,6 +64,22 @@ Uma resist\^encia $R$ de ganho \'e utilizada, com valor apresentado na \autoref{
 Resistor & W ($\mu$m)  & L ($\mu$m) & Resist\^encia (M$\Omega$)\\
 \midrule \midrule
 R & 1,68 & 39486,3 & 25\\
+\bottomrule
+\end{tabular}
+\legend{Fonte: Produzido pelo autor}
+\end{table}
+
+O fotodiodo utilizado no bloco apresenta os par\^ametros mostrados na \autoref{\NomeTTab}. $W$ é a largura do fotodiodo. $L$ é o comprimento do fotodiodo.
+
+\begin{table}[!h]
+\caption{Fotodiodo do bloco \NomeBloco}
+\label{\NomeTTab}
+\centering
+\begin{tabular}{ccccc}
+\toprule
+Nome & W ($\mu$m)  & L ($\mu$m)\\
+\midrule \midrule
+Fotodiodo & 25 & 25\\
 \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}
