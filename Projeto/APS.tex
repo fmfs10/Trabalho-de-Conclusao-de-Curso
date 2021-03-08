@@ -12,24 +12,23 @@
 O bloco \NomeBloco{} implementa o circuito apresentado na \autoref{fig_APS}. O bloco apresenta as definições de sinais de entrada e sa\'ida referidos na \autoref{\NomeSTab}.
 
 \begin{table}[!h]
-\caption{Sinais do bloco \NomeBloco}
 \label{\NomeSTab}
-\centering
 \begin{tabular}{ccll}
-
-    \toprule
-    Sinal & Tipo    & Descrição & Observação        \\
-    \midrule \midrule
-    RESET   & Entrada   & Sinal de tensão de RESET no APS & Ativo em nível baixo\\
-    \midrule
-    ENABLE   & Entrada   & Sinal de tensão de ENABLE no APS & Ativo em nível alto\\
-    \midrule
-    Ibias\_clk & Entrada & Dreno de Corrente do bloco\\
-    \midrule
-    Vout   & Saída   & \begin{tabular}[l]{@{}l@{}}Sinal de tensão anal\'ogica produzido\\ pelo APS\end{tabular} \\
-    \bottomrule
+\toprule
+Sinal      & Tipo    & \multicolumn{1}{c}{Descrição}                                                          & \multicolumn{1}{c}{Observação}                                                                               \\
+\midrule \midrule
+RESET      & Entrada & Sinal de tensão de RESET no APS                                                        & Ativo em nível baixo                                                                                         \\
+\midrule
+ENABLE     & Entrada & Sinal de tensão de ENABLE no APS                                                       & Ativo em nível alto                                                                                          \\
+\midrule
+SELECT     & Entrada & Sinal de tensão de SELECT no APS                                                       & \begin{tabular}[c]{@{}l@{}}Ativo em nível alto.\\ Mantido internamente \\ em nível alto\end{tabular} \\
+\midrule
+Ibias\_clk & Entrada & Dreno de Corrente do bloco (500 nA)                                                    &                                                                                                              \\
+\midrule
+Vout       & Saída   & \begin{tabular}[c]{@{}l@{}}Sinal de tensão analógica produzido\\ pelo APS\end{tabular} &    \\
+\bottomrule
 \end{tabular}
-\legend{Fonte: Produzido pelo autor}
+\legend{Fonte: Produzido pelo autor.}
 \end{table}
 
 A representação em bloco do circuito projetado é dado na \autoref{\NomeSFig}.
@@ -68,11 +67,11 @@ O fotodiodo utilizado no bloco apresenta os par\^ametros mostrados na \autoref{\
 \caption{Fotodiodo do bloco \NomeBloco}
 \label{\NomeQTab}
 \centering
-\begin{tabular}{ccccc}
+\begin{tabular}{cccc}
 \toprule
-Nome & W ($\mu$m)  & L ($\mu$m)\\
+Nome & W ($\mu$m)  & L ($\mu$m) & Área ($\mu$m²)\\
 \midrule \midrule
-Fotodiodo & 25 & 25\\
+Fotodiodo & 25 & 25 & 625\\
 \bottomrule
 \end{tabular}
 \legend{Fonte: Produzido pelo autor}

@@ -6,7 +6,7 @@
 % ----------------------------------------------------------
 Receptores ópticos têm uma vasta gama de aplicações. Podemos utilizá-los para detectar a presença ou ausência de luz no ambiente em determinada faixa de frequência; recepção de sinais luminosos de diferentes cores para construir uma foto em uma câmera; recepção de sinais codificados em luz para realizar uma transmissão de dados sem fio (Li-Fi); detecção de temperatura em um objeto via a sua emissão de luz infravermelha; entre incontáveis outras utilidades. A forma como o circuito do sensor é desenvolvido varia muito com a aplicação, e diversas topologias podem ser utilizadas. Mesmo dentro de uma classe específica de sensores, diversas variações de circuitos podem existir.
 
-Neste trabalho, é desenvolvido o projeto eletrônico dos principais blocos analógicos de um Receptor \'Optico integrado em tecnologia CMOS 180 nm. Para realizar a recepção dos dados, um pixel ativo do tipo APS (\textit{Active Pixel Sensor}) e um TIA (\textit{Transimpedance Amplifier}) para captação de refer\^encia de temporização foram projetados. O APS e o TIA são topologias muito estudadas e utilizadas, devido principalmente à facilidade com que podem ser integrados em um CI utilizando tecnologia CMOS, sua facilidade de acoplamento com outros circuitos do mesmo CI, e também pelo baixo custo por pixel em comparação com outros tipos de Receptores Ópticos. 
+Neste trabalho, é desenvolvido o projeto eletrônico dos principais blocos analógicos de um Receptor \'Optico integrado em tecnologia CMOS de 180 nm. Para realizar a recepção dos dados, um pixel ativo do tipo APS (\textit{Active Pixel Sensor}) e um TIA (\textit{Transimpedance Amplifier}) para captação de refer\^encia de temporização foram projetados. O APS e o TIA são topologias muito estudadas e utilizadas, devido principalmente à facilidade com que podem ser integrados em um CI utilizando tecnologia CMOS, sua facilidade de acoplamento com outros circuitos do mesmo CI, e também pelo baixo custo por pixel em comparação a outros tipos de Receptores Ópticos. 
 
 Junto à construção dos blocos citados, diversos outros circuitos são necessários para que se permita o condicionamento e processamento do sinal luminoso transferido para o domínio elétrico. Dentre os circuitos auxiliares que compõem todo um sistema de Pixel Ativo, podemos citar Amplificadores Operacionais, utilizados para amplificar o sinal gerado pelo sensor; circuitos geradores de temporização, que definem o momento de captação de luz do pixel e momento este poderá ser operado; e circuitos de controle que devem ser utilizados para garantir sincronia entre todos elementos do sistema
 
@@ -18,7 +18,7 @@ Todo o trabalho é desenvolvido com apoio do OptMA\textsuperscript{Lab} , labora
 
 Dado a infinidade de aplicações do qual um APS pode ser utilizado, a fundamentação de parâmetros de referência para desenvolvimento de projetos de circuitos que se faz presente é de essencial importância para possibilitar a escolha de qual projeto é mais adequado à aplicação. Diferentes figuras de mérito podem ser avaliadas para otimizar uma ou mais características de interesse técnico e/ou econômico do projeto.
 
-O trabalho tem como principal objetivo o desenvolvimento de um circuito de Sensor de Pixel Ativo, e um TIA, tomando como referência trabalhos j\'a desenvolvidos por outros autores. O desenvolvimento apresenta o projeto elétrico, simulação, e desenvolvimento do layout do CI. 
+O trabalho tem como principal objetivo o desenvolvimento de um circuito de Sensor de Pixel Ativo, e um TIA, tomando como referência trabalhos j\'a desenvolvidos por outros autores. O desenvolvimento apresenta o projeto elétrico, simulação, e desenvolvimento do layout do CI (\textit{Circuito Integrado}). 
 
 São desenvolvidos seis circuitos principais, sendo três com a função de detectar diferentes cores (azul, verde e amarelo) utilizando um APS, um circuito extrator de sinal de relógio de uma fonte luminosa atrav\'es de um TIA, e um APS e um TIA para fins de testes, dos quais são utilizados para testar as funcionalidades dos circuitos citados sem a necessidade de uma fonte luminosa. 
 
@@ -32,16 +32,16 @@ A monografia apresenta o desenvolvimento de um projeto de Receptores Ópticos. O
 
 Revisão Bibliográfica, capítulo 2 deste trabalho, visa apresentar um resumo histórico simplificado sobre Receptores Ópticos, conceituação de elementos chave para o entendimento do que é apresentado em capítulos posteriores, citação de outros trabalhos relacionados ao tema aprovados pela comunidade científica e detalhamento dos circuitos APS e TIA, principais objetos de estudo deste documento.
 
-Desenvolvimento do Projeto, capítulo 3 deste trabalho, visa apresentar o processo adotado para desenvolvimento do Receptor Óptico, as especificações e tecnologias utilizadas pelo auto, e mostrar o esquemático elétrico dos blocos de maior interesse para entendimento do projeto.
+Desenvolvimento do Projeto, capítulo 3 deste trabalho, visa apresentar o processo adotado para desenvolvimento do Receptor Óptico, as especificações e tecnologias utilizadas pelo autor, e mostrar o esquemático elétrico dos blocos de maior interesse para entendimento do projeto. O desenvolvimento a nível de layout do circuito também é apresentado, com base nos circuitos previamente indicados.
 
-Resultados, capítulo 4 deste trabalho, apresenta todos resultados de simulação obtidos de acordo com o modelo metodológico previamente apresentado, e a comprovação de atendimento aos objetivos tais quais formulados. O desenvolvimento a nível de layout do circuito também é apresentado, a partir da validação de funcionamento do circuito em simulação.
+Resultados, capítulo 4 deste trabalho, apresenta todos resultados de simulação obtidos de acordo com o modelo metodológico previamente apresentado, e a comprovação de atendimento aos objetivos tais quais formulados.
 
 Conclusão, capítulo 5 deste trabalho, retoma os resultados e avalia se os objetivos foram devidamente alcançados. Sugestões de trabalhos posteriores são apresentados para explorar alguns tópicos que o autor entende que possam complementar todo o estudo aqui realizado.
 
 \section{Padronização de identifição dos elementos dos circuitos}
 \label{section:padrao_sinais}
 
-Para facilitar a demonstração dos circuitos presentes neste trabalho, o autor padronizou um conjunto de cores que estarão presentes em cada elemento ilustrados para cada circuito referenciado:
+Para facilitar a demonstração dos circuitos presentes neste trabalho, o autor padronizou um conjunto de cores que estarão presentes em cada elemento ilustrado para cada circuito referenciado:
 
 \begin{itemize}
     \item \textbf{\color{red}VERMELHO}: indica o nome de uma inst\^ancia de um componente

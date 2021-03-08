@@ -58,11 +58,11 @@ O circuito projetado para o bloco \'e demonstrado na \autoref{\NomePFig}.
 
 A sa\'ida digital do bloco funciona realizando uma comparação entre uma tensão de refer\^encia chamada de \textit{Vref} e a sa\'ida anal\'ogica do APS, chamada de \textit{AnOut}. Quando o valor de \textit{Vref} for maior do que o de \textit{AnOut}, o comparador ir\'a saturar e apresentar um sinal aproximadamente igual a VDD, interpretada como n\'ivel l\'ogico '1'. Quando o valor de \textit{Vref} for menor ou igual do que o de \textit{AnOut}, o comparador ir\'a apresentar um sinal aproximadamente igual a GND em sua sa\'ida, interpretada como n\'ivel l\'ogico '0'.
 
-Utilizando o elemento comparador, podemos ajustar para que a sa\'ida retorne '0' apenas quando for atingido um valor limiar controlado. Como sabemos que a intensidade da corrente fotogerada depende da intensidade da luz captada pelo fotodiodo (\autoref{secao_fotodiodo}), podemos deduzir a informação sobre intensidade luminosa verificando em quanto tempo demora para que se mude de n\'ivel l\'ogico '1' para '0' durante o Est\'agio 2. Considerando o atraso no comparador nulo, e desprezando-se as resistências das chaves no bloco APS, podemos utilizar a \autoref{eq_responsividade} e a \autoref{eq_modEletFotIl} para se obter a \autoref{eq_apsd}.
+Utilizando o elemento comparador, podemos ajustar para que a sa\'ida retorne '0' apenas quando for atingido um valor limiar controlado. Como sabemos que a intensidade da corrente fotogerada depende da intensidade da luz captada pelo fotodiodo (\autoref{secao_fotodiodo}), podemos deduzir a informação sobre intensidade luminosa verificando em quanto tempo demora para que se mude de n\'ivel l\'ogico '1' para '0' durante o Est\'agio 2, considerando que o nó $V_{cn}$ apresentava o valor de VDD, que equivale à $AnOut$ apresentar o máximo valor em sua saída (\autoref{eq_voutfinal}). Considerando o atraso no comparador nulo, e desprezando-se as resistências das chaves no bloco APS, podemos utilizar as equações \ref{eq_responsividade}, \ref{eq_modEletFotIl} e \ref{eq_voutfinal} para se obter a \autoref{eq_apsd}.
 
 \begin{equation}
     \label{eq_apsd}
-    P_{FD} = \frac{(VDD-V_{ref})(C_{j}+C_{cn})}{R_{\lambda}t}
+    P_{FD} = \frac{(AnOut_0-V_{ref})(C_{j}+C_{cn})}{R_{\lambda}t}
 \end{equation}
 
 Onde:
@@ -70,8 +70,7 @@ Onde:
 \begin{itemize}
 
     \item \textit{P$_{FD}$} \'e a pot\^encia \'optica presente no fotodiodo [\textit{W}]
-    \item \textit{R$_\lambda$} \'e a Responsividade [\textit{A.W$^{-1}$}]
-    \item \textit{VDD} \'e a tensão de alimentação do circuito [$V$]
+    \item $AnOut_0$ \'e o valor do nó $AnOut$ no momento que inicia o Período de Integração [$V$]
     \item \textit{$V_{ref}$} \'e a tensão de refer\^encia do comparador [$V$]
     \item \textit{$C_j$} \'e a capacit\^ancia de junção do fotodiodo [\textit{F}]
     \item \textit{$C_{cn}$} \'e a capacit\^ancia do n\'o central do APS [\textit{F}]
