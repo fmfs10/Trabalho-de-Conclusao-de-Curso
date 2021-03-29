@@ -29,10 +29,7 @@ Máximo & 30\\
 
 É avaliado qual a resposta do APS com a presença de uma fotocorrente. Para a simulação, foi considerado o modelo apresentado na \autoref{fig_APS_cap}, do qual há uma fonte de corrente em paralelo a um diodo representando a fotogeração. A corrente \textit{Iref} considerada foi de $500$ nA, fornecida pelo bloco \textit{current\_mirror\_nmos}.
 
-O Período de Reset nas simulações é definido para ter uma duração de $1$ us. Ao realizarmos as medições do circuito fabricado, desejamos que o valor da saída do APS esteja estabilizado no seu valor máximo, para que o valor de inicio do estágio esteja sempre fixado. Em simulação isso não é necessário, pois conseguimos calcular a inclinação da curva sem erros significativos.
-
-Dois valores para o Período de Integração foram considerados, como mostrado nas próximas subseções.
-Dois cenários de simulação são descritos nas subseções \ref{sub_sec121} e \ref{sub_sec247} são apresentados, sendo suficientes para comprovação da operação do circuito. O primeiro cenário modela o sinal de fotocorrente gerada com uma onda quadrada de 8 kHz (período de 125 $\mu$s) e valor de amplitude de 5 nA. O segundo cenário modela o sinal de fotocorrente gerada com uma onda quadrada de 4 kHz (período de 250 $\mu$s) e valor de amplitude de 2,5 nA. Esses e outros valores de corrente fotogeradas sugeridos pelo trabalho \cite{LidianeCampos} foram testados na topologia implementada.
+O Período de Reset nas simulações é definido para ter uma duração de $1$ us. Dois cenários de simulação são descritos nas subseções \ref{sub_sec121} e \ref{sub_sec247} são apresentados, sendo suficientes para comprovação da operação do circuito. O primeiro cenário modela o sinal de fotocorrente gerada com uma onda quadrada de 8 kHz (período de 125 $\mu$s) e valor de amplitude de 5 nA. O segundo cenário modela o sinal de fotocorrente gerada com uma onda quadrada de 4 kHz (período de 250 $\mu$s) e valor de amplitude de 2,5 nA. Esses e outros valores de corrente fotogeradas sugeridos pelo trabalho \cite{LidianeCampos} foram testados na topologia implementada.
 
 \subsection{Período de Integração igual a 121 $\mu$s}
 \label{sub_sec121}

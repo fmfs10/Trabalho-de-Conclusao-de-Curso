@@ -62,7 +62,7 @@ Utilizando o elemento comparador, podemos ajustar para que a sa\'ida retorne '0'
 
 \begin{equation}
     \label{eq_apsd}
-    P_{FD} = \frac{(AnOut_0-V_{ref})(C_{j}+C_{cn})}{R_{\lambda}t}
+    P_{FD} = \frac{(AnOut_0-V_{ref})(C_{j}+C_{cn})}{R_{\lambda}t_{1-0}}
 \end{equation}
 
 Onde:
@@ -75,6 +75,15 @@ Onde:
     \item \textit{$C_j$} \'e a capacit\^ancia de junção do fotodiodo [\textit{F}]
     \item \textit{$C_{cn}$} \'e a capacit\^ancia do n\'o central do APS [\textit{F}]
     \item $R_{\lambda}$ \'e a responsividade para o comprimento de onda detectado no fotodiodo [$A.W^{-1}$]
-    \item \textit{t} \'e o tempo do qual o n\'ivel l\'ogico mudou de '1' para '0' [\textit{s}]
+    \item $t_{1\_0}$ \'e o tempo do qual o n\'ivel l\'ogico demorou para mudar de '1' para '0', a partir do momento que se inicia o Estágio 2, representado na \autoref{figurataps}, equivalente ao tempo para que a tensão de saída do APS seja igual a Vref [\textit{s}]
     
 \end{itemize}
+
+\begin{figure}[!h]
+ \centering
+    \centering
+    \caption{\label{figurataps}Comparação da saída do APS com a tensão de referência do comparador do $APS\_digitalized$ \NomeBloco} 
+    \includegraphics[scale=0.3]{Imagens/Graficot.png}
+    \legend{Fonte: Produzido pelo autor}
+    \label{\NomePFig}
+\end{figure}

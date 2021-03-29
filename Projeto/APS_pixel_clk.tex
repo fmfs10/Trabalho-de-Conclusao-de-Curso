@@ -85,18 +85,18 @@ Fotodiodo & 25 & 25 & 625\\
 \legend{Fonte: Produzido pelo autor}
 \end{table}
 
-Considerando $R_{sh}$ do fotodiodo tendendo ao infinito e com base na \autoref{eqCTIA}, a \autoref{eq_TIAblock} descreve $V_{p}$, que \'e comparada com \textit{Vref\_comp} e então utilizada para gerar o sinal de sa\'ida.
+Com base na \autoref{eqCTIA2}, a \autoref{eq_TIAblock} descreve $V_{p}$, que \'e comparada com \textit{Vref\_comp} e então utilizada para gerar o sinal de sa\'ida.
 
 \begin{equation}
     \label{eq_TIAblock}
-    V_{p} = RI_{PH} + V_{ref\_amp}
+    V_{p} = RI_{PH}
 \end{equation}
 
 Onde:
 
 \begin{itemize}
 
-    \item \textit{$V_{PH}$} \'e a tensão no ramo positivo do comparador [$V$]
+    \item \textit{$V_{P}$} \'e a tensão no ramo positivo do comparador [$V$]
     \item \textit{$I_{PH}$} \'e a corrente fotogerada [$A$]
     
 \end{itemize}

@@ -14,7 +14,7 @@ Com a invenção do fototransistor e fotodiodo, e o desenvolvimento de tecnologi
 
 Em meados da d\'ecada de 70, o PPS (\textit{Passive Pixel Sensor}) foi desenvolvido, como alternativa aos dispositivos de imagem de tubo a vácuo \cite{Savvas}. Sua constituição se dá por uma matriz de fotodiodos, que convertem uma informação luminosa em el\'etrica, diretamente a um elemento processador de dados analógico, sem a utilização de um componente de amplificação.
 
-Ainda na d\'ecada de 70, os primeiros trabalhos relacionados ao APS foram desenvolvidos utilizando a tecnologia MOS (\textit{Metal-Oxide-Semiconductor}) \cite{Peter}. O APS \'e uma evolução direta do PPS, com a adição de um dispositivo amplificador \cite{EstevaoCoelho}. Amplificar o sinal permite uma maior precisão na aquisição dos dados, al\'em de permitir uma maior miniaturização do fotodiodo, o que leva a uma miniaturização de todo o sistema. Com a evolução da tecnologia CMOS (\textit{Complementary Metal-Oxide-Semiconductor}) na d\'ecada de 90, o APS se tornou mais atraente, por ser facilmente integrado com outros componentes que utilizam-se da mesma tecnologia em um mesmo circuito integrado. O APS vem desde então dominando o mercado de Recepção Óptica \cite{Andre, LidianeCampos}.
+Ainda na d\'ecada de 70, os primeiros trabalhos relacionados ao APS foram desenvolvidos utilizando a tecnologia MOS (\textit{Metal-Oxide-Semiconductor}) \cite{Peter}. O APS \'e uma evolução direta do PPS, com a adição de um dispositivo amplificador \cite{EstevaoCoelho}. Amplificar o sinal permite uma maior precisão na aquisição dos dados, al\'em de permitir uma maior miniaturização do fotodiodo, o que leva a uma miniaturização de todo o sistema. Com a evolução da tecnologia CMOS (\textit{Complementary Metal-Oxide-Semiconductor}) na d\'ecada de 90, o APS se tornou mais atraente, por ser facilmente integrado com outros componentes que utilizam-se da mesma tecnologia em um mesmo circuito integrado.
 
 Amplificadores Operacionais são circuitos amplamente utilizados para o desenvolvimento de sistemas analógicos. Desde a década de 60, o desenvolvimento de circuitos de comunicação óptica exploram a utilização de amplificadores para captação de sinais ópticos, transmissão e regeneração de sinais. A utilização de amplificadores operacionais junto à fotodiodos, possibilitam a conversão de sinais de luz em elétricas, que pode ser então processado e utilizado para fins tanto analógicos quanto digitais. O circuito comumente utilizado no processo de captação óptica de sinais digitais são variações do TIA, tendo papel fundamental para a expansão tecnológica que temos desde então. \cite{ajoy, andrefontoura}.
 
@@ -32,7 +32,7 @@ A Física Quântica nos diz que qualquer material apresenta níveis de energia p
 
 A Teoria das Bandas nasce da observação de que comumente uma grande quantidade de níveis de energia permitidos de um material se apresentam muito próximos entre si. Desses níveis de energia, surge-se o conceito “banda de energia”, que \'e a aproximação que dentro dessa faixa de níveis concentrados, temos uma representação contínua de níveis de energia permitidos. Um material pode apresentar uma grande quantidade de bandas, sendo que duas são de extremo interesse para o estudo de semicondutores: A Banda de condução e a Banda de valência.
 
-A Banda de valência \'e a última do qual se considera que um el\'etron está fortemente ligada a um átomo, não podendo mover livremente ao longo do material. A Banda de condução \'e a primeira banda de níveis acima da de valência, e nele já consideramos que um el\'etron \'e livre para se movimentar no material.
+A Banda de valência \'e a última da qual se considera que um el\'etron está fortemente ligada a um átomo, não podendo mover livremente ao longo do material. A Banda de condução \'e a primeira banda de níveis acima da de Valência, e nele já consideramos que um el\'etron \'e livre para se movimentar no material.
 
 \subsubsection{Fóton}
 
@@ -86,7 +86,9 @@ Onde:
     \item \textit{T} \'e a temperatura presente no fotodiodo [\textit{K}]
 \end{itemize}
 
-O fotodiodo em uma grande faixa apresenta comportamento linear, e \'e a faixa de principal interesse em aplicações como o APS ou o TIA. Com o aumento do n\'umero de f\'otons recebidos, o n\'ivel de corrente tende a ficar cada vez mais negativo, como mostrado na \autoref{fig_respFotodiodo}. Com o aumento ou diminuição expressiva, o circuito começa a se tornar não-linear.
+O fotodiodo em uma grande faixa apresenta comportamento linear em relação a quantidade de corrente fotogerada e o número de fótons recebidos, sendo essa a faixa de principal interesse em aplicações como o APS ou o TIA. Além disso, a corrente fotogerada e a queda de tensão entre os terminais do fotodiodo também tendem a apresentar resposta linear, como mostrado na \autoref{fig_respFotodiodo}. Com o aumento ou diminuição expressiva, o circuito começa a se tornar não-linear.
+
+Nota-se na \autoref{fig_respFotodiodo} que uma corrente e tensão negativa apresenta uma maior faixa de operação antes que ocorra a saturação do circuito. Isso ocorre pois a polarização reversa do fotodiodo aumenta a região de depleção, aprimorando a captação de fótons que podem ser convertidos em um sinal elétrico.
 
 \begin{figure}[!h]
 	\caption{\label{fig_respFotodiodo}Resposta Tensão x Corrente para dada intensidade luminosa no fotodiodo}
@@ -177,48 +179,6 @@ O Efeito Fotoel\'etrico se caracteriza pela excitação de el\'etrons em um mate
 
 Por outro lado, uma diminuição do comprimento de onda tende a excitar cada vez menos el\'etrons, pois a absorção na região de depleção deixa de acontecer, chegando a um ponto que o fotodiodo sature em resposta e não seja mais possível diferenciar diferentes frequências acima desta.
 Sabendo destas limitações, definimos a Resposta Espectral como a faixa de comprimentos de onda do qual o fotodetector \'e capaz de produzir uma fotocorrente correspondente.
-
-\subsubsection{Relação Sinal-Ruído}
-Razão entre a potência de sinal fotogerada pela pot\^encia de ru\'ido no sinal.
-
-\begin{equation}
-    SNR = \frac{P_{SINAL}}{P_{Ru\acute{i}do}}
-\end{equation}
-
-Onde:
-\begin{itemize}
-    \item \textit{SNR} \'e relação sinal-ru\'ido [\textit{Adm.}]
-    \item \textit{P\textsubscript{SINAL}} \'e a pot\^encia do sinal fotogerado [\textit{W}]
-    \item \textit{V\textsubscript{D}} \'e a pot\^encia do ruido do sinal fotogerado [\textit{W}]
-\end{itemize}
-
-\subsubsection{Pot\^encia equivalente ao ru\'ido}
-Pot\^encia da luz incidida no fotodiodo, que gera uma potência de sinal equivalente ao de ruído em largura de 1 Hz
-
-\begin{equation}
-    NEP = P_{Ru\acute{i}do 1 H}
-\end{equation}
-
-Onde:
-\begin{itemize}
-    \item \textit{NEP} \'e a pot\^encia da luz incidida no fotodiodo [\textit{W}]
-    \item \textit{P\textsubscript{Ruído 1 Hz}} \'e a potência do ruído em largura de 1 Hz [\textit{W}]
-\end{itemize}
-
-\subsubsection{Detectividade espec\'ifica}
-Razão entre a raiz quadrada da área fotossensível do diodo, sobre o NEP
-
-\begin{equation}
-    D* = \frac{\sqrt{A.B}}{NEP}
-\end{equation}
-
-Onde:
-
-\begin{itemize}
-    \item \textit{D*} \'e a detectividade espec\'ifica [$cm.\sqrt{Hz}.W^{-1}$]
-    \item \textit{A} \'e a \'area da região fotossens\'ivel do fotodiodo [\textit{cm²}]
-    \item \textit{A} \'e a largura de banda [\textit{Hz}]
-\end{itemize}
 
 \section{Sensor de Pixel Ativo (APS)}
 \label{section:APS}
@@ -380,7 +340,7 @@ Um amplificador de transimped\^ancia \'e um circuito em que dada uma corrente de
 	\begin{center}
 	    \includegraphics[scale=0.3]{Circuitos/TIA.png}
 	\end{center}
-	\legend{Fonte da ilustra ão: Pr\'oprio autor}
+	\legend{Fonte da ilustração: Pr\'oprio autor}
 \end{figure}
 
 Onde:
@@ -420,23 +380,31 @@ Considerando $R_{sh} >> R$, chegamos à \autoref{eqCTIA2}, utilizada no projeto 
 Como a imped\^ancia de entrada do $TIA$ não \'e ideal (infinita) e varia com a frequ\^encia e temperatura, o circuito não se apresenta linear em toda sua banda de operação, o que representa uma variação na resposta em frequ\^encia de acordo com a corrente fotogerada \cite{hamamatsu}.
 Como o pr\'oprio amplificador apresenta capacit\^ancias internas, o circuito \'e tamb\'em limitado em altas frequ\^encias, principalmente pelo produto $R$ vezes $C$, onde C \'e a capacit\^ancia interna vista pelos terminais de $R$ \cite{hamamatsu}.
 
-Dada as duas propriedades, a \autoref{figura_respostaTIA} e a \autoref{figura_respostaTIA2} mostram o comportamento t\'ipico de resposta em frequ\^encia da topologia.
+A \autoref{figura_respostaTIA} e a \autoref{figura_respostaTIA2} mostram o comportamento t\'ipico de resposta em frequ\^encia da topologia. O pico observado na \autoref{figura_respostaTIA} é característico de um sistema de 2ª ordem e acontece devido a capacitância vista nos terminais do fotodiodo, em conjunto com capacitâncias internas ao amplificador e na saída. Para reduzir esse efeito, um capacitor pode ser adicionado em paralelo ao resistor \textit{R}, com valor precisamente calculado de forma a atenuar o pico (formando um circuito denominado \textit{CTIA}). A\autoref{figura_respostaTIA2} mostra as oscilações presentes em resposta a um pulso, que da mesma forma, também podem ser atenuados utilizado o mesmo capacitor.
 
 \begin{figure}[!h]
- \centering
+    \begin{minipage}{0.4\textwidth}
     \centering
     \caption{\label{figura_respostaTIA}Resposta espectral de um TIA}
-	\begin{center}
-	    \includegraphics[scale=0.8]{Imagens/RespostaEspectralTIA.png}
-	\end{center}
+	\includegraphics[scale=0.8]{Imagens/RespostaEspectralTIA.png}
 	\legend{Fonte: \cite{hamamatsu}}
+	\end{minipage}
+	 \hfill
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \caption{\label{figura_respostaTIA2}Resposta a um pulso em um TIA}
+    \includegraphics[scale=0.8]{Imagens/RespostaEspectralTIA2.png}
+    \legend{Fonte: \cite{hamamatsu}}
+  \end{minipage}
+  
+	
 \end{figure}
 
 \begin{figure}[!h]
     \centering
-    \caption{\label{figura_respostaTIA2}Resposta a um pulso em um TIA}
+    
 	\begin{center}
-	    \includegraphics[scale=0.8]{Imagens/RespostaEspectralTIA2.png}
+	    
 	\end{center}
 	\legend{Fonte: \cite{hamamatsu}}
 \end{figure}
