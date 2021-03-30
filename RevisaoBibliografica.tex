@@ -14,9 +14,9 @@ Com a invenção do fototransistor e fotodiodo, e o desenvolvimento de tecnologi
 
 Em meados da d\'ecada de 70, o PPS (\textit{Passive Pixel Sensor}) foi desenvolvido, como alternativa aos dispositivos de imagem de tubo a vácuo \cite{Savvas}. Sua constituição se dá por uma matriz de fotodiodos, que convertem uma informação luminosa em el\'etrica, diretamente a um elemento processador de dados analógico, sem a utilização de um componente de amplificação.
 
-Ainda na d\'ecada de 70, os primeiros trabalhos relacionados ao APS foram desenvolvidos utilizando a tecnologia MOS (\textit{Metal-Oxide-Semiconductor}) \cite{Peter}. O APS \'e uma evolução direta do PPS, com a adição de um dispositivo amplificador \cite{EstevaoCoelho}. Amplificar o sinal permite uma maior precisão na aquisição dos dados, al\'em de permitir uma maior miniaturização do fotodiodo, o que leva a uma miniaturização de todo o sistema. Com a evolução da tecnologia CMOS (\textit{Complementary Metal-Oxide-Semiconductor}) na d\'ecada de 90, o APS se tornou mais atraente, por ser facilmente integrado com outros componentes que utilizam-se da mesma tecnologia em um mesmo circuito integrado.
+Ainda na d\'ecada de 70, os primeiros trabalhos relacionados ao APS foram desenvolvidos utilizando a tecnologia MOS (\textit{Metal-Oxide-Semiconductor}) \cite{Peter}. O APS \'e uma evolução direta do PPS, com a adição de circuitos eletrônicos de condicionamento de sinal, utilizando-se amplificadores operacionais \cite{EstevaoCoelho}. Amplificar o sinal permite uma maior precisão na aquisição dos dados, al\'em de permitir uma maior miniaturização do fotodiodo, o que leva a uma miniaturização de todo o sistema. Com a evolução da tecnologia CMOS (\textit{Complementary Metal-Oxide-Semiconductor}) na d\'ecada de 90, o APS se tornou mais atraente, por ser facilmente integrado com outros componentes que utilizam-se da mesma tecnologia em um mesmo circuito integrado.
 
-Amplificadores Operacionais são circuitos amplamente utilizados para o desenvolvimento de sistemas analógicos. Desde a década de 60, o desenvolvimento de circuitos de comunicação óptica exploram a utilização de amplificadores para captação de sinais ópticos, transmissão e regeneração de sinais. A utilização de amplificadores operacionais junto à fotodiodos, possibilitam a conversão de sinais de luz em elétricas, que pode ser então processado e utilizado para fins tanto analógicos quanto digitais. O circuito comumente utilizado no processo de captação óptica de sinais digitais são variações do TIA, tendo papel fundamental para a expansão tecnológica que temos desde então. \cite{ajoy, andrefontoura}.
+Amplificadores Operacionais são circuitos amplamente utilizados para o desenvolvimento de sistemas analógicos. Desde a década de 60, o desenvolvimento de circuitos de comunicação óptica exploram a utilização de amplificadores para captação de sinais ópticos, transmissão e regeneração de sinais. A utilização de amplificadores operacionais junto à fotodiodos, possibilitam a conversão de sinais de luz em sinais elétricos, que pode ser processado e utilizado para fins tanto analógicos quanto digitais. O circuito comumente utilizado no processo de captação óptica de sinais digitais são variações do TIA, tendo papel fundamental para a expansão tecnológica que temos desde então. \cite{ajoy, andrefontoura}.
 
 \section{Fotodiodo}
 
@@ -66,7 +66,7 @@ Um fotodiodo apresenta um modelo el\'etrico equivalente ilustrado na \autoref{fi
 
 \begin{equation}
     \label{eq_modEletFot}
-    I_o = I_L - I_D - I\rq = I_L - I_S*(\exp (\frac{qV_d}{kT})-1) - I\rq
+    I_o = I_L - I_D - I\rq = I_L - I_S*(\exp (\frac{qV_D}{kT})-1) - I\rq
 \end{equation}
 
 Onde:
@@ -198,9 +198,9 @@ Cada componente desempenha uma diferente função de forma a processar a informa
 
 \begin{itemize}
 
-    \item O transistor $T_{buffer}$ funciona como um amplificador de Dreno Comum, e seu papel \'e replicar o sinal advindo do n\'o central ao n\'o de sa\'ida, reduzindo o efeito de carga que aconteceria caso o n\'o central ($V_{cn}$) fosse a saída do sistema.
+    \item O transistor $T_{buffer}$ funciona como um amplificador de Dreno Comum, e seu papel \'e replicar o sinal advindo do n\'o central ($V_{cn}$) ao n\'o de sa\'ida ($V_{out}$), reduzindo o efeito de carga que aconteceria caso o n\'o central fosse a saída do sistema.
 
-    \item O transistor $T_{reset}$ funciona como uma chave, que quando fechada (nível lógico '0' em seu gate), vale VDD. Quando aberto (nível lógico '1' em seu gate), o sinal no n\'o central passa a depender da configuração da Porta de Transmissão.
+    \item O transistor $T_{reset}$ quando fechado (nível lógico '0' em seu gate) vale VDD. Quando aberto (nível lógico '1' em seu gate), o sinal no n\'o central passa a depender da configuração da Porta de Transmissão.
 
     \item A Porta de Transmissão $T_{enable}$ funciona como uma chave, e quando o transistor $T_{reset}$ estiver em aberto, tem a função controlar se a tensão presente no fotodiodo ir\'a para o nó central ou não. Quando aberto, $V_{pn}$ fica isolado do restante do circuito, devido ao estado de alta imped\^ancia nos terminais do dispositivo. Quando fechado, a corrente fotogerada descarrega em $V_{cn}$, pois a associação das capacitâncias parasitas presentes nos transistores de $T_{enable}$, $T_{reset}$ e $T_{buffer}$ formam um caminho fechado do qual descarrega lentamente o fotodiodo \cite{LidianeCampos}. Uma representação desses capacitores \'e dada na \autoref{fig_APS_cap}.
     
@@ -226,8 +226,8 @@ Cada componente desempenha uma diferente função de forma a processar a informa
      \item \textit{VDD}: Alimentação do circuito
 \end{itemize}
 
-\subsubsection{Capacit\^ancias Parasitas}
-Para o correto estudo do APS devemos observar a capacit\^ancia equivalente $C_{eq}$ presente nos n\'os $V_{pn}$ e $V_{cn}$ do circuito \cite{LidianeCampos}. Na \autoref{fig_APS_cap} temos uma representação das capacit\^ancias que compõem $C_{eq}$.
+\subsection{Capacit\^ancias Parasitas}
+Para o correto estudo do APS devemos observar a capacit\^ancia equivalente $C_{eq}$ presente nos n\'os $V_{pn}$ e $V_{cn}$ do circuito \cite{LidianeCampos}. Na \autoref{fig_APS_cap} temos uma representação das capacit\^ancias que compõem $C_{eq}$, que é a soma das capacitâncias apresentadas na figura.
 
 \begin{figure}[!h]
 	\caption{\label{fig_APS_cap}Representação do circuito APS com suas capacit\^ancias parasitas destacadas}
@@ -240,7 +240,7 @@ Para o correto estudo do APS devemos observar a capacit\^ancia equivalente $C_{e
 Onde: 
 
 \begin{itemize}
-    \item $C_j$ \'e a capacit\^ancia de junção do fotodiodo. Seu principal efeito no estudo do APS \'e limitar a velocidade de varia ão da corrente fotogerada.
+    \item $C_j$ \'e a capacit\^ancia de junção do fotodiodo. Seu principal efeito no estudo do APS \'e limitar a velocidade de variação da corrente fotogerada.
     
     \item $C_{cn}$ \'e a capacit\^ancia equivalente vista do n\'o $V_{cn}$ ao GND, devido principalmente às capacit\^ancias presentes em $T_{enable}$,  $T_{reset}$ e $T_{buffer}$, sendo o de $T_{buffer}$ o de maior contribuição. O capacitor cria um caminho fechado para a corrente do fotodiodo circular ao GND e ser descarregado em um dos est\'agios citados posteriormente no trabalho.
     
@@ -249,7 +249,7 @@ Onde:
     \item \textit{Diodo} \'e o diodo do modelo el\'etrico equivalente do fotodiodo.
 \end{itemize}
 
-\subsubsection{Est\'agios}
+\subsection{Est\'agios}
 \label{estagiosAPS}
 
 A operação do APS pode ser dividida em 4 est\'agios, que vão definir os m\'inimos momentos de  atuação no sinal de controle e seus limites operação. Os est\'agios são representados na \autoref{figura_estagiosAPS}, tendo como base o trabalho de \cite{LidianeCampos}.
@@ -311,11 +311,11 @@ Onde:
 
 \item $T_{reset}$ aberto, $T_{enable}$ aberto, potencial \textit{$V_{pd}$} positivo
 
-Logo ap\'os abrir o $T_{enable}$, a fotocorrente não circula mais no n\'o central, e o fotodiodo continua a ter sua diferença de potencial reduzida, com circulação de corrente internamente devido a $C_j$. O n\'o central passa a cair bem lentamente devido a correntes de fuga. \textit{$V_{pd}$} cai at\'e chegar a se tornar negativo;
+Logo ap\'os abrir o $T_{enable}$, a fotocorrente não circula mais no n\'o central, e o fotodiodo continua a ter sua diferença de potencial reduzida, com circulação de corrente internamente devido a $C_j$. O n\'o central passa a reduzir a tensão bem lentamente devido a correntes de fuga. \textit{$V_{pd}$} diminue seu valor at\'e se tornar negativo.
 
 \item \textit{$T_{reset}$} aberto, \textit{$T_{enable}$} aberto, potencial \textit{$V_{pd}$} negativo
 
-Nessa situação, o $T_{enable}$ passa a operar em modo linear. O potencial no n\'o $V_{cn}$ passa a cair devido a circulação de corrente do n\'o at\'e o fotodiodo. O nó diminui at\'e que finalmente chega a 0, onde se mant\'em estável e não apresenta mais circulação de corrente.
+Nessa situação, o $T_{enable}$ passa a operar em modo linear. O potencial no n\'o $V_{cn}$ passa a diminuir devido a circulação de corrente do n\'o at\'e o fotodiodo. O nó diminui at\'e que finalmente chega a 0, onde se mant\'em estável e não apresenta mais circulação de corrente.
 
 \end{enumerate}
 
@@ -326,14 +326,14 @@ Podemos aproveitar o entendimento das propriedades f\'isicas do fotodiodo, e tam
 
 Como sabemos matematicamente as relações de fotocorrente determinadas por \autoref{eq_modEletFot} e \autoref{eq_modEletFotIl}, e tamb\'em as Figuras de M\'erito que caracterizam o fotodetector, podemos utilizar o APS para coletar as informações em sua sa\'ida e determinar a intensidade da luz
 
-Entre os est\'agios 2 e 3, a tensão do n\'o $V_{cn}$ passa a cair, devido a circulação da fotocorrente. Como essa corrente depende da intensidade da luz, podemos descobrir o valor de intensidade sabendo a inclinação da curva de tensão na sa\'ida, j\'a que a variação da tensão \'e uma grandeza diretamente proporcional à corrente e a imped\^ancia vista no n\'o. Como a tensão de sa\'ida \'e igual ao de $V_{cn}$ menos $V_{GS}$ do transistor $T_{buffer}$, podemos medir a sa\'ida para processar o sinal e então relatar a intensidade luminosa.
+Entre os est\'agios 2 e 3 apresentados na \autoref{figura_estagiosAPS}, a tensão do n\'o $V_{cn}$ passa a diminuir, devido a circulação da fotocorrente. Como essa corrente depende da intensidade da luz, podemos descobrir o valor de intensidade sabendo a inclinação da curva de tensão na sa\'ida, j\'a que a variação da tensão \'e uma grandeza diretamente proporcional à corrente e a imped\^ancia vista no n\'o. Como a tensão de sa\'ida \'e igual a $V_{cn}$ menos $V_{GS}$ do transistor $T_{buffer}$, podemos medir a sa\'ida para processar o sinal e então relatar a intensidade luminosa.
 
 Com as observações aqui apresentadas, podemos desenvolver um sistema de medição de informação luminosa, trabalhando entre os est\'agios 1 e 3, e então retornando ao Estágio 1 para uma nova aquisição. \'E importante destacar que existem limitações quanto \`a temporização dos est\'agios. Para que a medição seja realizada de forma adequada, devemos garantir que tenhamos entre o Est\'agio 1 e 2, um tempo suficientemente grande para que $V_{cn}$ apresente um valor estável, ou seja, o tempo de transição do sistema nessa condição seja conclu\'ido. Entre o Est\'agio 2 e Est\'agio 3, devemos garantir que tenhamos um tempo mínimo para que dois valores distintos de $V_{out}$ possam ser medidos, de acordo com a sensibilidade do sistema de medição.
 
 \section{Amplificador de Transimped\^ancia (TIA)}
 \label{section:TIA}
 
-Um amplificador de transimped\^ancia \'e um circuito em que dada uma corrente de entrada, gera-se uma tensão em sua sa\'ida proporcional \`a esta corrente \cite{RazaviFundM}. Considerando-se o fotodiodo como uma fonte de corrente, a \autoref{fig_TIA} apresenta uma poss\'ivel topologia de um TIA, desenvolvido no presente trabalho.
+Um amplificador de transimped\^ancia \'e um circuito em que dada uma corrente de entrada, gera-se uma tensão em sua sa\'ida proporcional \`a esta corrente \cite{RazaviFundM}. Considerando-se o fotodiodo como uma fonte de corrente, a \autoref{fig_TIA} apresenta uma poss\'ivel topologia de um Amplificador de Transimped\^ancia (TIA), desenvolvido no presente trabalho.
 
 \begin{figure}[!h]
 	\caption{\label{fig_TIA}TIA desenvolvido}
@@ -352,7 +352,7 @@ Onde:
     \item $R_l$ \'e uma carga de sa\'ida [$\Omega$]
 \end{itemize}
 
-Sabemos da \autoref{fig_modelofotodiodo} que podemos modelar uma resist\^encia $R_{sh}$ em paralelo ao fotodiodo. Desprezando-se todos outros componentes do modelo para facilitar a an\'alise, podemos descrever a f\'ormula correspondente ao $TIA$ como a \autoref{eqCTIA}.
+Observando a \autoref{fig_modelofotodiodo}, nota-se que podemos modelar uma resist\^encia $R_{sh}$ em paralelo ao fotodiodo. Desprezando-se todos outros componentes do modelo para facilitar a an\'alise, podemos descrever a f\'ormula correspondente ao $TIA$ como a \autoref{eqCTIA}.
 
 \begin{equation}
     \label{eqCTIA}
