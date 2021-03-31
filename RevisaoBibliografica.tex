@@ -20,7 +20,7 @@ Amplificadores Operacionais são circuitos amplamente utilizados para o desenvol
 
 \section{Fotodiodo}
 
-O fotodiodo, ou fotodetector, \'e um componente optoeletrônico semicondutor que tem a função de captar um sinal eletromagn\'etico no ambiente, e então convertê-lo para uma corrente el\'etrica, chamada de corrente fotogerada, ou fotocorrente \cite{RazaviOpt}. A faixa de frequência do sinal que pode ser captado varia em cada projeto, mas dispositivos práticos se apresentam comumente em uma banda entre o ultravioleta e o infravermelho, o que possibilita o desenvolvimento de dispositivos dentro da faixa da luz visível \cite{LidianeCampos}.
+O fotodiodo, ou fotodetector, \'e um componente optoeletrônico semicondutor que tem a função de captar um sinal eletromagn\'etico no ambiente, e então convertê-lo para uma corrente el\'etrica, chamada de corrente fotogerada, ou fotocorrente \cite{RazaviOpt}. A faixa de frequência da onda eletromagnética que pode ser captada varia em cada projeto, mas dispositivos práticos se apresentam comumente em uma banda entre o ultravioleta e o infravermelho, o que possibilita o desenvolvimento de dispositivos dentro da faixa da luz visível \cite{LidianeCampos}.
 
 Para o entendimento do funcionamento do fotodiodo, uma fundamentação quântica da luz deve ser utilizada, com foco principal na Teoria das Bandas e no entendimento do que são os Fótons.
 
@@ -40,17 +40,21 @@ Fóton \'e uma partícula elementar que surge como resultado da liberação de e
 
 \subsection{Fotodiodo}
 \label{secao_fotodiodo}
-Um fotodiodo comumente \'e formado pela junção PIN, que \'e a junção de um material semicondutor dopado do tipo-P, um semicondutor intrínseco e um material semicondutor dopado do tipo-N, como mostrado na \autoref{fig_fotodiodo}:
+Um fotodiodo \'e formado por uma junção PN, que \'e a junção de um material semicondutor dopado do tipo-P com um do tipo-N, como mostrado na \autoref{fig_fotodiodo}:
 
 \begin{figure}[!h]
-	\caption{\label{fig_fotodiodo}Exemplo de construção de uma junção PIN}
+	\caption{\label{fig_fotodiodo}Exemplo de construção de uma junção PN}
 	\begin{center}
-	    \includegraphics[scale=0.4]{Imagens/PIN.png}
+	    \includegraphics[scale=0.7]{Imagens/JuncaoPN.png}
 	\end{center}
-	\legend{Fonte: \cite{RazaviOpt}}
+	\legend{Fonte: \cite{LidianeCampos}}
 \end{figure}
 
-Quando um fóton com energia suficiente para excitar o material \'e absorvido, um par el\'etron-lacuna \'e gerado (migração de um el\'etron da banda de valência para de condução), e por difusão, os el\'etrons migram para o cátodo, formando uma fotocorrente. Ajustando-se os tamanhos das camadas P, N e da região de depleção (formada pelo semicondutor intrínseco), podemos controlar a resposta em frequência do fotodiodo e qual a energia mínima do fóton necessária para que gere a fotocorrente. Com a migração dos el\'etrons, uma diferença de potencial \'e gerada entre as camadas P e N, que pode ser aproveitada para a geração de corrente el\'etrica em um circuito el\'etrico fechado \cite{hamamatsu}.
+Quando um fóton com energia suficiente para excitar o material \'e absorvido, um par el\'etron-lacuna \'e gerado (migração de um el\'etron da banda de valência para de condução), e por difusão, os el\'etrons migram para o cátodo, formando uma fotocorrente. Ajustando-se os tamanhos das camadas P, N e também a dopagem, podemos controlar a resposta em frequência do fotodiodo e qual a energia mínima do fóton necessária para que gere a fotocorrente.
+
+A Região de Depleção é uma região de barreira de potencial formada ao redor dos contatos da junção, que é gerada com a difusão de elétrons da camada N para P já na construção do dispositivo, ocorrendo devido a diferença de concentração de elétrons em N e lacunas (espaços com ausência de elétrons mas que podem ser ocupados pelos mesmos). No fotodiodo essa é a região de maior interesse, por ser onde há a conversão de fótons em energia elétrica que pode ser aproveitada.
+
+Com a migração dos el\'etrons, uma diferença de potencial \'e gerada entre as camadas P e N, que pode ser aproveitada para a geração de corrente el\'etrica em um circuito el\'etrico fechado \cite{hamamatsu}.
 Um fotodiodo apresenta um modelo el\'etrico equivalente ilustrado na \autoref{fig_modelofotodiodo}:
 
 \begin{figure}[!h]
@@ -88,7 +92,7 @@ Onde:
 
 O fotodiodo em uma grande faixa apresenta comportamento linear em relação a quantidade de corrente fotogerada e o número de fótons recebidos, sendo essa a faixa de principal interesse em aplicações como o APS ou o TIA. Além disso, a corrente fotogerada e a queda de tensão entre os terminais do fotodiodo também tendem a apresentar resposta linear, como mostrado na \autoref{fig_respFotodiodo}. Com o aumento ou diminuição expressiva, o circuito começa a se tornar não-linear.
 
-Nota-se na \autoref{fig_respFotodiodo} que uma corrente e tensão negativa apresenta uma maior faixa de operação antes que ocorra a saturação do circuito. Isso ocorre pois a polarização reversa do fotodiodo aumenta a região de depleção, aprimorando a captação de fótons que podem ser convertidos em um sinal elétrico.
+Nota-se na \autoref{fig_respFotodiodo} que uma corrente e tensão negativa apresenta uma maior faixa de operação antes que ocorra a saturação do circuito. Isso ocorre pois a polarização reversa do fotodiodo aumenta a região de depleção, aprimorando a captação de fótons que podem ser convertidos em um sinal elétrico. Devido a isso o fotodiodo é comumente polarizado reversamente nas suas diversas aplicações.
 
 \begin{figure}[!h]
 	\caption{\label{fig_respFotodiodo}Resposta Tensão x Corrente para dada intensidade luminosa no fotodiodo}
@@ -177,7 +181,8 @@ O conhecimento da velocidade de resposta \'e crucial para determinar as limitaç
 
 O Efeito Fotoel\'etrico se caracteriza pela excitação de el\'etrons em um material por um fóton, quando este apresenta uma energia mínima, chamada de \textit{Função Trabalho}. Mesmo quando uma grande quantidade de fótons com energia menor do que a Função Trabalho atravessem o fotodiodo, eles não serão capazes de excitar nenhum el\'etron. Como a energia de um fóton diminui com o aumento de seu comprimento de onda, existe um comprimento de onda máximo (ou uma frequência mínima) do qual o fotodetector será capaz de gerar fotocorrente.
 
-Por outro lado, uma diminuição do comprimento de onda tende a excitar cada vez menos el\'etrons, pois a absorção na região de depleção deixa de acontecer, chegando a um ponto que o fotodiodo sature em resposta e não seja mais possível diferenciar diferentes frequências acima desta.
+Por outro lado, uma diminuição do comprimento de onda tende a excitar cada vez menos el\'etrons, pois absorção de luz acontece principalmente na superfície da região de difusão, que não é a região de depleção.
+
 Sabendo destas limitações, definimos a Resposta Espectral como a faixa de comprimentos de onda do qual o fotodetector \'e capaz de produzir uma fotocorrente correspondente.
 
 \section{Sensor de Pixel Ativo (APS)}
@@ -198,11 +203,11 @@ Cada componente desempenha uma diferente função de forma a processar a informa
 
 \begin{itemize}
 
-    \item O transistor $T_{buffer}$ funciona como um amplificador de Dreno Comum, e seu papel \'e replicar o sinal advindo do n\'o central ($V_{cn}$) ao n\'o de sa\'ida ($V_{out}$), reduzindo o efeito de carga que aconteceria caso o n\'o central fosse a saída do sistema.
+    \item O transistor $T_{buffer}$ funciona como um amplificador de Dreno Comum, e seu papel \'e replicar o sinal advindo do n\'o central ($V_{cn}$) ao n\'o de sa\'ida ($V_{out}$), decrescido da diferença de tensão entre porta e dreno do transistor ($V_{GS}$). O efeito de carga\footnote{Efeito do qual a saída de um circuito 1, conectado a entrada de outro circuito 2, tem o valor de saída reduzido, comparado a situação da qual a saída do circuito 1 não está conectada em nada. Ocorre devido a saída do circuito 1 enxergar uma impedância finita na conexão do circuito 2, que então cria um divisor de tensão com a sua impedância de saída e consequentemente reduz a tensão vista no nó de saída.} que aconteceria caso o n\'o central fosse a saída do sistema é reduzido, pois entre os pinos de porta e dreno do transistor há a presença de uma alta impedância.
 
-    \item O transistor $T_{reset}$ quando fechado (nível lógico '0' em seu gate) vale VDD. Quando aberto (nível lógico '1' em seu gate), o sinal no n\'o central passa a depender da configuração da Porta de Transmissão.
+    \item O transistor $T_{reset}$ quando fechado (nível lógico '0' em seu gate) faz com que o potencial do nó $V_{cn}$ seja igual a VDD. Quando aberto (nível lógico '1' em seu gate), o sinal no n\'o central passa a depender da configuração de $T_{enable}$.
 
-    \item A Porta de Transmissão $T_{enable}$ funciona como uma chave, e quando o transistor $T_{reset}$ estiver em aberto, tem a função controlar se a tensão presente no fotodiodo ir\'a para o nó central ou não. Quando aberto, $V_{pn}$ fica isolado do restante do circuito, devido ao estado de alta imped\^ancia nos terminais do dispositivo. Quando fechado, a corrente fotogerada descarrega em $V_{cn}$, pois a associação das capacitâncias parasitas presentes nos transistores de $T_{enable}$, $T_{reset}$ e $T_{buffer}$ formam um caminho fechado do qual descarrega lentamente o fotodiodo \cite{LidianeCampos}. Uma representação desses capacitores \'e dada na \autoref{fig_APS_cap}.
+    \item A Porta de Transmissão $T_{enable}$ funciona como uma chave, e quando o transistor $T_{reset}$ estiver em aberto tem a função de isolar o fotodiodo do nó central de acordo com a sua situação de abertura ou fechamento. Quando aberto, $V_{pn}$ fica isolado do restante do circuito, devido ao estado de alta imped\^ancia nos terminais do dispositivo. Quando fechado, a corrente fotogerada descarrega em $V_{cn}$, pois a associação das capacitâncias parasitas presentes nos transistores de $T_{enable}$, $T_{reset}$ e $T_{buffer}$ formam um caminho fechado do qual descarrega lentamente o fotodiodo \cite{LidianeCampos}. Uma representação desses capacitores \'e dada na \autoref{fig_APS_cap}.
     
     \item O transistor $T_{select}$ \'e utilizado para que m\'ultiplos APS's compartilhem um mesmo barramento de sa\'ida. No projeto aqui implementado $T_{select}$ sempre se apresentar\'a fechado (\textit{SELECT} em n\'ivel l\'ogico '1').
     
@@ -349,7 +354,7 @@ Onde:
     \item $V_{ref}$ \'e a tensão de entrada de referência [$V$]
     \item $V_o$ \'e a tensão de sa\'ida [$V$]
     \item $R$ \'e uma resist\^encia de ajuste ganho [$\Omega$]
-    \item $R_l$ \'e uma carga de sa\'ida [$\Omega$]
+    \item $R_L$ \'e uma carga de sa\'ida [$\Omega$]
 \end{itemize}
 
 Observando a \autoref{fig_modelofotodiodo}, nota-se que podemos modelar uma resist\^encia $R_{sh}$ em paralelo ao fotodiodo. Desprezando-se todos outros componentes do modelo para facilitar a an\'alise, podemos descrever a f\'ormula correspondente ao $TIA$ como a \autoref{eqCTIA}.
